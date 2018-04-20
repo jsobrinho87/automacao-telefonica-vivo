@@ -163,13 +163,11 @@ public class TestediariosSteps {
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
         driver.findElement(By.id("txtMae")).sendKeys("Mae Maria Testando");
-
     }
     
     @And ("dados do cliente clica em Proximo Passo TD")
     public void btaoProximoPasso1comboTD() throws IOException {
     	driver.findElement(By.className("btn-lg")).click();
-    	
     }
     
     @And ("tela Endereco de Instalacao clica em Proximo Passo TD")
