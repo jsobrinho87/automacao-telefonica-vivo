@@ -22,23 +22,23 @@ Feature: Execucao dos testes de regressao do release
 #---------B2C---------#
 #---------------------#
 
-#Scenario: Apresenta paginas - Testes Regressivos
-#	Given abre uma nova pagina do navegador
-#	And acessa pg cb 3P regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg cb 2P regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg Banda Larga regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg Fixa regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg TV regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg Simulador 3P regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg fixa dois regressao
-#	Given abre uma nova pagina do navegador
-#	And acessa pg Simulador 2P regressao
+Scenario: Apresenta paginas - Testes Regressivos
+	Given abre uma nova pagina do navegador
+	And acessa pg cb 3P regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg cb 2P regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg Banda Larga regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg Fixa regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg TV regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg Simulador 3P regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg fixa dois regressao
+	Given abre uma nova pagina do navegador
+	And acessa pg Simulador 2P regressao
 
 #Cenário 01	
 Scenario: Combo 3P - Portal Assine
