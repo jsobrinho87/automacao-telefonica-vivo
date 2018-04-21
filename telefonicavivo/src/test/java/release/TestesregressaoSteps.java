@@ -55,7 +55,7 @@ public class TestesregressaoSteps {
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 30);
+ 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
  	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
  	  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
@@ -77,10 +77,11 @@ public class TestesregressaoSteps {
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 30);
+ 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
  	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
  	  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
  	    	Assert.assertEquals("Banda Larga + TV por Assinatura + Telefonia Fixa", strng); 
@@ -96,13 +97,14 @@ public class TestesregressaoSteps {
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 30);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
+ 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
+ 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[7]/div/div/div[1]/h2/strong"))));
  	  	    	
- 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[7]/div/div/div[1]/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
- 	    	Assert.assertEquals("Banda Larga + TV por Assinatura + Telefonia Fixa", strng); 
+ 	    	Assert.assertEquals("Planos Vivo Internet", strng); 
  	    	System.out.println("----------------------------------------------------------------");
  	    	
  	    	driver.quit();
@@ -114,6 +116,17 @@ public class TestesregressaoSteps {
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	
+ 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
+ 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"))));
+ 	  	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Ultra HD", strng); 
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	     
@@ -123,6 +136,17 @@ public class TestesregressaoSteps {
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	
+	    	WebDriverWait wait = new WebDriverWait(driver, 60);
+ 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"))));
+ 	  	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Fixo + Móvel Local", strng); 
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	     

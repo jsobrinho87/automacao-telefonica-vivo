@@ -23,10 +23,10 @@ Feature: Execucao dos testes de regressao do release
 #---------------------#
 
 Scenario: Apresenta paginas - Testes Regressivos
-	Given abre uma nova pagina do navegador
-	And acessa pg cb 3P regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg cb 2P regressao
+#	Given abre uma nova pagina do navegador
+#	And acessa pg cb 3P regressao
+#	Given abre uma nova pagina do navegador
+#	And acessa pg cb 2P regressao
 	Given abre uma nova pagina do navegador
 	And acessa pg Banda Larga regressao
 	Given abre uma nova pagina do navegador
