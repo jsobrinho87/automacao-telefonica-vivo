@@ -51,13 +51,11 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg cb 3P regressao")
  	     public void acessapaginaCombo3PTG()  throws InterruptedException {
  	    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/combos");
- 	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
+// 	    	driver.get("https://assine.vivo.com.br/curitiba_PR/combos");
+ 	    	((JavascriptExecutor)driver).executeScript("scroll(0,1500)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
- 	  	    	
+ 	    	  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
  	    	String strng = element.getText();
  	    	System.out.println("----------------------------------------------------------------");
@@ -73,18 +71,17 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg cb 2P regressao")
  	     public void acessapaginaCombo2PTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/blumenau_SC/combos");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
- 	  	    	
+ 	    	  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
  	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
  	    	Assert.assertEquals("Banda Larga + TV por Assinatura + Telefonia Fixa", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());;
  	    	System.out.println("----------------------------------------------------------------");
  	    	
  	    	driver.quit();
@@ -93,18 +90,17 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg Banda Larga regressao")
  	     public void acessapaginaBLTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/salvador_BA/banda-larga");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[7]/div/div/div[1]/h2/strong"))));
- 	  	    	
+ 	    		  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[7]/div/div/div[1]/h2/strong"));
  	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
- 	    	Assert.assertEquals("Planos Vivo Internet", strng); 
+ 	    	Assert.assertEquals("Experimente a Banda Larga de Ultravelocidade com Vivo Fibra", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());;
  	    	System.out.println("----------------------------------------------------------------");
  	    	
  	    	driver.quit();
@@ -113,18 +109,17 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg Fixa regressao")
  	     public void acessapaginaFixaTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/niteroi_PR/telefonia?cid=M3");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 	    	
- 	    	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"))));
- 	  	    	
+ 	    		  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"));
  	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
- 	    	Assert.assertEquals("Ultra HD", strng); 
+ 	    	Assert.assertEquals("Fixo + Móvel Local", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());
  	    	System.out.println("----------------------------------------------------------------");
  	    	
  	    	driver.quit();
@@ -133,18 +128,17 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg TV regressao")
  	     public void acessapaginaTVTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/francisco-beltrao_PR/tv-por-assinatura?cid=M4");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 	    	
-	    	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"))));
- 	  	    	
+ 	    		    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"));
  	    	System.out.println("----------------------------------------------------------------");
  	    	String strng = element.getText();
  	    	System.out.println(strng);
- 	    	Assert.assertEquals("Fixo + Móvel Local", strng); 
+ 	    	Assert.assertEquals("Ultra HD", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());
  	    	System.out.println("----------------------------------------------------------------");
  	    	
  	    	driver.quit();
@@ -153,46 +147,95 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg Simulador 3P regressao")
  	     public void acessapaginaSimu3PTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	  	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/footer/section[1]/div/div/div[1]/ul/li/span"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Home", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	     
  	     @And ("acessa pg fixa dois regressao")
  	     public void acessapaginaFixadoisTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/natal_RN/telefonia");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
- 	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    		    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/header/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Fixo + Móvel Local", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	     
  	     @And ("acessa pg Simulador 2P regressao")
  	     public void acessapaginaSimu2PTG()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/Fortaleza_CE");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    		  	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/footer/section[1]/div/div/div[1]/ul/li/span"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Home", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	
  	     @And ("acessa pg simu 2P regressao B2B")
  	     public void acessapgSimu2PTGB2B()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/porto-alegre_RS/empresas/pequenas-e-medias/combos");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Internet + Telefone Fixo", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());;
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }
  	
  	     @And ("acessa pg cb 3P regressao B2B")
  	     public void acessapgcombo3PTGB2B()  throws InterruptedException {	
  	    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
+ 	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,2000)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"));
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Internet + Telefone Fixo", strng); 
+ 	    	System.out.println("Página: " + driver.getTitle());;
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	
  	    	driver.quit();
  	     }     
  	     
