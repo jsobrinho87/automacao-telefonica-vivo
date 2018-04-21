@@ -53,7 +53,19 @@ public class TestesregressaoSteps {
  	    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/combos");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+ 	    	
+ 	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
+ 	    	String strng = element.getText();
+ 	    	System.out.println(strng);
+ 	    	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
+ 	    	System.out.println("----------------------------------------------------------------");
+ 	    	    	
+ 	    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
+ 	    	String strng2 = element2.getText();
+ 	    	System.out.printf("Número Protocolo: "+ strng2);
+ 	    	
  	    	driver.quit();
+ 	    	
  	     }
  	     
  	     @And ("acessa pg cb 2P regressao")
