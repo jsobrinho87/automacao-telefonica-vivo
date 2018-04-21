@@ -51,7 +51,6 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg cb 3P regressao")
  	     public void acessapaginaCombo3PTG()  throws InterruptedException {
  	    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/combos");
-// 	    	driver.get("https://assine.vivo.com.br/curitiba_PR/combos");
  	    	((JavascriptExecutor)driver).executeScript("scroll(0,1500)");
  	    	driver.navigate().refresh();
  	    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
