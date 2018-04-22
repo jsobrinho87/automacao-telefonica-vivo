@@ -1694,7 +1694,7 @@ public class TestesregressaoSteps {
   	driver.findElement(By.id("txtBusinessName")).clear();
   	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Vivo Novo Novo NV");
   	driver.findElement(By.id("txtBusinessDocument")).clear();
-  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("13035391000121");
+  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("26261575000151");
 
   	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
   	FileUtils.copyFile(scrFile, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\02-Teste-dadosCliente01-2pSimulador-B2B.jpg"));
@@ -1845,7 +1845,7 @@ public class TestesregressaoSteps {
   	driver.findElement(By.id("txtBusinessName")).clear();
   	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Testando Vivo Dois NV");
   	driver.findElement(By.id("txtBusinessDocument")).clear();
-  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("70651996000180");
+  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("72396036000147");
 
   	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	FileUtils.copyFile(scrFile, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\06-Teste-dadosCliente01-3PCombo-B2B.jpg"));
