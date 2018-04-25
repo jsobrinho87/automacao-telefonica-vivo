@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import util.util;
+//import util.util;
 
 import static org.junit.Assert.assertTrue;
 
@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 public class TestediariosSteps {
 	
 	private WebDriver driver;
-	private util util;
+//	private util util;
 	public static final int TIMEOUT_SEGUNDO = 15;
 	
 //----------------------------------------------------//
@@ -42,7 +42,7 @@ public class TestediariosSteps {
     	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();
-    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
+//    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
     }	
 
 //----------------------------------------------------//
@@ -53,17 +53,18 @@ public class TestediariosSteps {
      public void acessapaginaCombo3()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/porto-alegre_RS/combos");
     	
-    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
-//    	
-//    	driver.navigate().refresh();
-//    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+//    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
+
+    	driver.navigate().refresh();
+    	Thread.sleep(3000);
     	driver.quit();
      }
      
      @And ("acessa pagina Banda Larga")
      public void acessapaginaBL()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/salvador_BA/banda-larga");
-    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
+    	driver.navigate().refresh();
+    	Thread.sleep(3000);
     	driver.quit();
      }
      
@@ -71,7 +72,7 @@ public class TestediariosSteps {
      public void acessapaginaFixa()  throws InterruptedException {
     	driver.navigate().to("https://assine.vivo.com.br/francisco-beltrao_PR/telefonia");
     	driver.navigate().refresh();
-    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
     	driver.quit();
      }
      
@@ -79,7 +80,7 @@ public class TestediariosSteps {
      public void acessapaginaTV()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/Paranavai_PR/tv-por-assinatura");
     	driver.navigate().refresh();
-    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
     	driver.quit();
      }
      
@@ -87,7 +88,7 @@ public class TestediariosSteps {
      public void acessapaginaSimu3()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
     	driver.navigate().refresh();
-    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
     	driver.quit();
      }
      
@@ -95,7 +96,7 @@ public class TestediariosSteps {
      public void acessapgLPBL()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/jaragua-do-sul_PR/oferta/internet-banda-larga");
     	driver.navigate().refresh();
-    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
     	driver.quit();
      }
     
@@ -111,13 +112,15 @@ public class TestediariosSteps {
     
     @And ("informa opcao de combo 3P TD")
     public void menucomboTD() throws InterruptedException {
-//    	Thread.sleep(1000);
+    	Thread.sleep(2000);
     	WebDriverWait wait = new WebDriverWait(driver, 30);
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button")));
     	
     	WebElement element1 = driver.findElement(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
+        
+        Thread.sleep(3000);
     }
     
     @When ("modal de consulta cobertura informa os dados TD")
@@ -245,9 +248,6 @@ public class TestediariosSteps {
     
     @And ("informa opcao de Avulso BL TD")
     public void menuAvulsoBLTD() throws InterruptedException {
-//    	((JavascriptExecutor)driver).executeScript("scroll(0,700)");
-    	
-//    	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/section/div/div/div/article[3]/div[1]/div[4]/div[2]/atom-button/button")).click();
         WebElement element1 = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[4]/div[1]/div[4]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
@@ -274,17 +274,14 @@ public class TestediariosSteps {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
     	Thread.sleep(3000);
     	
-    	driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[3]")).click();
-   	
     	Actions act=new Actions(driver);   	
     	act.moveToElement(driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
 
-    	Thread.sleep(3000);
+    	Thread.sleep(5000);
     }
     
     @When ("completa o pedido Avulso BL TD")
     public void dadosClienteAvulsoBLTD() throws IOException { 
-   	
     	driver.findElement(By.id("txtDocumento")).clear();
     	driver.findElement(By.id("txtDocumento")).sendKeys("15871624235");
     	driver.findElement(By.id("txtEmail")).clear();
@@ -638,8 +635,6 @@ public class TestediariosSteps {
         element1.click();
         
         Thread.sleep(5000);
-        
-    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     
     @When ("modal de consulta cobertura informa dados simulador 3P TD")

@@ -22,24 +22,24 @@ Feature: Execucao dos testes de consulta cobertura
 #---------B2C---------#
 #---------------------#
 
-#Cenário 01	
-Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
-	Given abre pg do navegador cobertura
-	And acessa pg de cobertura G1
-	And seleciona opcao de combo G1
-	When na modal de consulta cobertura G1
-	And seleciona botao consultar G1
-	Then valida retorno de sucesso ou erro G1
-
-#Cenário 02	
-#Scenario: Consulta cobertura - G2_FSP_3P_50_vdsl
+##Cenário 01	
+#Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
 #	Given abre pg do navegador cobertura
-	And acessa pg de cobertura G2
-	And seleciona opcao de combo G2
-	When na modal de consulta cobertura G2
-	And seleciona botao consultar G2
-	Then valida retorno de sucesso ou erro G2
-	
+#	And acessa pg de cobertura G1
+#	And seleciona opcao de combo G1
+#	When na modal de consulta cobertura G1
+#	And seleciona botao consultar G1
+#	Then valida retorno de sucesso ou erro G1
+#
+##Cenário 02	
+##Scenario: Consulta cobertura - G2_FSP_3P_50_vdsl
+##	Given abre pg do navegador cobertura
+#	And acessa pg de cobertura G2
+#	And seleciona opcao de combo G2
+#	When na modal de consulta cobertura G2
+#	And seleciona botao consultar G2
+#	Then valida retorno de sucesso ou erro G2
+#	
 ##Cenário 03
 #Scenario: Consulta cobertura - G3_FSP_50_GPON
 #	Given abre pg do navegador cobertura
@@ -102,3 +102,30 @@ Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
 #	When na modal consulta cobertura G10
 #	And seleciona botao consulta G10
 #	Then valida retorno sucesso ou erro G10
+#
+##Cenário 10
+#Scenario: Consulta cobertura - OFFNET 
+#	Given abre pg do navegador cobertura
+#	And acessa pg grupo OFFNET 
+#	And seleciona opcao combo OFFNET
+#	When na modal consulta cobertura OFFNET
+#	And seleciona botao consulta OFFNET
+#	Then valida retorno sucesso ou erro OFFNET
+#	
+##Cenário 11
+#Scenario: Consulta cobertura - Massivo
+#	Given abre pg do navegador cobertura
+#	And acessa pg de cobertura Massivo
+#	And seleciona opcao de combo Massivo
+#	When na modal de consulta cobertura Massivo
+#	And seleciona botao consultar Massivo
+#	Then valida retorno de sucesso ou erro Massivo
+	
+#Cenário 12
+Scenario: Consulta cobertura - Defaut
+	Given abre pg do navegador cobertura
+	And acessa pg de cobertura Defaut
+	And seleciona opcao de combo Defaut
+	When na modal de consulta cobertura Defaut
+	And seleciona botao consultar Defaut
+	Then valida retorno de sucesso ou erro Defaut
