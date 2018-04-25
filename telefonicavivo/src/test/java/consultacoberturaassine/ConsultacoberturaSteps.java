@@ -573,18 +573,18 @@ public class ConsultacoberturaSteps {
       
       @And ("seleciona opcao combo OFFNET")
       public void acessarMenuCoberturaOFFNET() throws InterruptedException { 	
-      	driver.findElement(By.xpath("//*[@id=\"header\"]/div/section[3]/div/nav/ul/li[5]/a")).click();
-      	Thread.sleep(2000);
-      	driver.findElement(By.xpath("//*[@id=\"header\"]/div/section[3]/div/nav/ul/li[5]/ul/li[2]/a")).click();
-      	Thread.sleep(3000);
+        	driver.findElement(By.xpath("//*[@id=\"header\"]/div/section[3]/div/nav/ul/li[5]/a")).click();
+        	Thread.sleep(2000);
+        	driver.findElement(By.xpath("//*[@id=\"header\"]/div/section[3]/div/nav/ul/li[5]/ul/li[2]/a")).click();
+        	Thread.sleep(3000);
       }
       
       @When ("na modal consulta cobertura OFFNET")
       public void consultaCoberturaOFFNET()  throws InterruptedException {
-      	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Mario Vieira Testando");   
-        driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
-        driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("99700-532");
-        driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("640");
+        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Mario Vieira Testando");   
+            driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+            driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("99700-532");
+            driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("640");
            
       }
       
