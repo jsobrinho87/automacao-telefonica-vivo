@@ -113,7 +113,7 @@ Feature: Execucao dos testes de consulta cobertura
 #	Then valida retorno sucesso ou erro OFFNET
 #	
 ##Cenário 11
-#Scenario: Consulta cobertura - Massivo
+#Scenario: Consulta cobertura - Massivo SP
 #	Given abre pg do navegador cobertura
 #	And acessa pg de cobertura Massivo
 #	And seleciona opcao de combo Massivo
@@ -122,7 +122,7 @@ Feature: Execucao dos testes de consulta cobertura
 #	Then valida retorno de sucesso ou erro Massivo
 	
 #Cenário 12
-Scenario: Consulta cobertura - Defaut
+Scenario: Consulta cobertura - Defaut SP
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Defaut
 	And seleciona opcao de combo Defaut

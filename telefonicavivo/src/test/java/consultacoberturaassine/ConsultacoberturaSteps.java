@@ -674,8 +674,8 @@ public class ConsultacoberturaSteps {
 	     
   @And ("acessa pg de cobertura Defaut")
   public void paginaCoberturaDefaut()  throws InterruptedException {	
-   	driver.navigate().to("https://assine.vivo.com.br/bocaina_SP");
-    Thread.sleep(5000);
+     	driver.navigate().to("https://assine.vivo.com.br/bocaina_SP");
+        Thread.sleep(5000);
   }
   
   @And ("seleciona opcao de combo Defaut")
@@ -714,7 +714,7 @@ public class ConsultacoberturaSteps {
      	WebElement element2 = driver.findElement(By.id("btnLinkMonte"));
     	assertTrue(element2.getText().contains("Monte sua oferta"));
 
-//    String strng2 = element2.getText();
+//      String strng2 = element2.getText();
     	System.out.printf("Resultado: "+ driver.getTitle());
     	System.out.println();
     	System.out.println("---------------------------------------------");
