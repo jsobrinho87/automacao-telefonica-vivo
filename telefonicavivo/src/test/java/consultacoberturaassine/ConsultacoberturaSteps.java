@@ -513,8 +513,7 @@ public class ConsultacoberturaSteps {
     @And ("acessa pg grupo G10")
     public void pgCoberturaG10()  throws InterruptedException {	
      	driver.navigate().to("https://assine.vivo.com.br/garanhuns_PE");
-      	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-      	Thread.sleep(3000);
+      	Thread.sleep(5000);
     }
     
     @And ("seleciona opcao combo G10")
@@ -537,8 +536,7 @@ public class ConsultacoberturaSteps {
     @And ("seleciona botao consulta G10")
     public void consultaG10() throws InterruptedException {
       	driver.findElement(By.className("btn-consult")).click();
-      	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-      	Thread.sleep(3000);
+      	Thread.sleep(5000);
     	
       	WebDriverWait wait = new WebDriverWait(driver, 30);
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
@@ -585,14 +583,12 @@ public class ConsultacoberturaSteps {
             driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
             driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("99700-532");
             driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("640");
-           
       }
       
       @And ("seleciona botao consulta OFFNET")
       public void consultaOFFNET() throws InterruptedException {
         	driver.findElement(By.className("btn-consult")).click();
-        	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        	Thread.sleep(3000);
+        	Thread.sleep(5000);
       	
         	WebDriverWait wait = new WebDriverWait(driver, 30);
         	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
