@@ -1,9 +1,3 @@
-/.classpath
-/.project
-/consultacoberturaassine/
-/cucumber/
-/release/
-/testesdiarios/
-/util.class
-/Util.class
 /util/
+/testesdiarios/
+/cucumber/

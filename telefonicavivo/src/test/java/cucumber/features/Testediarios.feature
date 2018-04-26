@@ -18,6 +18,7 @@
 #Sample Feature Definition Template
 Feature: Execucao dos cenarios de testes diarios assine vivo
 
+@Cenario01
 Scenario: Valida C2CR FSP - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina teste C2RC FSP
@@ -26,6 +27,7 @@ Scenario: Valida C2CR FSP - Testes Diarios
 	And clica em Receber Ligacao C2RC FSP
 	Then retorno da msg da pag C2RC FSP
 
+@Cenario02
 Scenario: Apresenta paginas - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina cb 3P
@@ -39,7 +41,8 @@ Scenario: Apresenta paginas - Testes Diarios
 	And acessa pagina Simulador 3P
 	Given abre pg do navegador TD
 	And acessa pagina LP BL
-	
+
+@Cenario03
 Scenario: Combo 3P - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina combo 3P TD
@@ -53,7 +56,8 @@ Scenario: Combo 3P - Testes Diarios
 	When tela de Pagamentos informa os dados TD
 	And tela de Pagamento clica em Finalizar Pedido TD
 	Then tela exibi mensagem de sucesso ou erro TD
-	
+
+@Cenario04
 Scenario: Banda Larga Avulsa - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pg de Avulso BL TD
@@ -67,7 +71,8 @@ Scenario: Banda Larga Avulsa - Testes Diarios
 	When pagamentos informa os dados Avulso BL TD
 	And pagamento clica em Finalizar Pedido Avulso BL TD
 	Then mensagem de sucesso ou erro Avulso BL TD
-	
+
+@Cenario05
 Scenario: Telefonia Avulsa - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pg de Avulso Fixa TD
@@ -82,6 +87,7 @@ Scenario: Telefonia Avulsa - Testes Diarios
 	And pagamento clica em Finalizar Pedido Avulso Fixa TD
 	Then mensagem de sucesso ou erro Avulso Fixa TD
 	
+@Cenario06
 Scenario: TV por Assinatura Avulsa - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pg de Avulso TV TD
@@ -95,7 +101,8 @@ Scenario: TV por Assinatura Avulsa - Testes Diarios
 	When pagamentos informa os dados Avulso TV TD
 	And pagamento clica em Finalizar Pedido Avulso TV TD
 	Then mensagem de sucesso ou erro Avulso TV TD
-	
+
+@Cenario07
 Scenario: Simulador 3P - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pg simulador 3P TD
@@ -112,7 +119,8 @@ Scenario: Simulador 3P - Testes Diarios
 	When pagamentos informa dados simulador 3P TD
 	And pagamento clica Finalizar Pedido simulador 3P TD
 	Then mensagem de sucesso ou erro simulador 3P TD
-	
+
+@Cenario08	
 Scenario: LP Oferta Banda Larga - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina LP Oferta BL TD
@@ -126,7 +134,8 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	When em Pagamentos informa os dados LP Oferta BL TD
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
-	
+
+@Cenario09	
 Scenario: Verifica paginas - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa nova pagina LP BL Nova Iguacu
@@ -152,6 +161,7 @@ Scenario: Verifica paginas - Testes Diarios
 	And clique de Identificacao modal Vivo TV
 	Then retorno da msg da pag simulador Vivo TV
 
+@Cenario10
 Scenario: Valida C2CR FSP - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina teste C2RC FSP

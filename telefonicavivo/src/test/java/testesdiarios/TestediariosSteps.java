@@ -105,14 +105,14 @@ public class TestediariosSteps {
 //----------------------------------------------------//
     	
     @And ("acessa pagina combo 3P TD")
-    public void acessapaginaCombo3P()  throws InterruptedException {	
+        public void acessapaginaCombo3P()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/porto-alegre_RS/combos");
+    	Thread.sleep(5000);
     	
     }
     
     @And ("informa opcao de combo 3P TD")
     public void menucomboTD() throws InterruptedException {
-    	Thread.sleep(2000);
     	WebDriverWait wait = new WebDriverWait(driver, 30);
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button")));
     	
@@ -138,16 +138,16 @@ public class TestediariosSteps {
     @And ("modal de Identificacao clica em Receber Ligacao TD")
     public void receberLigacaocomboTD() throws InterruptedException {
     	driver.findElement(By.className("btn-consult")).click();
+    	Thread.sleep(3000);
     }
     
     @And ("modal de Identificacao clica em Adicionar TD")
     public void btaoAdicionalcomboTD() throws InterruptedException, IOException {
-    	Thread.sleep(3000);
     	WebDriverWait wait1 = new WebDriverWait(driver, 30);
     	wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spinner")));
     	
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div/div//div//section/form/div//button")).click();
-    	Thread.sleep(1000);
+    	Thread.sleep(3000);
     }
     
     @When ("tela dados do cliente complete o pedido TD")
@@ -611,7 +611,6 @@ public class TestediariosSteps {
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\04-Teste-messageSucessoouErro-2PCombo.jpg"));
     	
     	driver.quit();
-    	
     }
  
 //--------------------------------------------------------//
@@ -621,20 +620,23 @@ public class TestediariosSteps {
     @And ("acessa pg simulador 3P TD")
     public void pg3pSimuladorTD()  throws InterruptedException {
     	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
-    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     	driver.navigate().refresh();     
+    	Thread.sleep(5000);
     }
     
     @And ("confirma consulta simulador 3P TD")
     public void acessarMenu3pSimulador() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
     	Thread.sleep(3000);
+
+        Actions act2=new Actions(driver); 	
+    	act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))).click().build().perform();
     	
-        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a[1]"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-        element1.click();
+//        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a[1]"));
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+//        element1.click();
         
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
     
     @When ("modal de consulta cobertura informa dados simulador 3P TD")
@@ -643,7 +645,6 @@ public class TestediariosSteps {
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-3223");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("88020-300");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("950");
-
     }
     
     @And ("na modal clica em Consultar simulador 3P TD")
