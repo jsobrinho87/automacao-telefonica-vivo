@@ -584,7 +584,7 @@ public class ConsultacoberturaSteps {
             driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("99700-532");
             driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("640");
       }
-      
+      	
       @And ("seleciona botao consulta OFFNET")
       public void consultaOFFNET() throws InterruptedException {
         	driver.findElement(By.className("btn-consult")).click();
@@ -716,4 +716,139 @@ public class ConsultacoberturaSteps {
     	System.out.println("---------------------------------------------");
     	driver.quit(); 	
   }   
+  
+//-----//
+//B2C //
+//-----//    
+
+//----------------------------------------//
+// Consulta Cobertura - onnet_padrao      //
+//----------------------------------------// 	     
+	     
+   @And ("acessa pg de cobertura Onnet")
+   public void paginaCoberturaOnnet()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/apucarana_PR/empresas/pequenas-e-medias");
+   	
+    	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    	Thread.sleep(3000);
+   	
+    	logger.log(LogStatus.INFO, "Carrega página grupo onnet_padrao");
+   }
+   
+   @And ("seleciona opcao de combo Onnet")
+   public void acessarMenuCoberturaOnnet() throws InterruptedException { 	
+    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/header/section[3]/div/nav/ul/li[5]/a")).click();
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/header/section[3]/div/nav/ul/li[5]/div/a[2]/picture/img")).click();
+    	Thread.sleep(5000);
+   	
+    	logger.log(LogStatus.INFO, "Carrega modal Consulta Cobertura");
+   }
+   
+   @When ("na modal de consulta cobertura Onnet")
+   public void consultaCoberturaOnnet()  throws InterruptedException {
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda ME TENV");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("86800-620");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("36");       
+   }
+   
+   @And ("seleciona botao consultar Onnet")
+   public void consultaOnnet() throws InterruptedException {
+   	driver.findElement(By.className("btn-consult")).click();
+   	Thread.sleep(5000);
+   	
+   	WebDriverWait wait = new WebDriverWait(driver, 60);
+   	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+   }
+   
+   @And ("valida retorno de sucesso ou erro Onnet")
+   public void retornoSucessoouErroOnnet() throws InterruptedException {   	
+     	System.out.println("-----------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (Onnet_padrao)");
+     	System.out.println("-----------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
+     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("----------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_padrao");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   	
+   }
+   
+   
+//----------------------------------------//
+// Consulta Cobertura - onnet_padrao      //
+//----------------------------------------// 	     
+	     
+   @And ("acessa pg de cobertura Sem TV")
+   public void paginaCoberturaSemTV()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/cuiaba_MT/empresas/pequenas-e-medias");
+	    
+    	Thread.sleep(5000);
+   	
+    	logger.log(LogStatus.INFO, "Carrega página grupo onnet_padrao");
+   }
+   
+   @And ("seleciona opcao de combo Sem TV")
+   public void acessarMenuCoberturaSemTV() throws InterruptedException { 	
+    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/header/section[3]/div/nav/ul/li[4]/a")).click();
+    	Thread.sleep(2000);
+    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/header/section[3]/div/nav/ul/li[4]/div/a[2]/picture/img")).click();
+    	Thread.sleep(5000);
+   	
+    	logger.log(LogStatus.INFO, "Carrega modal Consulta Cobertura");
+   }
+   
+   @When ("na modal de consulta cobertura Sem TV")
+   public void consultaCoberturaSemTV()  throws InterruptedException {
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("78045-250");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("150");       
+   }
+   
+   @And ("seleciona botao consultar Sem TV")
+   public void consultaSemTV() throws InterruptedException {
+   	driver.findElement(By.className("btn-consult")).click();
+   	Thread.sleep(5000);
+   	
+   	WebDriverWait wait = new WebDriverWait(driver, 60);
+   	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+   }
+   
+   @And ("valida retorno de sucesso ou erro Sem TV")
+   public void retornoSucessoouErroSemTV() throws InterruptedException {   	
+     	System.out.println("-----------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (Onnet_Sem_TV)");
+     	System.out.println("-----------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
+     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("----------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   	
+   }
+  
+  
 }
+

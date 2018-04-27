@@ -169,3 +169,21 @@ Scenario: Valida C2CR FSP - Testes Diarios
 	When modal de consulta cobertura C2RC FSP
 	And clica em Receber Ligacao C2RC FSP
 	Then retorno da msg da pag C2RC FSP
+	
+@Cenario11
+Scenario: Consulta cobertura SP - G6_SP_3P_100_gpon
+	Given abre pg do navegador TD
+	And acessa pg de cobertura SP G6
+	And seleciona opcao de combo SP G6
+	When na modal de consulta cobertura SP G6
+	And seleciona botao consultar SP G6
+	Then valida retorno de sucesso ou erro SP G6
+	
+@Cenario12
+Scenario: Consulta cobertura - Defaut SP
+	Given abre pg do navegador TD
+	And acessa pg de cobertura SP Defaut
+	And seleciona opcao de combo SP Defaut
+	When na modal de consulta cobertura SP Defaut
+	And seleciona botao consultar SP Defaut
+	Then valida retorno de sucesso ou erro SP Defaut

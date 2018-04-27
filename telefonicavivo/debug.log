@@ -1688,3 +1688,4 @@
 [0423/120810.325:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
 [0423/120853.072:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
 [0423/121004.033:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0427/125238.591:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
