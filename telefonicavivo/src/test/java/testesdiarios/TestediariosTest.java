@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
 	       + "@Cenario05,"
 	       + "@Cenario06,"
 	       + "@Cenario07,"
-	       + "@Cenario08," 
+	       + "@Cenario08,"
            + "@Cenario09,"
            + "@Cenario10,"
            + "@Cenario11,"

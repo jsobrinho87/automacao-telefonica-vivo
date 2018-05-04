@@ -263,7 +263,7 @@ public class TestesregressaoSteps {
     @And ("na modal de Identificacao clica em Adicionar")
     public void botaoAdicional() throws InterruptedException, IOException {
      	driver.findElement(By.className("btn-consult")).click();
-    	Thread.sleep(3000);
+    	Thread.sleep(5000);
     }
     
     @When ("na tela dados do cliente complete o pedido")
@@ -1194,7 +1194,7 @@ public class TestesregressaoSteps {
     public void botaoProximoPasso33pSimulador() throws InterruptedException {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 60);
+    	WebDriverWait wait = new WebDriverWait(driver, 120);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
     
@@ -1640,7 +1640,7 @@ public class TestesregressaoSteps {
   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
   	Thread.sleep(3000);
 
-    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"));
+    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
     element1.click();
 

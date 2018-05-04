@@ -796,7 +796,7 @@ public class ConsultacoberturaSteps {
 	    
     	Thread.sleep(5000);
    	
-    	logger.log(LogStatus.INFO, "Carrega página grupo onnet_padrao");
+//    	logger.log(LogStatus.INFO, "Carrega página grupo onnet_padrao");
    }
    
    @And ("seleciona opcao de combo Sem TV")
@@ -806,7 +806,7 @@ public class ConsultacoberturaSteps {
     	driver.findElement(By.xpath("//*[@id=\"mainView\"]/header/section[3]/div/nav/ul/li[4]/div/a[2]/picture/img")).click();
     	Thread.sleep(5000);
    	
-    	logger.log(LogStatus.INFO, "Carrega modal Consulta Cobertura");
+//    	logger.log(LogStatus.INFO, "Carrega modal Consulta Cobertura");
    }
    
    @When ("na modal de consulta cobertura Sem TV")
@@ -819,11 +819,11 @@ public class ConsultacoberturaSteps {
    
    @And ("seleciona botao consultar Sem TV")
    public void consultaSemTV() throws InterruptedException {
-   	driver.findElement(By.className("btn-consult")).click();
-   	Thread.sleep(5000);
+    	driver.findElement(By.className("btn-consult")).click();
+    	Thread.sleep(5000);
    	
-   	WebDriverWait wait = new WebDriverWait(driver, 60);
-   	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+    	WebDriverWait wait = new WebDriverWait(driver, 120);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
    }
    
    @And ("valida retorno de sucesso ou erro Sem TV")

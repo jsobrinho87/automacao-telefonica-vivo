@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 
     tags  = {
     	     "@CenarioPaginas-B2C,"
-           + "@CenarioCombo3P-B2C,"
+           +  "@CenarioCombo3P-B2C,"
            + "@CenarioCombo2P-B2C,"
            + "@CenarioBL-B2C,"
            + "@CenarioFixa-B2C,"

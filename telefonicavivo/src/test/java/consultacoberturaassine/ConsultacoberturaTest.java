@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 	glue = { "" }, monochrome = true, dryRun = false,
 
 	tags  = {
-//	         "@Cenario-G1,"
+//	           "@Cenario-G1,"
 //           + "@Cenario-G2,"
 //           + "@Cenario-G3,"
 //           + "@Cenario-G4,"
@@ -22,7 +22,7 @@ import cucumber.api.junit.Cucumber;
 //           + "@Cenario-OFFNET,"
 //           + "@Cenario-MassivoSP,"
 //           + "@Cenario-DefautSP"
-//               "@Cenario-OnnetPadrao"
+//             "@Cenario-OnnetPadrao"
               "@Cenario-OnnetSemTV"
 			
         	})   
