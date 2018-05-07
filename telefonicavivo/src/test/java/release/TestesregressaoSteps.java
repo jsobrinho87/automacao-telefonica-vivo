@@ -257,7 +257,7 @@ public class TestesregressaoSteps {
     @And ("na modal de Identificacao clica em Receber Ligacao")
     public void receberLigacao() throws InterruptedException {
     	driver.findElement(By.className("btn-consult")).click();
-    	Thread.sleep(8000);
+    	Thread.sleep(10000);
     }
     
     @And ("na modal de Identificacao clica em Adicionar")
@@ -567,7 +567,7 @@ public class TestesregressaoSteps {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
         
-    	Thread.sleep(3000);
+    	Thread.sleep(5000);
     }
     
     @When ("na modal de consulta cobertura dados do Cliente - Avulso BL")
