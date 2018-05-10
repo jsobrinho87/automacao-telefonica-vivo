@@ -42,7 +42,6 @@ public class TestediariosSteps {
     	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();
-//    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
     }	
 
 //----------------------------------------------------//
@@ -53,50 +52,53 @@ public class TestediariosSteps {
      public void acessapaginaCombo3()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/porto-alegre_RS/combos");
     	
-//    	util.waitForRequests(100,TIMEOUT_SEGUNDO);
-
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong")));
     	driver.quit();
      }
      
      @And ("acessa pagina Banda Larga")
      public void acessapaginaBL()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/salvador_BA/banda-larga");
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"secCards\"]/div/div/div/div/ul/li[1]/article[2]/div[1]/div[4]/div[2]/atom-button/button")));
     	driver.quit();
      }
      
      @And ("acessa pagina Fixa")
      public void acessapaginaFixa()  throws InterruptedException {
     	driver.navigate().to("https://assine.vivo.com.br/francisco-beltrao_PR/telefonia");
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button")));
     	driver.quit();
      }
      
      @And ("acessa pagina TV")
      public void acessapaginaTV()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/Paranavai_PR/tv-por-assinatura");
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button")));
     	driver.quit();
      }
      
      @And ("acessa pagina Simulador 3P")
      public void acessapaginaSimu3()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"header\"]/div/section[1]/div")));
     	driver.quit();
      }
      
      @And ("acessa pagina LP BL")
      public void acessapgLPBL()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/jaragua-do-sul_PR/oferta/internet-banda-larga");
-    	driver.navigate().refresh();
-    	Thread.sleep(3000);
+
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]")));
     	driver.quit();
      }
     
@@ -117,7 +119,6 @@ public class TestediariosSteps {
     	WebElement element1 = driver.findElement(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
-        
     }
     
     @When ("modal de consulta cobertura informa os dados TD")
@@ -129,7 +130,6 @@ public class TestediariosSteps {
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90660-120");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
-
     }
     
     @And ("modal de Identificacao clica em Receber Ligacao TD")
@@ -155,7 +155,7 @@ public class TestediariosSteps {
     	driver.findElement(By.id("txtDocumento")).clear();
     	driver.findElement(By.id("txtDocumento")).sendKeys("27243069290");
     	driver.findElement(By.id("txtEmail")).clear();
-    	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
+    	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
     	driver.findElement(By.id("txtFone")).clear();
     	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
     	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
@@ -485,7 +485,6 @@ public class TestediariosSteps {
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\03-Teste-messageSucessoouErro-2PCombo.jpg"));
     	
     	driver.quit();
-    	
     }
     
 //-------------------------------------------------------------------//
@@ -544,7 +543,7 @@ public class TestediariosSteps {
     	driver.findElement(By.id("txtDocumento")).clear();
     	driver.findElement(By.id("txtDocumento")).sendKeys("24015299000");
     	driver.findElement(By.id("txtEmail")).clear();
-    	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
+    	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
     	driver.findElement(By.id("txtFone")).sendKeys("4125250090");
     	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
@@ -570,7 +569,6 @@ public class TestediariosSteps {
     	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"stepPagamento\"]/div[1]/div/h3"))));
-
     }
     
     @When ("pagamentos informa os dados Avulso TV TD")
@@ -587,7 +585,6 @@ public class TestediariosSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
-    
     
     @Then ("mensagem de sucesso ou erro Avulso TV TD")
     public void sucessoouErroAvulsoTVTD() throws IOException {
@@ -688,18 +685,20 @@ public class TestediariosSteps {
     public void telefonia3pSimuladorTD() throws InterruptedException {
     	WebDriverWait wait2 = new WebDriverWait(driver, 200);
     	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[3]/div/div[2]/div[2]/button"))));
+    	
     	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[3]/div/div[2]/div[2]/button")).click();
+    	Thread.sleep(3000);
     }
     
     @When ("cliente informa o pedido simulador 3P TD")
     public void dadosCliente3pSimuladorTD() throws IOException {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtName"))));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("16739755345");
+    	driver.findElement(By.id("txtDocumento")).sendKeys("44067537026");
     	driver.findElement(By.id("txtEmail")).clear();
-    	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
+    	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
     	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
     	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
@@ -739,7 +738,7 @@ public class TestediariosSteps {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("sucesso"))));
     }
     
     @Then ("mensagem de sucesso ou erro simulador 3P TD")
@@ -747,7 +746,10 @@ public class TestediariosSteps {
     	System.out.println("----------------------------------------------------------------");
     	System.out.println("B2C 3P SIMULADOR - " + driver.getTitle());
     	System.out.println("----------------------------------------------------------------");
-        	    	
+        
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
+    	
     	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
     	String strng2 = element2.getText();
     	System.out.printf("Número Protocolo: "+ strng2);
@@ -808,7 +810,7 @@ public class TestediariosSteps {
      @And ("modal clica em Consultar LP Oferta BL TD")
      public void consultarLPOfertaBL() throws InterruptedException {
      	driver.findElement(By.className("btn-consult")).click();
-//     	Thread.sleep(6000);
+     	Thread.sleep(3000);
      }
           
      @And ("modal pontos adicionais clica em Adicionar LP Oferta BL TD")
@@ -827,7 +829,7 @@ public class TestediariosSteps {
      	driver.findElement(By.id("txtDocumento")).clear();
      	driver.findElement(By.id("txtDocumento")).sendKeys("52896048049");
      	driver.findElement(By.id("txtEmail")).clear();
-     	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
+     	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
      	driver.findElement(By.id("txtFone")).clear();
      	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
      	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
@@ -1130,7 +1132,6 @@ public class TestediariosSteps {
     	driver.findElement(By.id("modal-cep-phone")).sendKeys("(41)2525-3200");
         driver.findElement(By.id("cep")).sendKeys("80050-540");
         driver.findElement(By.id("numero")).sendKeys("39");
-
     }
     
     @And ("clique de Identificacao modal Vivo TV")
@@ -1195,9 +1196,8 @@ public class TestediariosSteps {
       @And ("clica em Receber Ligacao C2RC FSP")
       public void clicaC2RCFSP() throws InterruptedException {
       	driver.findElement(By.className("btn-consult")).click();
-
-      	WebDriverWait wait = new WebDriverWait(driver, 200);
-     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("modal-wrapper-content"))));
+      
+        Thread.sleep(3000);
       }
       
       @Then ("retorno da msg da pag C2RC FSP")
@@ -1253,9 +1253,8 @@ public class TestediariosSteps {
       @And ("clica Receber Ligacao dois C2RC FSP")
       public void clicadoisC2RCFSP() throws InterruptedException {
       	driver.findElement(By.className("btn-consult")).click();
-      	
-      	WebDriverWait wait = new WebDriverWait(driver, 200);
-     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("modal-wrapper-content"))));
+
+      	Thread.sleep(3000);
       }
       
       @Then ("retorno msg da pag dois C2RC FSP")
@@ -1273,8 +1272,7 @@ public class TestediariosSteps {
       	System.out.println("----------------------------------------------------------------");
       		
       	driver.quit();
-      }  
-      
+      }        
 
 //------Valida Consulta Cobertura SP------//   
         

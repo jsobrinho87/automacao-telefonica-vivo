@@ -147,3 +147,48 @@ Scenario: Consulta cobertura - Onnet Sem TV
 	When na modal de consulta cobertura Sem TV
 	And seleciona botao consultar Sem TV
 	Then valida retorno de sucesso ou erro Sem TV
+	
+@Cenario-OnnetPlus
+Scenario: Consulta cobertura - Onnet Plus
+	Given abre pg do navegador cobertura
+	And acessa pg de cobertura Plus
+	And seleciona opcao de combo Plus
+	When na modal de consulta cobertura Plus
+	And seleciona botao consultar Plus
+	Then valida retorno de sucesso ou erro Plus
+	
+@Cenario-G7-B2B
+Scenario: Consulta cobertura - G7 B2B
+	Given abre pg do navegador cobertura
+	And acessa pg do grupo G7 B2B
+	And seleciona opcao barra G7 B2B
+	When valida de consulta cobertura G7 B2B
+	And valida botao consultar G7 B2B
+	Then valida retorno sucesso ou erro G7 B2B
+	
+@Cenario-G9-B2B
+Scenario: Consulta cobertura - G9 B2B
+	Given abre pg do navegador cobertura
+	And acessa pg de G9 B2B
+	And seleciona opcao de G9 B2B
+	When valida consulta cobertura G9 B2B
+	And preciona botao consultar G9 B2B
+	Then valida retorno sucesso ou erro G9 B2B
+	
+@Cenario-OFFNET-B2B
+Scenario: Consulta cobertura - Offnet B2B
+	Given abre pg do navegador cobertura
+	And acessa pg de Offnet B2B
+	And seleciona opcao de Offnet B2B
+	When valida consulta cobertura Offnet B2B
+	And preciona botao consultar Offnet B2B
+	Then valida retorno sucesso ou erro Offnet B2B
+	
+@Cenario-Default-SP-Soft-B2B
+Scenario: Consulta cobertura - Default SP B2B
+	Given abre pg do navegador cobertura
+	And acessa pg do grupo Default SP B2B
+	And seleciona opcao barra Default SP B2B
+	When valida de consulta cobertura Default SP B2B
+	And valida botao consultar Default SP B2B
+	Then valida retorno sucesso ou erro Default SP B2B

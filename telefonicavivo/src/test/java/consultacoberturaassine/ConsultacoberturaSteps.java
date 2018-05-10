@@ -3,9 +3,11 @@ package consultacoberturaassine;
 import cucumber.api.java.en.Given;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -46,7 +48,6 @@ public class ConsultacoberturaSteps {
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();
     	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
- 
     }
     
 //-----//
@@ -83,7 +84,6 @@ public class ConsultacoberturaSteps {
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("86800-620");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("36");
-        
     }
     
     @And ("seleciona botao consultar G1")
@@ -101,7 +101,7 @@ public class ConsultacoberturaSteps {
       	System.out.println("----------------------------------------------");
       	System.out.println("B2C - Consulta Cobertura - (G1_FSP_3P_15_vdsl)");
       	System.out.println("----------------------------------------------");
-      	     	    	
+      	
       	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
       	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
 
@@ -115,8 +115,7 @@ public class ConsultacoberturaSteps {
 //      report.endTest(logger);
       	report.flush();
       	
-//    	driver.quit();
-    	
+     	driver.quit();
     }
     
 //----------------------------------------//
@@ -718,9 +717,8 @@ public class ConsultacoberturaSteps {
   }   
   
 //-----//
-//B2C //
+// B2B //
 //-----//    
-
 //----------------------------------------//
 // Consulta Cobertura - onnet_padrao      //
 //----------------------------------------// 	     
@@ -762,7 +760,7 @@ public class ConsultacoberturaSteps {
    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
    }
    
-   @And ("valida retorno de sucesso ou erro Onnet")
+   @Then ("valida retorno de sucesso ou erro Onnet")
    public void retornoSucessoouErroOnnet() throws InterruptedException {   	
      	System.out.println("-----------------------------------------");
      	System.out.println("B2C - Consulta Cobertura - (Onnet_padrao)");
@@ -787,7 +785,7 @@ public class ConsultacoberturaSteps {
    
    
 //----------------------------------------//
-// Consulta Cobertura - onnet_padrao      //
+// Consulta Cobertura - Onnet_sem_tv      //
 //----------------------------------------// 	     
 	     
    @And ("acessa pg de cobertura Sem TV")
@@ -826,7 +824,7 @@ public class ConsultacoberturaSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
    }
    
-   @And ("valida retorno de sucesso ou erro Sem TV")
+   @Then ("valida retorno de sucesso ou erro Sem TV")
    public void retornoSucessoouErroSemTV() throws InterruptedException {   	
      	System.out.println("-----------------------------------------");
      	System.out.println("B2C - Consulta Cobertura - (Onnet_Sem_TV)");
@@ -846,9 +844,317 @@ public class ConsultacoberturaSteps {
      	report.flush();
      	
      	driver.quit();
-   	
    }
   
+//--------------------------------------//
+// Consulta Cobertura - Onnet_plus      //
+//--------------------------------------// 	     
+	     
+   @And ("acessa pg de cobertura Plus")
+   public void paginaCoberturaPlus()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
+   }
+   
+   @And ("seleciona opcao de combo Plus")
+   public void acessarMenuCoberturaPlus() throws InterruptedException {	
+	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+     	Thread.sleep(3000);
+
+       Actions act2=new Actions(driver); 	
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   }
+   
+   @When ("na modal de consulta cobertura Plus")
+   public void consultaCoberturaPlus()  throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")))); 
+	   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("82900320");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("66");       
+   }
+   
+   @And ("seleciona botao consultar Plus")
+   public void consultaPlus() throws InterruptedException {
+    	driver.findElement(By.className("btn-consult")).click();
+   	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+   }
+   
+   @Then ("valida retorno de sucesso ou erro Plus")
+   public void retornoSucessoouPlus() throws InterruptedException {   	
+     	System.out.println("---------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (Onnet_Plus)");
+     	System.out.println("---------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
+     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("----------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   }
+   
+//---------------------------------------------//
+// Consulta Cobertura - G7_SP_3P_50_vdsl - B2B //
+//---------------------------------------------// 	     
+	     
+   @And ("acessa pg do grupo G7 B2B")
+   public void paginaCoberturaG7B2B()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
+   }
+   
+   @And ("seleciona opcao barra G7 B2B")
+   public void acessarMenuCoberturaG7B2B() throws InterruptedException {	
+	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+       Thread.sleep(3000);
+
+       Actions act2=new Actions(driver); 	
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   }
+   
+   @When ("valida de consulta cobertura G7 B2B")
+   public void consultaCoberturaG7B2B()  throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[1]/input")))); 
+	   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("18110210");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div[1]/div[3]/div[2]/input")).sendKeys("432");       
+   }
+   
+   @And ("valida botao consultar G7 B2B")
+   public void consultaG7B2B() throws InterruptedException {
+    	driver.findElement(By.className("btn-consult")).click();
+   	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("/html/body/section[1]/div/div[2]/div[3]/div[1]/h4/span"))));
+   }
+   
+   @Then ("valida retorno sucesso ou erro G7 B2B")
+   public void retornoSucessoouErroG7B2B() throws InterruptedException {   	
+     	System.out.println("---------------------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (G7_SP_3P_50_vdsl - B2B)");
+     	System.out.println("---------------------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("/html/body/section[1]/div/div[2]/div[3]/div[1]/h4/span"));
+     	assertTrue(element2.getText().contains("Internet"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("---------------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   }
   
+//-----------------------------------------------------//
+// Consulta Cobertura - G9_FSP_3P_gpon_lançamento      //
+//-----------------------------------------------------// 	     
+	     
+   @And ("acessa pg de G9 B2B")
+   public void paginaCoberturaG9B2B()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/teresina_PI/empresas/pequenas-e-medias/combos");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
+   }
+   
+   @And ("seleciona opcao de G9 B2B")
+   public void acessarMenuCoberturaG9B2B() throws InterruptedException {	
+	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+     	Thread.sleep(3000);
+
+       Actions act2=new Actions(driver); 	
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   }
+   
+   @When ("valida consulta cobertura G9 B2B")
+   public void consultaCoberturaG9B2B()  throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")))); 
+	   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("64001-020");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("1860");       
+   }
+   
+   @And ("preciona botao consultar G9 B2B")
+   public void consultaG9B2B() throws InterruptedException {
+    	driver.findElement(By.className("btn-consult")).click();
+   	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+   }
+   
+   @Then ("valida retorno sucesso ou erro G9 B2B")
+   public void retornoSucessoouG9B2B() throws InterruptedException {   	
+     	System.out.println("------------------------------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (G9_FSP_3P_gpon_lançamento) - B2B");
+     	System.out.println("------------------------------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
+     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("------------------------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   }
+   
+//--------------------------------------//
+// Consulta Cobertura - OFFNET B2B      //
+//--------------------------------------// 	     
+	     
+   @And ("acessa pg de Offnet B2B")
+   public void paginaCoberturaOffnetB2B()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/paranagua_PR/empresas/pequenas-e-medias/combos");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
+   }
+   
+   @And ("seleciona opcao de Offnet B2B")
+   public void acessarMenuCoberturaOffnetB2B() throws InterruptedException {	
+	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+     	Thread.sleep(3000);
+
+       Actions act2=new Actions(driver); 	
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   }
+   
+   @When ("valida consulta cobertura Offnet B2B")
+   public void consultaCoberturaOffnetB2B()  throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")))); 
+	   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("83206-200");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("1615");       
+   }
+   
+   @And ("preciona botao consultar Offnet B2B")
+   public void consultaOffnetB2B() throws InterruptedException {
+    	driver.findElement(By.className("btn-consult")).click();
+   	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+   }
+   
+   @Then ("valida retorno sucesso ou erro Offnet B2B")
+   public void retornoErroSucessoOffnetB2B() throws InterruptedException {   	
+     	System.out.println("---------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (Offnet B2B)");
+     	System.out.println("---------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
+     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("----------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   }   
+   
+//--------------------------------------------//
+// Consulta Cobertura - Default_SP_soft - B2B //
+//--------------------------------------------// 	     
+	     
+   @And ("acessa pg do grupo Default SP B2B")
+   public void paginaCoberturaDefaultSPB2B()  throws InterruptedException {	
+	    driver.navigate().to("https://assine.vivo.com.br/aguai_SP/empresas/pequenas-e-medias/combos");
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
+   }
+   
+   @And ("seleciona opcao barra Default SP B2B")
+   public void acessarMenuCoberturaDefaultSPB2B() throws InterruptedException {	
+	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+       Thread.sleep(3000);
+
+       Actions act2=new Actions(driver); 	
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   }
+   
+   @When ("valida de consulta cobertura Default SP B2B")
+   public void consultaCoberturaDefaultSPB2B()  throws InterruptedException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[1]/input")))); 
+	   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("13860-000");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div[1]/div[3]/div[2]/input")).sendKeys("868");       
+   }
+   
+   @And ("valida botao consultar Default SP B2B")
+   public void consultaDefaultSPB2B() throws InterruptedException {
+    	driver.findElement(By.className("btn-consult")).click();
+   	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("/html/body/section[1]/div/div[1]/h4"))));
+   }
+   
+   @Then ("valida retorno sucesso ou erro Default SP B2B")
+   public void retornoSucessoouDefaultSPB2B() throws InterruptedException {   	
+     	System.out.println("--------------------------------------------------");
+     	System.out.println("B2C - Consulta Cobertura - (Default_SP_soft - B2B)");
+     	System.out.println("--------------------------------------------------");
+     	     	    	
+     	WebElement element2 = driver.findElement(By.xpath("/html/body/section[1]/div/div[1]/h4"));
+     	assertTrue(element2.getText().contains("Materiais, a tecnologia fibra ainda não chegou na sua região."));
+
+//      String strng2 = element2.getText();
+     	System.out.printf("Resultado: "+ driver.getTitle());
+     	System.out.println();
+     	System.out.println("--------------------------------------------------");
+   
+     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
+     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
+//      report.endTest(logger);
+     	report.flush();
+     	
+     	driver.quit();
+   }
+   
 }
 

@@ -27,7 +27,7 @@ Scenario: Valida C2CR FSP - Testes Diarios
 	And clica em Receber Ligacao C2RC FSP
 	Then retorno da msg da pag C2RC FSP
 
-@CenarioPáginas
+@CenarioPaginas
 Scenario: Apresenta paginas - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa pagina cb 3P
@@ -136,7 +136,7 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
 
-@CenarioValidaPaginas	
+@CenarioValidaPagina
 Scenario: Verifica paginas - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa nova pagina LP BL Nova Iguacu
