@@ -22,7 +22,7 @@ Feature: Execucao dos testes de consulta cobertura
 #---------B2C---------#
 #---------------------#
 
-@Cenario-G1	
+@Cenario-G1-B2C
 Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G1
@@ -31,7 +31,7 @@ Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
 	And seleciona botao consultar G1
 	Then valida retorno de sucesso ou erro G1
 
-@Cenario-G2	
+@Cenario-G2-B2C	
 Scenario: Consulta cobertura - G2_FSP_3P_50_vdsl
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G2
@@ -40,7 +40,7 @@ Scenario: Consulta cobertura - G2_FSP_3P_50_vdsl
 	And seleciona botao consultar G2
 	Then valida retorno de sucesso ou erro G2
 	
-@Cenario-G3
+@Cenario-G3-B2C
 Scenario: Consulta cobertura - G3_FSP_50_GPON
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G3
@@ -49,7 +49,7 @@ Scenario: Consulta cobertura - G3_FSP_50_GPON
 	And seleciona botao consultar G3
 	Then valida retorno de sucesso ou erro G3
 	
-@Cenario-G4
+@Cenario-G4-B2C
 Scenario: Consulta cobertura - G4_FSP_2P_15_vdsl
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G4
@@ -58,7 +58,7 @@ Scenario: Consulta cobertura - G4_FSP_2P_15_vdsl
 	And seleciona botao consultar G4
 	Then valida retorno de sucesso ou erro G4
 	
-@Cenario-G5
+@Cenario-G5-B2C
 Scenario: Consulta cobertura - G5_FSP_3P_50_vdsl_plus
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G5
@@ -67,7 +67,7 @@ Scenario: Consulta cobertura - G5_FSP_3P_50_vdsl_plus
 	And seleciona botao consultar G5
 	Then valida retorno de sucesso ou erro G5
 	
-@Cenario-G6
+@Cenario-G6-B2C
 Scenario: Consulta cobertura - G6_SP_3P_100_gpon
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G6
@@ -76,7 +76,7 @@ Scenario: Consulta cobertura - G6_SP_3P_100_gpon
 	And seleciona botao consultar G6
 	Then valida retorno de sucesso ou erro G6
 	
-@Cenário-G7
+@Cenário-G7-B2C
 Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G7
@@ -85,7 +85,7 @@ Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
 	And seleciona botao consultar G7
 	Then valida retorno de sucesso ou erro G7
 	
-@Cenario-G9
+@Cenario-G9-B2C
 Scenario: Consulta cobertura - G9_FSP_3P_gpon_lancamento
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G9
@@ -94,7 +94,7 @@ Scenario: Consulta cobertura - G9_FSP_3P_gpon_lancamento
 	And seleciona botao consultar G9
 	Then valida retorno de sucesso ou erro G9
 
-@Cenario-G10
+@Cenario-G10-B2C
 Scenario: Consulta cobertura - G10_FSP_3P_100_GPON
 	Given abre pg do navegador cobertura
 	And acessa pg grupo G10
@@ -103,7 +103,7 @@ Scenario: Consulta cobertura - G10_FSP_3P_100_GPON
 	And seleciona botao consulta G10
 	Then valida retorno sucesso ou erro G10
 
-@Cenario-OFFNET
+@Cenario-OFFNET-B2C
 Scenario: Consulta cobertura - OFFNET 
 	Given abre pg do navegador cobertura
 	And acessa pg grupo OFFNET 
@@ -112,7 +112,7 @@ Scenario: Consulta cobertura - OFFNET
 	And seleciona botao consulta OFFNET
 	Then valida retorno sucesso ou erro OFFNET
 	
-@Cenario-MassivoSP
+@Cenario-MassivoSP-B2C
 Scenario: Consulta cobertura - Massivo SP
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Massivo
@@ -121,7 +121,7 @@ Scenario: Consulta cobertura - Massivo SP
 	And seleciona botao consultar Massivo
 	Then valida retorno de sucesso ou erro Massivo
 	
-@Cenario-DefautSP
+@Cenario-DefautSP-B2C
 Scenario: Consulta cobertura - Defaut SP
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Defaut
@@ -130,7 +130,7 @@ Scenario: Consulta cobertura - Defaut SP
 	And seleciona botao consultar Defaut
 	Then valida retorno de sucesso ou erro Defaut
 	
-@Cenario-OnnetPadrao
+@Cenario-OnnetPadrao-B2B
 Scenario: Consulta cobertura - Onnet Padrao
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Onnet
@@ -139,7 +139,7 @@ Scenario: Consulta cobertura - Onnet Padrao
 	And seleciona botao consultar Onnet
 	Then valida retorno de sucesso ou erro Onnet
 	
-@Cenario-OnnetSemTV
+@Cenario-OnnetSemTV-B2B
 Scenario: Consulta cobertura - Onnet Sem TV
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Sem TV
@@ -148,7 +148,7 @@ Scenario: Consulta cobertura - Onnet Sem TV
 	And seleciona botao consultar Sem TV
 	Then valida retorno de sucesso ou erro Sem TV
 	
-@Cenario-OnnetPlus
+@Cenario-OnnetPlus-B2B
 Scenario: Consulta cobertura - Onnet Plus
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura Plus

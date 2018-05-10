@@ -126,8 +126,8 @@ public class ConsultacoberturaSteps {
      public void paginaCobertG2()  throws InterruptedException {
      	driver.get("https://assine.vivo.com.br/Brusque_SC");
      	
-     	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-     	Thread.sleep(3000);
+     	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
      }
      
      @And ("seleciona opcao de combo G2")
@@ -186,8 +186,9 @@ public class ConsultacoberturaSteps {
       @And ("acessa pg de cobertura G3")
       public void paginaCoberturaG3()  throws InterruptedException {	
       	driver.navigate().to("https://assine.vivo.com.br/navegantes_SC");
-      	driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-      	Thread.sleep(3000);
+      	
+      	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("wrap-vivo"))));
       }
       
       @And ("seleciona opcao de combo G3")
