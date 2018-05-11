@@ -51,8 +51,8 @@ public class TestesregressaoSteps {
  	     @And ("acessa pg cb 3P regressao")
  	     public void acessapaginaCombo3PTG()  throws InterruptedException {
  	    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/combos");
- 	    	driver.navigate().refresh();
- 	    	Thread.sleep(6000);
+ 	    	WebDriverWait wait = new WebDriverWait(driver, 200);
+ 	 	    wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"))));
  	    	  	    	
  	    	WebElement element = driver.findElement(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"));
  	    	String strng = element.getText();

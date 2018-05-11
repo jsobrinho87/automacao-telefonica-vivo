@@ -76,7 +76,7 @@ Scenario: Consulta cobertura - G6_SP_3P_100_gpon
 	And seleciona botao consultar G6
 	Then valida retorno de sucesso ou erro G6
 	
-@Cenário-G7-B2C
+@Cenario-G7-B2C
 Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
 	Given abre pg do navegador cobertura
 	And acessa pg de cobertura G7
