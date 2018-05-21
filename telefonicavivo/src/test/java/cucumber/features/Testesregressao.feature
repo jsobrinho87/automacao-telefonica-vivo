@@ -74,10 +74,10 @@ Scenario: Combo 2P - Portal Assine
 Scenario: Banda Larga Avulsa - Portal Assine
 	Given abre uma nova pagina do navegador
 	And acessa pagina de Avulso BL
-	And seleciona opcao de Avulso BL
+	And seleciona card de Avulso BL
 	When na modal de consulta cobertura dados do Cliente - Avulso BL
 	And na modal de Identifica clica em Receber Ligacao - Avulso BL
-	And seleciona botao comprar internet avulsa BL
+	And seleciona botao montar internet avulsa BL
 	When cliente complete o pedido - Avulso BL
 	And cliente clica em Proximo Passo - Avulso BL
 	And na tela Endereco Instalacao clica Proximo Passo - Avulso BL
@@ -125,7 +125,8 @@ Scenario: Simulador 3P - Portal Assine
 	And seleciona botao comprar simulador 3P
 	And seleciona banda larga simulador 3P
 	And seleciona TV por Assinatura simulador 3P
-	And seleciona Telefonia simulador 3P
+	And informa pontos adicionais TV simulador 3P
+	And informa Telefonia simulador 3P
 	When cliente complete o pedido - simulador 3P
 	And cliente clica em Proximo Passo - simulador 3P
 	And na tela Endereco Instalacao clica Proximo Passo simulador 3P

@@ -22,7 +22,7 @@ import cucumber.api.junit.Cucumber;
            + "@CenarioC2CR-02,"
            + "@CenarioConsultaSP-G6,"
            + "@CenarioConsultaSP-Defalt"
-	    	})    
+	    	})
 
 public class TestediariosTest {
 

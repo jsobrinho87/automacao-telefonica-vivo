@@ -111,9 +111,9 @@ Scenario: Simulador 3P - Testes Diarios
 	And na modal clica em Consultar simulador 3P TD
 	And valida botao simulador 3P TD
 	And informa banda larga simulador 3P TD
-	And informa TV por Assinatura simulador 3P TD
-	And informa pontos adicionais TV simulador 3P TD
-	And informa Telefonia simulador 3P TD
+	And informa TV simulador 3P TD
+	And informa adicionais TV simulador 3P TD
+	And informa Fixa simulador 3P TD
 	When cliente informa o pedido simulador 3P TD
 	And cliente clica Proximo Passo simulador 3P TD
 	And tela Endereco Instalacao clica Proximo Passo simulador 3P TP

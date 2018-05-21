@@ -686,8 +686,8 @@ public class ConsultacoberturaSteps {
       	System.out.println("B2C - Consulta Cobertura - (Massivo SP)");
       	System.out.println("---------------------------------------");
       	     	    	
-     	WebElement element2 = driver.findElement(By.id("btnLinkMonte"));
-      	assertTrue(element2.getText().contains("Monte sua oferta"));
+      	WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.id("btnLinkMonte"), "Monte sua oferta"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
