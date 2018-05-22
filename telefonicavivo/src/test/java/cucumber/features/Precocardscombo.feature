@@ -102,3 +102,45 @@ Scenario: Consulta cobertura - Defaut SP-B2C
 	When na modal de consulta Defaut SP
 	And informa botao consultar Defaut SP
 	Then valida preco dos cards de combos Defaut SP
+	
+@Cenario-OnnetPadrao-B2B
+Scenario: Consulta cobertura - Onnet_padrao
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Onnet_padrao
+	Then valida preco cards de combos Onnet_padrao
+	
+@Cenario-OnnetSemTV-B2B
+Scenario: Consulta cobertura - Onnet_sem_tv
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Onnet_sem_tv
+	Then valida preco cards de combos Onnet_sem_tv
+	
+@Cenario-OnnetPlus-B2B
+Scenario: Consulta cobertura - Onnet_plus
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Onnet_plus
+	Then valida preco cards de combos Onnet_plus
+	
+@Cenario-G7-B2B
+Scenario: Consulta cobertura - G7_SP_3P_50_vdsl - B2B
+	Given abre pg do navegador preco card combo
+	And acessa pg combo G7_SP_B2B
+	Then valida preco cards de combos G7_SP_B2B
+	
+@Cenario-G9-B2B
+Scenario: Consulta cobertura - G9_FSP_3P_gpon_lançamento - B2B
+	Given abre pg do navegador preco card combo
+	And acessa pg combo G9_FSP_B2B
+	Then valida preco cards de combos G9_FSP_B2B
+	
+@Cenario-OFFNET-B2B
+Scenario: Consulta cobertura - Offnet_B2B
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Offnet_B2B
+	Then valida preco cards de combos Offnet_B2B
+	
+@Cenario-Default-SP-Soft-B2B
+Scenario: Consulta cobertura - Offnet_B2B
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Default_SP_B2B
+	Then valida preco cards de combos Default_SP_B2B

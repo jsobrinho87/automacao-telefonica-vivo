@@ -1033,7 +1033,7 @@ public class PrecoCardsComboSteps {
    	     
       @And ("acessa pg combo Offnet")
       public void paginaCoberturaOffnet()  throws InterruptedException {	
-      	 	driver.get("https://assine.vivo.com.br/erechim_RS	/combos");
+      	 	driver.get("https://assine.vivo.com.br/erechim_RS/combos");
       		
       		WebDriverWait wait1 = new WebDriverWait(driver, 200);
       		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Banda Larga + Telefonia Fixa"));
@@ -1141,7 +1141,8 @@ public class PrecoCardsComboSteps {
 	   	    System.out.println("----------------------------------");
 	      	
 	       	driver.quit();
-      }       
+      }      
+      
 //----------------------------------------------------// 
 //Precificação preço dos Cards de Combos - Massivo SP //
 //----------------------------------------------------// 	     
@@ -1197,7 +1198,7 @@ public class PrecoCardsComboSteps {
 //---------------------------------------------------// 
 //Precificação preço dos Cards de Combos - Defaut SP //
 //---------------------------------------------------// 	     
-  	     
+ 	     
     @And ("acessa pg de Defaut SP")
     public void paginaCoberturaDefautSP()  throws InterruptedException {	
   	    driver.navigate().to("https://assine.vivo.com.br/bocaina_SP");
@@ -1239,10 +1240,1055 @@ public class PrecoCardsComboSteps {
       	     	    	     	
       	WebDriverWait wait4 = new WebDriverWait(driver, 200);
 	    wait4.until(ExpectedConditions.textToBe(By.id("btnLinkMonte"), "Monte sua oferta"));
-
+ 
       	System.out.printf("Resultado página: "+ driver.getTitle());
       	System.out.println();
       	System.out.println("-------------------------------------------");
       	driver.quit(); 	
-    }       
+    }             
+      
+//-----//
+// B2B //
+//-----//      
+//------------------------------------------------------// 
+//Precificação preço dos Cards de Combos - Onnet_padrao //
+//------------------------------------------------------// 	     
+  	     
+      @And ("acessa pg combo Onnet_padrao")
+      public void paginaCoberturaOnnetpadrao()  throws InterruptedException {	
+      	driver.get("https://assine.vivo.com.br/apucarana_PR/empresas/pequenas-e-medias/combos");
+      	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+      }
+      
+      @Then ("valida preco cards de combos Onnet_padrao")
+      public void retornoSucessoouErroOnnetpadrao() throws InterruptedException {   	
+    	  	System.out.println("-----------------------------------------------");
+        	System.out.println("|B2B - Preços Cards de Combos - (Onnet_padrao)|");
+        	System.out.println("-----------------------------------------------");	
+        	System.out.println("|            COMBOS 2P           |");
+        	System.out.println("----------------------------------");
+        	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+        	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+        	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+        	String strngRS = elementRS.getText();
+        	System.out.printf("| " + strngRS);
+        	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+        	String strng1 = element1.getText();
+        	System.out.printf(strng1);
+        	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+        	String strng1a = element1a.getText();
+        	System.out.printf(strng1a);
+      	
+        	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+        	String strngRS2 = elementRS2.getText();
+        	System.out.printf(" | " + strngRS2);
+        	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+        	String strng2 = element2.getText();
+        	System.out.printf(strng2);
+        	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+        	String strng2a = element2a.getText();
+        	System.out.printf(strng2a); 	
+            	
+        	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+     		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+     		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+     		String strngRS3 = elementRS3.getText();
+     		System.out.printf(" | " + strngRS3);
+     		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+     		String strng3 = element3.getText();
+     		System.out.printf(strng3);
+     		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+     		String strng3a = element3a.getText();
+     		System.out.printf(strng3a + " |");
+     		System.out.println();
+     		System.out.println("----------------------------------");
+     		
+//Aba 2//        		
+     		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+     		
+     		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+        	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+        	String strngRS4 = elementRS4.getText();
+        	System.out.printf("| " + strngRS4);
+        	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+        	String strng4 = element4.getText();
+        	System.out.printf(strng4);
+        	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+        	String strng4a = element4a.getText();
+        	System.out.printf(strng4a);
+      	
+        	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+        	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+        	String strngRS5 = elementRS5.getText();
+        	System.out.printf(" | " + strngRS5);
+        	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+        	String strng5 = element5.getText();
+        	System.out.printf(strng5);
+        	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+        	String strng5a = element5a.getText();
+        	System.out.printf(strng5a);
+            	
+        	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+     		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+     		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+     		String strngRS6 = elementRS6.getText();
+     		System.out.printf(" | " + strngRS6);
+     		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+     		String strng6 = element6.getText();
+     		System.out.printf(strng6);
+     		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+     		String strng6a = element6a.getText();
+     		System.out.printf(strng6a + " |");
+     		System.out.println();
+
+//Internet + TV por Assinatura + Telefone Fixo//
+//Aba 01//   
+     		System.out.println("----------------------------------");
+        	System.out.println("|            COMBOS 3P           |");
+        	System.out.println("----------------------------------");
+        	
+	      	WebDriverWait wait7 = new WebDriverWait(driver, 200);
+	      	wait7.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS7 = elementRS7.getText();
+	   	   	System.out.printf("| " + strngRS7);
+	   	   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng7 = element7.getText();
+	   	   	System.out.printf(strng7);
+	   	   	WebElement element7a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng7a = element7a.getText();
+	   	   	System.out.printf(strng7a);
+	   	   	
+	   	   	WebDriverWait wait8 = new WebDriverWait(driver, 200);
+	   	   	wait8.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS8 = elementRS8.getText();
+	   	   	System.out.printf(" | " + strngRS8);
+	   	   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng8 = element8.getText();
+	   	   	System.out.printf(strng8);
+	   	   	WebElement element8a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng8a = element8a.getText();
+	   	   	System.out.printf(strng8a);
+	   	   	
+	   	   	WebDriverWait wait9 = new WebDriverWait(driver, 200);
+	   	   	wait9.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS9 = elementRS9.getText();
+	   	   	System.out.printf(" | " + strngRS9);
+	   	   	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng9 = element9.getText();
+	   	   	System.out.printf(strng9);
+	   	   	WebElement element9a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng9a = element9a.getText();
+	   	   	System.out.printf(strng9a + " |");
+	   	   	System.out.println();
+	   	    System.out.println("----------------------------------");
+
+//Aba 2//        		
+     		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[3]/span")).click();	   	    
+	   	    
+	      	WebDriverWait wait10 = new WebDriverWait(driver, 200);
+	      	wait10.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS10 = elementRS10.getText();
+	   	   	System.out.printf("| " + strngRS10);
+	   	   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng10 = element10.getText();
+	   	   	System.out.printf(strng10);
+	   	   	WebElement element10a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng10a = element10a.getText();
+	   	   	System.out.printf(strng10a);
+	   	   	
+	   	   	WebDriverWait wait11 = new WebDriverWait(driver, 200);
+	   	   	wait11.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS11 = elementRS11.getText();
+	   	   	System.out.printf(" | " + strngRS11);
+	   	   	WebElement element11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng11 = element11.getText();
+	   	   	System.out.printf(strng11);
+	   	   	WebElement element11a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng11a = element11a.getText();
+	   	   	System.out.printf(strng11a);
+	   	   	
+	   	   	WebDriverWait wait12 = new WebDriverWait(driver, 200);
+	   	   	wait12.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS12 = elementRS12.getText();
+	   	   	System.out.printf(" | " + strngRS12);
+	   	   	WebElement element12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng12 = element12.getText();
+	   	   	System.out.printf(strng12);
+	   	   	WebElement element12a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng12a = element12a.getText();
+	   	   	System.out.printf(strng12a + " |");
+	   	   	System.out.println();
+	   	    System.out.println("----------------------------------");
+     		
+	       	driver.quit();
+      }     
+
+//------------------------------------------------------// 
+//Precificação preço dos Cards de Combos - Onnet_sem_tv //
+//------------------------------------------------------// 	     
+	     
+    @And ("acessa pg combo Onnet_sem_tv")
+    public void paginaCoberturaOnnetsemtv()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/cuiaba_MT/empresas/pequenas-e-medias/combos");
+    	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    }
+    
+    @Then ("valida preco cards de combos Onnet_sem_tv")
+    public void retornoSucessoouErroOnnetsemtv() throws InterruptedException {   	
+  	  	System.out.println("-----------------------------------------------");
+      	System.out.println("|B2B - Preços Cards de Combos - (Onnet_sem_tv)|");
+      	System.out.println("-----------------------------------------------");	
+      	System.out.println("|            COMBOS 2P           |");
+      	System.out.println("----------------------------------");
+      	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS = elementRS.getText();
+      	System.out.printf("| " + strngRS);
+      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng1 = element1.getText();
+      	System.out.printf(strng1);
+      	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng1a = element1a.getText();
+      	System.out.printf(strng1a);
+    	
+      	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS2 = elementRS2.getText();
+      	System.out.printf(" | " + strngRS2);
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng2 = element2.getText();
+      	System.out.printf(strng2);
+      	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng2a = element2a.getText();
+      	System.out.printf(strng2a); 	
+          	
+      	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS3 = elementRS3.getText();
+   		System.out.printf(" | " + strngRS3);
+   		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng3 = element3.getText();
+   		System.out.printf(strng3);
+   		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng3a = element3a.getText();
+   		System.out.printf(strng3a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+   		
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+   		
+   		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS4 = elementRS4.getText();
+      	System.out.printf("| " + strngRS4);
+      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng4 = element4.getText();
+      	System.out.printf(strng4);
+      	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng4a = element4a.getText();
+      	System.out.printf(strng4a);
+    	
+      	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS5 = elementRS5.getText();
+      	System.out.printf(" | " + strngRS5);
+      	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng5 = element5.getText();
+      	System.out.printf(strng5);
+      	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng5a = element5a.getText();
+      	System.out.printf(strng5a);
+          	
+      	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS6 = elementRS6.getText();
+   		System.out.printf(" | " + strngRS6);
+   		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng6 = element6.getText();
+   		System.out.printf(strng6);
+   		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng6a = element6a.getText();
+   		System.out.printf(strng6a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+
+       	driver.quit();
+    }     
+    
+//----------------------------------------------------// 
+//Precificação preço dos Cards de Combos - Onnet_plus //
+//----------------------------------------------------// 	     
+	     
+    @And ("acessa pg combo Onnet_plus")
+    public void paginaCoberturaOnnetplus()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
+    	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    }
+    
+    @Then ("valida preco cards de combos Onnet_plus")
+    public void retornoSucessoouErroOnnetplus() throws InterruptedException {   	
+  	  	System.out.println("---------------------------------------------");
+      	System.out.println("|B2B - Preços Cards de Combos - (Onnet_plus)|");
+      	System.out.println("---------------------------------------------");	
+      	System.out.println("|            COMBOS 2P           |");
+      	System.out.println("----------------------------------");
+      	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS = elementRS.getText();
+      	System.out.printf("| " + strngRS);
+      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng1 = element1.getText();
+      	System.out.printf(strng1);
+      	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng1a = element1a.getText();
+      	System.out.printf(strng1a);
+    	
+      	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS2 = elementRS2.getText();
+      	System.out.printf(" | " + strngRS2);
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng2 = element2.getText();
+      	System.out.printf(strng2);
+      	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng2a = element2a.getText();
+      	System.out.printf(strng2a); 	
+          	
+      	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS3 = elementRS3.getText();
+   		System.out.printf(" | " + strngRS3);
+   		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng3 = element3.getText();
+   		System.out.printf(strng3);
+   		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng3a = element3a.getText();
+   		System.out.printf(strng3a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+   		
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+   		
+   		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS4 = elementRS4.getText();
+      	System.out.printf("| " + strngRS4);
+      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng4 = element4.getText();
+      	System.out.printf(strng4);
+      	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng4a = element4a.getText();
+      	System.out.printf(strng4a);
+    	
+      	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS5 = elementRS5.getText();
+      	System.out.printf(" | " + strngRS5);
+      	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng5 = element5.getText();
+      	System.out.printf(strng5);
+      	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng5a = element5a.getText();
+      	System.out.printf(strng5a);
+          	
+      	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS6 = elementRS6.getText();
+   		System.out.printf(" | " + strngRS6);
+   		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng6 = element6.getText();
+   		System.out.printf(strng6);
+   		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng6a = element6a.getText();
+   		System.out.printf(strng6a + " |");
+   		System.out.println();
+
+//Internet + TV por Assinatura + Telefone Fixo//
+//Aba 01//   
+   		System.out.println("----------------------------------");
+      	System.out.println("|            COMBOS 3P           |");
+      	System.out.println("----------------------------------");
+      	
+	      	WebDriverWait wait7 = new WebDriverWait(driver, 200);
+	      	wait7.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS7 = elementRS7.getText();
+	   	   	System.out.printf("| " + strngRS7);
+	   	   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng7 = element7.getText();
+	   	   	System.out.printf(strng7);
+	   	   	WebElement element7a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng7a = element7a.getText();
+	   	   	System.out.printf(strng7a);
+	   	   	
+	   	   	WebDriverWait wait8 = new WebDriverWait(driver, 200);
+	   	   	wait8.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS8 = elementRS8.getText();
+	   	   	System.out.printf(" | " + strngRS8);
+	   	   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng8 = element8.getText();
+	   	   	System.out.printf(strng8);
+	   	   	WebElement element8a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng8a = element8a.getText();
+	   	   	System.out.printf(strng8a);
+	   	   	
+	   	   	WebDriverWait wait9 = new WebDriverWait(driver, 200);
+	   	   	wait9.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS9 = elementRS9.getText();
+	   	   	System.out.printf(" | " + strngRS9);
+	   	   	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng9 = element9.getText();
+	   	   	System.out.printf(strng9);
+	   	   	WebElement element9a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng9a = element9a.getText();
+	   	   	System.out.printf(strng9a + " |");
+	   	   	System.out.println();
+	   	    System.out.println("----------------------------------");
+
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[3]/span")).click();	   	    
+	   	    
+	      	WebDriverWait wait10 = new WebDriverWait(driver, 200);
+	      	wait10.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS10 = elementRS10.getText();
+	   	   	System.out.printf("| " + strngRS10);
+	   	   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng10 = element10.getText();
+	   	   	System.out.printf(strng10);
+	   	   	WebElement element10a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng10a = element10a.getText();
+	   	   	System.out.printf(strng10a);
+	   	   	
+	   	   	WebDriverWait wait11 = new WebDriverWait(driver, 200);
+	   	   	wait11.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS11 = elementRS11.getText();
+	   	   	System.out.printf(" | " + strngRS11);
+	   	   	WebElement element11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng11 = element11.getText();
+	   	   	System.out.printf(strng11);
+	   	   	WebElement element11a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng11a = element11a.getText();
+	   	   	System.out.printf(strng11a);
+	   	   	
+	   	   	WebDriverWait wait12 = new WebDriverWait(driver, 200);
+	   	   	wait12.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	   	WebElement elementRS12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	   	String strngRS12 = elementRS12.getText();
+	   	   	System.out.printf(" | " + strngRS12);
+	   	   	WebElement element12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	   	String strng12 = element12.getText();
+	   	   	System.out.printf(strng12);
+	   	   	WebElement element12a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	   	String strng12a = element12a.getText();
+	   	   	System.out.printf(strng12a + " |");
+	   	   	System.out.println();
+	   	    System.out.println("----------------------------------");
+   		
+	       	driver.quit();
+    }   
+
+//----------------------------------------------------------------// 
+//Precificação preço dos Cards de Combos - G7_SP_3P_50_vdsl - B2B //
+//----------------------------------------------------------------// 	     
+	     
+  @And ("acessa pg combo G7_SP_B2B")
+  public void paginaCoberturaG7spb2b()  throws InterruptedException {	
+  	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
+  	
+  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+  }
+  
+  @Then ("valida preco cards de combos G7_SP_B2B")
+  public void retornoSucessoouErroG7spb2b() throws InterruptedException {   	
+	  	System.out.println("---------------------------------------------------------");
+    	System.out.println("|B2B - Preços Cards de Combos - (G7_SP_3P_50_vdsl - B2B)|");
+    	System.out.println("---------------------------------------------------------");	
+    	System.out.println("|            COMBOS 2P           |");
+    	System.out.println("----------------------------------");
+    	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+    	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+    	String strngRS = elementRS.getText();
+    	System.out.printf("| " + strngRS);
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+    	String strng1 = element1.getText();
+    	System.out.printf(strng1);
+    	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+    	String strng1a = element1a.getText();
+    	System.out.printf(strng1a);
+  	
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+    	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+    	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+    	String strngRS2 = elementRS2.getText();
+    	System.out.printf(" | " + strngRS2);
+    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+    	String strng2 = element2.getText();
+    	System.out.printf(strng2);
+    	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+    	String strng2a = element2a.getText();
+    	System.out.printf(strng2a); 	
+        	
+    	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+ 		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+ 		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+ 		String strngRS3 = elementRS3.getText();
+ 		System.out.printf(" | " + strngRS3);
+ 		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+ 		String strng3 = element3.getText();
+ 		System.out.printf(strng3);
+ 		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+ 		String strng3a = element3a.getText();
+ 		System.out.printf(strng3a + " |");
+ 		System.out.println();
+ 		System.out.println("----------------------------------");
+ 		
+//Aba 2//        		
+ 		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+ 		
+ 		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+    	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+    	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+    	String strngRS4 = elementRS4.getText();
+    	System.out.printf("| " + strngRS4);
+    	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+    	String strng4 = element4.getText();
+    	System.out.printf(strng4);
+    	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+    	String strng4a = element4a.getText();
+    	System.out.printf(strng4a);
+  	
+    	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+    	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+    	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+    	String strngRS5 = elementRS5.getText();
+    	System.out.printf(" | " + strngRS5);
+    	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+    	String strng5 = element5.getText();
+    	System.out.printf(strng5);
+    	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+    	String strng5a = element5a.getText();
+    	System.out.printf(strng5a);
+        	
+    	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+ 		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+    	
+ 		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+ 		String strngRS6 = elementRS6.getText();
+ 		System.out.printf(" | " + strngRS6);
+ 		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+ 		String strng6 = element6.getText();
+ 		System.out.printf(strng6);
+ 		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+ 		String strng6a = element6a.getText();
+ 		System.out.printf(strng6a + " |");
+ 		System.out.println();
+ 		System.out.println("----------------------------------");
+
+     	driver.quit();
+  }
+
+//--------------------------------------------------------------------// 
+//Precificação preço dos Cards de Combos - G9_FSP_3P_gpon_lançamento  //
+//--------------------------------------------------------------------// 	     
+	     
+    @And ("acessa pg combo G9_FSP_B2B")
+    public void paginaCoberturaG9fspB2B()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/teresina_PI/empresas/pequenas-e-medias/combos");
+    	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    }
+    
+    @Then ("valida preco cards de combos G9_FSP_B2B")
+    public void retornoSucessoouErroG9fspB2B() throws InterruptedException {   	
+  	  	System.out.println("------------------------------------------------------------");
+      	System.out.println("|B2B - Preços Cards de Combos - (G9_FSP_3P_gpon_lançamento)|");
+      	System.out.println("------------------------------------------------------------");	
+      	System.out.println("|            COMBOS 2P           |");
+      	System.out.println("----------------------------------");
+      	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS = elementRS.getText();
+      	System.out.printf("| " + strngRS);
+      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng1 = element1.getText();
+      	System.out.printf(strng1);
+      	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng1a = element1a.getText();
+      	System.out.printf(strng1a);
+    	
+      	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS2 = elementRS2.getText();
+      	System.out.printf(" | " + strngRS2);
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng2 = element2.getText();
+      	System.out.printf(strng2);
+      	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng2a = element2a.getText();
+      	System.out.printf(strng2a); 	
+          	
+      	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS3 = elementRS3.getText();
+   		System.out.printf(" | " + strngRS3);
+   		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng3 = element3.getText();
+   		System.out.printf(strng3);
+   		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng3a = element3a.getText();
+   		System.out.printf(strng3a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+   		
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+   		
+   		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS4 = elementRS4.getText();
+      	System.out.printf("| " + strngRS4);
+      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng4 = element4.getText();
+      	System.out.printf(strng4);
+      	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng4a = element4a.getText();
+      	System.out.printf(strng4a);
+    	
+      	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+      	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS5 = elementRS5.getText();
+      	System.out.printf(" | " + strngRS5);
+      	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng5 = element5.getText();
+      	System.out.printf(strng5);
+      	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng5a = element5a.getText();
+      	System.out.printf(strng5a);
+          	
+      	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+      	
+   		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS6 = elementRS6.getText();
+   		System.out.printf(" | " + strngRS6);
+   		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng6 = element6.getText();
+   		System.out.printf(strng6);
+   		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng6a = element6a.getText();
+   		System.out.printf(strng6a + " |");
+   		System.out.println();
+
+//Internet + TV por Assinatura + Telefone Fixo//
+//Aba 01//   
+   		System.out.println("----------------------------------");
+      	System.out.println("|            COMBOS 3P           |");
+      	System.out.println("----------------------------------");
+      	
+	    WebDriverWait wait7 = new WebDriverWait(driver, 200);
+	    wait7.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS7 = elementRS7.getText();
+	   	System.out.printf("| " + strngRS7);
+	   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng7 = element7.getText();
+	   	System.out.printf(strng7);
+	   	WebElement element7a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng7a = element7a.getText();
+	   	System.out.printf(strng7a);
+	   	   	
+	   	WebDriverWait wait8 = new WebDriverWait(driver, 200);
+	   	wait8.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS8 = elementRS8.getText();
+	   	System.out.printf(" | " + strngRS8);
+	   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng8 = element8.getText();
+	   	System.out.printf(strng8);
+	   	WebElement element8a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng8a = element8a.getText();
+	   	System.out.printf(strng8a);
+	   	   	
+	   	WebDriverWait wait9 = new WebDriverWait(driver, 200);
+	   	wait9.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS9 = elementRS9.getText();
+	   	System.out.printf(" | " + strngRS9);
+	   	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng9 = element9.getText();
+	   	System.out.printf(strng9);
+	   	WebElement element9a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng9a = element9a.getText();
+	   	System.out.printf(strng9a + " |");
+	   	System.out.println();
+	   	System.out.println("----------------------------------");
+
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[3]/span")).click();	   	    
+	   	    
+	    WebDriverWait wait10 = new WebDriverWait(driver, 200);
+	    wait10.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS10 = elementRS10.getText();
+	   	System.out.printf("| " + strngRS10);
+	   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng10 = element10.getText();
+	   	System.out.printf(strng10);
+	   	WebElement element10a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[1]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng10a = element10a.getText();
+	   	System.out.printf(strng10a);
+	   	   	
+	   	WebDriverWait wait11 = new WebDriverWait(driver, 200);
+	   	wait11.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS11 = elementRS11.getText();
+	   	System.out.printf(" | " + strngRS11);
+	   	WebElement element11 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng11 = element11.getText();
+	   	System.out.printf(strng11);
+	   	WebElement element11a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[2]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng11a = element11a.getText();
+	   	System.out.printf(strng11a);
+	   	   	
+	   	WebDriverWait wait12 = new WebDriverWait(driver, 200);
+	   	wait12.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	   	   	
+	   	WebElement elementRS12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[1]"));
+	   	String strngRS12 = elementRS12.getText();
+	   	System.out.printf(" | " + strngRS12);
+	   	WebElement element12 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/strong[2]"));
+	   	String strng12 = element12.getText();
+	   	System.out.printf(strng12);
+	   	WebElement element12a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[1]/div/div/strong"));
+	   	String strng12a = element12a.getText();
+	   	System.out.printf(strng12a + " |");
+	   	System.out.println();
+	   	System.out.println("----------------------------------");
+   		
+	    driver.quit();
+    }   
+
+//----------------------------------------------------// 
+//Precificação preço dos Cards de Combos - OFFNET B2B //
+//----------------------------------------------------// 	     
+  	     
+    @And ("acessa pg combo Offnet_B2B")
+    public void paginaCoberturaOffnetB2B()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
+    	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    }
+    
+    @Then ("valida preco cards de combos Offnet_B2B")
+    public void retornoSucessoouErroOffnetB2B() throws InterruptedException {   	
+  	  	System.out.println("---------------------------------------------");
+      	System.out.println("|B2B - Preços Cards de Combos - (Offnet_B2B)|");
+      	System.out.println("---------------------------------------------");	
+      	System.out.println("|            COMBOS 2P           |");
+      	System.out.println("----------------------------------");
+      	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS = elementRS.getText();
+      	System.out.printf("| " + strngRS);
+      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng1 = element1.getText();
+      	System.out.printf(strng1);
+      	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng1a = element1a.getText();
+      	System.out.printf(strng1a);
+    	
+      	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS2 = elementRS2.getText();
+      	System.out.printf(" | " + strngRS2);
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng2 = element2.getText();
+      	System.out.printf(strng2);
+      	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng2a = element2a.getText();
+      	System.out.printf(strng2a); 	
+          	
+      	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+   		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS3 = elementRS3.getText();
+   		System.out.printf(" | " + strngRS3);
+   		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng3 = element3.getText();
+   		System.out.printf(strng3);
+   		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng3a = element3a.getText();
+   		System.out.printf(strng3a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+   		
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+   		
+   		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS4 = elementRS4.getText();
+      	System.out.printf("| " + strngRS4);
+      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng4 = element4.getText();
+      	System.out.printf(strng4);
+      	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng4a = element4a.getText();
+      	System.out.printf(strng4a);
+    	
+      	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS5 = elementRS5.getText();
+      	System.out.printf(" | " + strngRS5);
+      	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng5 = element5.getText();
+      	System.out.printf(strng5);
+      	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng5a = element5a.getText();
+      	System.out.printf(strng5a);
+          	
+      	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+   		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS6 = elementRS6.getText();
+   		System.out.printf(" | " + strngRS6);
+   		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng6 = element6.getText();
+   		System.out.printf(strng6);
+   		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng6a = element6a.getText();
+   		System.out.printf(strng6a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+
+       	driver.quit();
+    }    
+
+//---------------------------------------------------------------// 
+//Precificação preço dos Cards de Combos - Default_SP_soft - B2B //
+//---------------------------------------------------------------// 	     
+  	     
+    @And ("acessa pg combo Default_SP_B2B")
+    public void paginaCoberturaDefaultSPB2B()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
+    	
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    }
+    
+    @Then ("valida preco cards de combos Default_SP_B2B")
+    public void retornoSucessoouErroDefaultSPB2B() throws InterruptedException {   	
+  	  	System.out.println("--------------------------------------------------------");
+      	System.out.println("|B2B - Preços Cards de Combos - (Default_SP_soft - B2B)|");
+      	System.out.println("--------------------------------------------------------");	
+      	System.out.println("|            COMBOS 2P           |");
+      	System.out.println("----------------------------------");
+      	
+//Internet + Telefone Fixo// 
+//Aba 01//       	
+      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS = elementRS.getText();
+      	System.out.printf("| " + strngRS);
+      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng1 = element1.getText();
+      	System.out.printf(strng1);
+      	WebElement element1a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng1a = element1a.getText();
+      	System.out.printf(strng1a);
+    	
+      	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS2 = elementRS2.getText();
+      	System.out.printf(" | " + strngRS2);
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng2 = element2.getText();
+      	System.out.printf(strng2);
+      	WebElement element2a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng2a = element2a.getText();
+      	System.out.printf(strng2a); 	
+          	
+      	WebDriverWait wait3 = new WebDriverWait(driver, 200);
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+   		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS3 = elementRS3.getText();
+   		System.out.printf(" | " + strngRS3);
+   		WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng3 = element3.getText();
+   		System.out.printf(strng3);
+   		WebElement element3a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng3a = element3a.getText();
+   		System.out.printf(strng3a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+   		
+//Aba 2//        		
+   		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
+   		
+   		WebDriverWait wait4 = new WebDriverWait(driver, 200);
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS4 = elementRS4.getText();
+      	System.out.printf("| " + strngRS4);
+      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng4 = element4.getText();
+      	System.out.printf(strng4);
+      	WebElement element4a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng4a = element4a.getText();
+      	System.out.printf(strng4a);
+    	
+      	WebDriverWait wait5 = new WebDriverWait(driver, 200);
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+      	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+      	String strngRS5 = elementRS5.getText();
+      	System.out.printf(" | " + strngRS5);
+      	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+      	String strng5 = element5.getText();
+      	System.out.printf(strng5);
+      	WebElement element5a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+      	String strng5a = element5a.getText();
+      	System.out.printf(strng5a);
+          	
+      	WebDriverWait wait6 = new WebDriverWait(driver, 200);
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	
+   		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
+   		String strngRS6 = elementRS6.getText();
+   		System.out.printf(" | " + strngRS6);
+   		WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[2]"));
+   		String strng6 = element6.getText();
+   		System.out.printf(strng6);
+   		WebElement element6a = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/div/strong"));
+   		String strng6a = element6a.getText();
+   		System.out.printf(strng6a + " |");
+   		System.out.println();
+   		System.out.println("----------------------------------");
+
+       	driver.quit();
+    }    
+    
 }
+

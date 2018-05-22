@@ -816,7 +816,6 @@ public class ConsultacoberturaSteps {
      	report.flush();
      	
      	driver.quit();
-   	
    }
    
    
@@ -1086,14 +1085,14 @@ public class ConsultacoberturaSteps {
      	Thread.sleep(3000);
 
        Actions act2=new Actions(driver); 	
-   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
+   	   act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a[2]"))).click().build().perform();
    }
    
    @When ("valida consulta cobertura Offnet B2B")
    public void consultaCoberturaOffnetB2B()  throws InterruptedException {
 	    WebDriverWait wait = new WebDriverWait(driver, 200);
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")))); 
-	   
+	    
 	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda Testando");   
 	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
 	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("83206-200");
@@ -1112,19 +1111,17 @@ public class ConsultacoberturaSteps {
    public void retornoErroSucessoOffnetB2B() throws InterruptedException {   	
      	System.out.println("---------------------------------------");
      	System.out.println("B2C - Consulta Cobertura - (Offnet B2B)");
-     	System.out.println("---------------------------------------");
+     	System.out.println("-----------------------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
      	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
 
-//      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
      	System.out.println();
-     	System.out.println("----------------------------------------------");
+     	System.out.println("-----------------------------------------------------");
    
      	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
      	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
-//      report.endTest(logger);
      	report.flush();
      	
      	driver.quit();
@@ -1176,8 +1173,11 @@ public class ConsultacoberturaSteps {
      	System.out.println("B2C - Consulta Cobertura - (Default_SP_soft - B2B)");
      	System.out.println("--------------------------------------------------");
      	     	    	
-     	WebElement element2 = driver.findElement(By.xpath("/html/body/section[1]/div/div[1]/h4"));
-     	assertTrue(element2.getText().contains("Materiais, a tecnologia fibra ainda não chegou na sua região."));
+//     	WebElement element2 = driver.findElement(By.xpath("/html/body/section[1]/div/div[1]/h4"));
+//     	assertTrue(element2.getText().contains("Materiais, a tecnologia fibra ainda não chegou na sua região."));
+//     	
+     	WebDriverWait wait4 = new WebDriverWait(driver, 200);
+	    wait4.until(ExpectedConditions.textToBe(By.xpath("/html/body/section[1]/div/div[1]/h4"), "Materiais, a tecnologia fibra ainda não chegou na sua região."));
 
 //      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());

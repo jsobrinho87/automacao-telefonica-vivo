@@ -17,7 +17,7 @@ import cucumber.api.junit.Cucumber;
              + "@Cenario-G5-B2C,"
              + "@Cenario-G6-B2C,"
              + "@Cenario-G7-B2C,"
-             + "@Cenario-G9-B2C," 
+             + "@Cenario-G9-B2C,"
              + "@Cenario-G10-B2C,"
              + "@Cenario-OFFNET-B2C,"
              + "@Cenario-MassivoSP-B2C,"
