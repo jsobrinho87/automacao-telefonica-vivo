@@ -10,9 +10,9 @@ import cucumber.api.junit.Cucumber;
 	glue = { "" }, monochrome = true, dryRun = false,
 	
 	tags  = {
-//		     "@CenarioC2CR-01,"
-//	       + "@CenarioPaginas,"
-	        "@CenarioCombo-3P,"
+		     "@CenarioC2CR-01,"
+	       + "@CenarioPaginas,"
+	       + "@CenarioCombo-3P,"
 	       + "@CenarioBL-Avulsa,"
 	       + "@CenarioFixa-Avulsa,"
 	       + "@CenarioTV-Avulsa,"

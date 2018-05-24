@@ -136,7 +136,7 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
 
-@CenarioValidaPagina
+@CenarioValidaPaginas
 Scenario: Verifica paginas - Testes Diarios
 	Given abre pg do navegador TD
 	And acessa nova pagina LP BL Nova Iguacu
