@@ -70,57 +70,74 @@ Scenario: Precos Cards Avulsos - G5_FSP_3P_50_vdsl_plus
 	And acessa pg de TV G5
 	Then valida preco dos cards de TV G5
 	
-#@Cenario-G6-B2C
-#Scenario: Consulta cobertura - G6_SP_3P_100_gpon
-#	Given abre pg do navegador preco card combo
-#	And acessa pg de combo G6
-#	Then valida preco dos cards de combos G6
-#	
-#@Cenario-G7-B2C
-#Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
-#	Given abre pg do navegador preco card combo
-#	And acessa pg de G7
-#	And informa menu combo G7
-#	When na modal de consulta G7
-#	And informa botao consultar G7
-#	Then valida preco dos cards de combos G7
-#	
-#@Cenario-G9-B2C
-#Scenario: Consulta cobertura - G9_FSP_3P_gpon_lancamento
-#	Given abre pg do navegador preco card combo
-#	And acessa pg de combo G9
-#	Then valida preco dos cards de combos G9
-#	
-#@Cenario-G10-B2C
-#Scenario: Consulta cobertura - G10_FSP_3P_100_GPON
-#	Given abre pg do navegador preco card combo
-#	And acessa pg combo G10
-#	Then valida preco cards de combos G10
-#	
-#@Cenario-OFFNET-B2C
-#Scenario: Consulta cobertura - OFFNET-B2C
-#	Given abre pg do navegador preco card combo
-#	And acessa pg combo Offnet
-#	Then valida preco cards de combos Offnet
-#	
-#@Cenario-MassivoSP-B2C
-#Scenario: Consulta cobertura - Massivo SP-B2C
-#	Given abre pg do navegador preco card combo
-#	And acessa pg de Massivo SP
-#	And informa menu combo Massivo SP
-#	When na modal de consulta Massivo SP
-#	And informa botao consultar Massivo SP
-#	Then valida preco dos cards de combos Massivo SP
-#	
-#@Cenario-DefautSP-B2C
-#Scenario: Consulta cobertura - Defaut SP-B2C
-#	Given abre pg do navegador preco card combo
-#	And acessa pg de Defaut SP
-#	And informa menu combo Defaut SP
-#	When na modal de consulta Defaut SP
-#	And informa botao consultar Defaut SP
-#	Then valida preco dos cards de combos Defaut SP
-#	
+@Cenario-G6-B2C
+Scenario: Precos Cards Avulsos - G6_SP_3P_100_gpon
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de banda larga G6
+	Then valida preco dos cards de banda larga G6
+	And acessa pg de fixa G6
+	Then valida preco dos cards de Fixa G6
+	And acessa pg de TV G6
+	Then valida preco dos cards de TV G6
+	
+@Cenario-G7-B2C
+Scenario: Precos Cards Avulsos - G7_SP_3P_50_vdsl
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de banda larga G7
+	Then valida preco dos cards de banda larga G7
+	And acessa pg de fixa G7
+	Then valida preco dos cards de Fixa G7
+	And acessa pg de TV G7
+	Then valida preco dos cards de TV G7
+	
+@Cenario-G9-B2C
+Scenario: Precos Cards Avulsos - G9_FSP_3P_gpon_lançamento
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de banda larga G9
+	Then valida preco dos cards de banda larga G9
+	And acessa pg de fixa G9
+	Then valida preco dos cards de Fixa G9
+	And acessa pg de TV G9
+	Then valida preco dos cards de TV G9
+	
+@Cenario-G10-B2C
+Scenario: Precos Cards Avulsos - G10_FSP_3P_100_GPON
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de BL G10
+	Then valida preco dos cards de BL G10
+	And acessa pg de telefonia G10
+	Then valida preco dos cards de telefonia G10
+	And acessa pg de TV Assinatura G10
+	Then valida preco dos cards de TV Assinatura G10
+	
+@Cenario-OFFNET-B2C
+Scenario: Precos Cards Avulsos - OFFNET-B2C
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de BL OFFNET
+	Then valida preco dos cards de BL OFFNET
+	And acessa pg de telefonia OFFNET
+	Then valida preco dos cards de Fixa OFFNET
+	
+@Cenario-MassivoSP-B2C
+Scenario: Precos Cards Avulsos - MassivoSP-B2C
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de banda larga Massivo SP
+	Then valida preco dos cards de banda larga Massivo SP
+	And acessa pg de fixa Massivo SP
+	Then valida preco dos cards de Fixa Massivo SP
+	And acessa pg de TV Massivo SP
+	Then valida preco dos cards de TV Massivo SP
+	
+@Cenario-DefautSP-B2C
+Scenario: Precos Cards Avulsos - DefautSP-B2C
+	Given abre pg do navegador preco cards avulsos
+	And acessa pg de BL Defaut SP
+	Then valida preco dos cards de BL Defaut SP
+	And acessa pg de fixa Defaut SP
+	Then valida preco dos cards de Fixa Defaut SP
+	And acessa pg de TV Defaut SP
+	Then valida preco dos cards de TV Defaut SP
+	
 #@Cenario-OnnetPadrao-B2B
 #Scenario: Consulta cobertura - Onnet_padrao
 #	Given abre pg do navegador preco card combo

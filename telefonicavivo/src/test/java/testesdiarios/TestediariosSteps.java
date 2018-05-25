@@ -204,21 +204,21 @@ public class TestediariosSteps {
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng8 = element8.getText();
-    	System.out.printf(strng8);
-    	System.out.println();
-    	
-    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng9 = element9.getText();
-    	System.out.printf("Plano TV por Assinatura: "+ strng9);
-    	System.out.println();
-    	
-    	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng10 = element10.getText();
-    	System.out.printf("Plano Telefonia Fixa: "+ strng10);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+//    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
+//    	String strng8 = element8.getText();
+//    	System.out.printf(strng8);
+//    	System.out.println();
+//    	
+//    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng9 = element9.getText();
+//    	System.out.printf("Plano TV por Assinatura: "+ strng9);
+//    	System.out.println();
+//    	
+//    	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng10 = element10.getText();
+//    	System.out.printf("Plano Telefonia Fixa: "+ strng10);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
 
     	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\01-Teste-messageSucessoouErro-3PCombo.jpg"));
@@ -321,6 +321,8 @@ public class TestediariosSteps {
     public void btaoProximoPasso3AvulsoBLTD() throws InterruptedException {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
+    	Thread.sleep(3000);
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
@@ -337,12 +339,12 @@ public class TestediariosSteps {
     	System.out.printf("Número Protocolo: "+ strng2);
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
-    	 
-    	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng3 = element3.getText();
-    	System.out.printf(strng3);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+    	
+//    	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul"));
+//    	String strng3 = element3.getText();
+//    	System.out.printf(strng3);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
     	
     	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\02-Teste-messageSucessoouErro-2PCombo.jpg"));
@@ -446,6 +448,8 @@ public class TestediariosSteps {
     public void botaoProximoPasso3AvulsoFixaTD() throws InterruptedException {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
+    	Thread.sleep(3000);
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
@@ -463,11 +467,11 @@ public class TestediariosSteps {
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng10 = element8.getText();
-    	System.out.printf(strng10);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+//    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul"));
+//    	String strng10 = element8.getText();
+//    	System.out.printf(strng10);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
     	
     	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\03-Teste-messageSucessoouErro-2PCombo.jpg"));
@@ -570,6 +574,8 @@ public class TestediariosSteps {
     public void btaoAvulsoTVTD() throws InterruptedException {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
+    	Thread.sleep(3000);
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
@@ -586,11 +592,11 @@ public class TestediariosSteps {
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng9 = element8.getText();
-    	System.out.printf(strng9);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+//    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul"));
+//    	String strng8 = element8.getText();
+//    	System.out.printf(strng8);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
     	
     	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\04-Teste-messageSucessoouErro-2PCombo.jpg"));
@@ -728,6 +734,8 @@ public class TestediariosSteps {
     public void botaoProximoPasso33pSimulador() throws InterruptedException {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
     	
+    	Thread.sleep(3000);
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
@@ -744,21 +752,21 @@ public class TestediariosSteps {
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng8 = element8.getText();
-    	System.out.printf(strng8);
-    	System.out.println();
-    	
-    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng9 = element9.getText();
-    	System.out.printf(strng9);
-    	System.out.println();
-    	
-	 	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng10 = element10.getText();
-    	System.out.printf(strng10);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+//    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
+//    	String strng8 = element8.getText();
+//    	System.out.printf(strng8);
+//    	System.out.println();
+//    	
+//    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng9 = element9.getText();
+//    	System.out.printf(strng9);
+//    	System.out.println();
+//    	
+//	 	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng10 = element10.getText();
+//    	System.out.printf(strng10);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
 
     	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\05-Teste-messageSucessoouErro-3pSimulador.jpg"));
@@ -798,14 +806,15 @@ public class TestediariosSteps {
      @And ("modal clica em Consultar LP Oferta BL TD")
      public void consultarLPOfertaBL() throws InterruptedException {
      	driver.findElement(By.className("btn-consult")).click();
-     	Thread.sleep(6000);
+
      }
           
      @And ("modal pontos adicionais clica em Adicionar LP Oferta BL TD")
      public void btaoAdicionalLPOfertaBL() throws InterruptedException {
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("btn-consult")))); 
+//    	WebDriverWait wait = new WebDriverWait(driver, 200);
+//       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("btn-consult")))); 
     	 
+    	 Thread.sleep(8000); 
      	driver.findElement(By.className("btn-consult")).click();
      }
      
@@ -858,6 +867,8 @@ public class TestediariosSteps {
      public void btaoProximoPasso3LPOfertaBL() throws InterruptedException {
      	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
      	
+     	Thread.sleep(3000);
+     	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
      }
@@ -874,21 +885,21 @@ public class TestediariosSteps {
      	System.out.println();
      	System.out.println("----------------------------------------------------------------");
 
-     	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-    	String strng8 = element8.getText();
-    	System.out.printf(strng8);
-    	System.out.println();
-    	
-    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng9 = element9.getText();
-    	System.out.printf(strng9);
-    	System.out.println();
-    	
-	 	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
-    	String strng10 = element10.getText();
-    	System.out.printf(strng10);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
+//     	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
+//    	String strng8 = element8.getText();
+//    	System.out.printf(strng8);
+//    	System.out.println();
+//    	
+//    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng9 = element9.getText();
+//    	System.out.printf(strng9);
+//    	System.out.println();
+//    	
+//	 	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
+//    	String strng10 = element10.getText();
+//    	System.out.printf(strng10);
+//    	System.out.println();
+//    	System.out.println("----------------------------------------------------------------");
 
      	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
      	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\06-Teste-messageSucessoouErro-3PCombo.jpg"));
@@ -916,21 +927,21 @@ public class TestediariosSteps {
   	System.out.println("B2C - Nova Iguaçu RJ - LP " + driver.getTitle());
   	System.out.println("-------------------------------------------------------------------");
   	     	    	
-  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[1]/div[2]/div/div[1]/h5"));
-  	String strng2 = element2.getText();
-  	System.out.printf("Resultado: "+ strng2);
-  	System.out.println();
-  	
-  	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[2]/div[2]/div/div[1]/h4/strong"));
-  	String strng3 = element3.getText();
-  	System.out.printf("Resultado: "+ strng3);
-  	System.out.println();
-  	
-  	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[3]/div[2]/div/div[1]/h4/strong"));
-  	String strng4 = element4.getText();
-  	System.out.printf("Resultado: "+ strng4);
-  	System.out.println();
-  	System.out.println("----------------------------------------------------------------");
+//  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[1]/div[2]/div/div[1]/h5"));
+//  	String strng2 = element2.getText();
+//  	System.out.printf("Resultado: "+ strng2);
+//  	System.out.println();
+//  	
+//  	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[2]/div[2]/div/div[1]/h4/strong"));
+//  	String strng3 = element3.getText();
+//  	System.out.printf("Resultado: "+ strng3);
+//  	System.out.println();
+//  	
+//  	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[3]/div[2]/div/div[1]/h4/strong"));
+//  	String strng4 = element4.getText();
+//  	System.out.printf("Resultado: "+ strng4);
+//  	System.out.println();
+//  	System.out.println("----------------------------------------------------------------");
   		
   	driver.quit();
   	

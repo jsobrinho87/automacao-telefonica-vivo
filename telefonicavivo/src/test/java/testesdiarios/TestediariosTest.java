@@ -10,18 +10,18 @@ import cucumber.api.junit.Cucumber;
 	glue = { "" }, monochrome = true, dryRun = false,
 	
 	tags  = {
-		     "@CenarioC2CR-01,"
-	       + "@CenarioPaginas,"
-	       + "@CenarioCombo-3P,"
+//		     "@CenarioC2CR-01,"
+//	       + "@CenarioPaginas,"
+	        "@CenarioCombo-3P,"
 	       + "@CenarioBL-Avulsa,"
 	       + "@CenarioFixa-Avulsa,"
 	       + "@CenarioTV-Avulsa,"
 	       + "@CenarioSimulador-3P,"
 	       + "@CenarioLP-BL,"
-           + "@CenarioValidaPaginas,"
-           + "@CenarioC2CR-02,"
-           + "@CenarioConsultaSP-G6,"
-           + "@CenarioConsultaSP-Defalt"
+//           + "@CenarioValidaPaginas,"
+//           + "@CenarioC2CR-02,"
+//           + "@CenarioConsultaSP-G6,"
+//           + "@CenarioConsultaSP-Defalt"
 	    	})
 
 public class TestediariosTest {

@@ -325,7 +325,6 @@ public class ConsultacoberturaSteps {
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("82920-100");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("697");
-        
     }
     
     @And ("seleciona botao consultar G5")
@@ -350,7 +349,6 @@ public class ConsultacoberturaSteps {
       	System.out.println();
       	System.out.println("---------------------------------------------------");
     	driver.quit();
-    	
     }   
     
 //----------------------------------------//
@@ -526,7 +524,7 @@ public class ConsultacoberturaSteps {
     
 //------------------------------------------//
 //Consulta Cobertura - G10_FSP_3P_100_GPON  //
-//------------------------------------------// 	     
+//------------------------------------------//
  	     
     @And ("acessa pg grupo G10")
     public void pgCoberturaG10()  throws InterruptedException {	
