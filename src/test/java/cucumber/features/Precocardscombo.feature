@@ -23,43 +23,43 @@ Feature: Execucao dos testes de precos dos cards de combo
 #---------------------#
 
 @Cenario-G1-B2C
-Scenario: Consulta cobertura - G1_FSP_3P_15_vdsl
+Scenario: Precos Cards de Combo - G1_FSP_3P_15_vdsl
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G1
 	Then valida preco dos cards de combos G1
 	
 @Cenario-G2-B2C
-Scenario: Consulta cobertura - G2_FSP_3P_50_vdsl
+Scenario: Precos Cards de Combo - G2_FSP_3P_50_vdsl
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G2
 	Then valida preco dos cards de combos G2
 	
 @Cenario-G3-B2C
-Scenario: Consulta cobertura - G3_FSP_50_GPON
+Scenario: Precos Cards de Combo - G3_FSP_50_GPON
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G3
 	Then valida preco dos cards de combos G3
 
 @Cenario-G4-B2C
-Scenario: Consulta cobertura - G4_FSP_2P_15_vdsl
+Scenario: Precos Cards de Combo - G4_FSP_2P_15_vdsl
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G4
 	Then valida preco dos cards de combos G4	
 	
 @Cenario-G5-B2C
-Scenario: Consulta cobertura - G5_FSP_3P_50_vdsl_plus
+Scenario: Precos Cards de Combo - G5_FSP_3P_50_vdsl_plus
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G5
 	Then valida preco dos cards de combos G5
 	
 @Cenario-G6-B2C
-Scenario: Consulta cobertura - G6_SP_3P_100_gpon
+Scenario: Precos Cards de Combo - G6_SP_3P_100_gpon
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G6
 	Then valida preco dos cards de combos G6
 	
 @Cenario-G7-B2C
-Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
+Scenario: Precos Cards de Combo - G7_SP_3P_50_vdsl
 	Given abre pg do navegador preco card combo
 	And acessa pg de G7
 	And informa menu combo G7
@@ -68,25 +68,25 @@ Scenario: Consulta cobertura - G7_SP_3P_50_vdsl
 	Then valida preco dos cards de combos G7
 	
 @Cenario-G9-B2C
-Scenario: Consulta cobertura - G9_FSP_3P_gpon_lancamento
+Scenario: Precos Cards de Combo - G9_FSP_3P_gpon_lancamento
 	Given abre pg do navegador preco card combo
 	And acessa pg de combo G9
 	Then valida preco dos cards de combos G9
 	
 @Cenario-G10-B2C
-Scenario: Consulta cobertura - G10_FSP_3P_100_GPON
+Scenario: Precos Cards de Combo - G10_FSP_3P_100_GPON
 	Given abre pg do navegador preco card combo
 	And acessa pg combo G10
 	Then valida preco cards de combos G10
 	
 @Cenario-OFFNET-B2C
-Scenario: Consulta cobertura - OFFNET-B2C
+Scenario: Precos Cards de Combo - OFFNET-B2C
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Offnet
 	Then valida preco cards de combos Offnet
 	
 @Cenario-MassivoSP-B2C
-Scenario: Consulta cobertura - Massivo SP-B2C
+Scenario: Precos Cards de Combo - Massivo SP-B2C
 	Given abre pg do navegador preco card combo
 	And acessa pg de Massivo SP
 	And informa menu combo Massivo SP
@@ -95,7 +95,7 @@ Scenario: Consulta cobertura - Massivo SP-B2C
 	Then valida preco dos cards de combos Massivo SP
 	
 @Cenario-DefautSP-B2C
-Scenario: Consulta cobertura - Defaut SP-B2C
+Scenario: Precos Cards de Combo - Defaut SP-B2C
 	Given abre pg do navegador preco card combo
 	And acessa pg de Defaut SP
 	And informa menu combo Defaut SP
@@ -104,43 +104,43 @@ Scenario: Consulta cobertura - Defaut SP-B2C
 	Then valida preco dos cards de combos Defaut SP
 	
 @Cenario-OnnetPadrao-B2B
-Scenario: Consulta cobertura - Onnet_padrao
+Scenario: Precos Cards de Combo - Onnet_padrao
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Onnet_padrao
 	Then valida preco cards de combos Onnet_padrao
 	
 @Cenario-OnnetSemTV-B2B
-Scenario: Consulta cobertura - Onnet_sem_tv
+Scenario: Precos Cards de Combo - Onnet_sem_tv
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Onnet_sem_tv
 	Then valida preco cards de combos Onnet_sem_tv
 	
 @Cenario-OnnetPlus-B2B
-Scenario: Consulta cobertura - Onnet_plus
+Scenario: Precos Cards de Combo - Onnet_plus
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Onnet_plus
 	Then valida preco cards de combos Onnet_plus
 	
 @Cenario-G7-B2B
-Scenario: Consulta cobertura - G7_SP_3P_50_vdsl - B2B
+Scenario: Precos Cards de Combo - G7_SP_3P_50_vdsl - B2B
 	Given abre pg do navegador preco card combo
 	And acessa pg combo G7_SP_B2B
 	Then valida preco cards de combos G7_SP_B2B
 	
 @Cenario-G9-B2B
-Scenario: Consulta cobertura - G9_FSP_3P_gpon_lançamento - B2B
+Scenario: Precos Cards de Combo - G9_FSP_3P_gpon_lançamento - B2B
 	Given abre pg do navegador preco card combo
 	And acessa pg combo G9_FSP_B2B
 	Then valida preco cards de combos G9_FSP_B2B
 	
 @Cenario-OFFNET-B2B
-Scenario: Consulta cobertura - Offnet_B2B
+Scenario: Precos Cards de Combo - Offnet_B2B
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Offnet_B2B
 	Then valida preco cards de combos Offnet_B2B
 	
 @Cenario-Default-SP-Soft-B2B
-Scenario: Consulta cobertura - Offnet_B2B
+Scenario: Precos Cards de Combo - Offnet_B2B
 	Given abre pg do navegador preco card combo
 	And acessa pg combo Default_SP_B2B
 	Then valida preco cards de combos Default_SP_B2B

@@ -225,16 +225,16 @@ public class TestesregressaoSteps {
     public void paginaCombo3P()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/combos");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("menu-content"))));
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
     }
     
     @And ("seleciona opcao de combo 3P")
     public void acessarMenu() throws InterruptedException { 	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button")));
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
     
-    	WebElement element1 = driver.findElement(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }
@@ -244,10 +244,10 @@ public class TestesregressaoSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")));
     	
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Armindo Monteiros Tes");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Armindo Monteiro Testando");   
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
-        driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("82900-320");
-        driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("66");
+        driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("80060-070");
+        driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("1999");
         
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2C\\01-Teste-informaDados-3PCombo.jpg"));
@@ -274,7 +274,7 @@ public class TestesregressaoSteps {
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
     	driver.findElement(By.id("txtFone")).clear();
-    	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
+    	driver.findElement(By.id("txtFone")).sendKeys("4125250090");
 
     	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2C\\02-Teste-dadosCliente-3PCombo.jpg"));
@@ -283,12 +283,12 @@ public class TestesregressaoSteps {
     	driver.findElement(By.id("txtDataDia")).clear();
     	driver.findElement(By.id("txtDataDia")).sendKeys("12");
     	driver.findElement(By.id("txtDataMes")).clear();
-    	driver.findElement(By.id("txtDataMes")).sendKeys("07");
+    	driver.findElement(By.id("txtDataMes")).sendKeys("08");
     	driver.findElement(By.id("txtDataAno")).clear();
-    	driver.findElement(By.id("txtDataAno")).sendKeys("1960");    	
+    	driver.findElement(By.id("txtDataAno")).sendKeys("1989");    	
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
-        driver.findElement(By.id("txtMae")).sendKeys("Maria Tomazia Marquess");
+        driver.findElement(By.id("txtMae")).sendKeys("Maria Tomazia Marques");
 
     }
     
@@ -399,13 +399,16 @@ public class TestesregressaoSteps {
     public void paginaCombo2P()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/blumenau_SC/combos");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-	    wait.until(ExpectedConditions.visibilityOfElementLocated((By.className("menu-content"))));       
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
     }
     
     @And ("seleciona opcao de combo 2P")
     public void acessarMenu2pCombo() throws InterruptedException {
-        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/article[3]/div[1]/div[3]/div[2]/div[2]/div[2]/atom-button/button"));
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/article[1]/div[1]/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));      
+    	
+        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/article[1]/div[1]/div[3]/div[2]/div[2]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }
@@ -415,7 +418,7 @@ public class TestesregressaoSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
     	
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Guauco Canziani");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Guauco Canziani Testando");   
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-3223");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("89010-904");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("2");
@@ -447,11 +450,11 @@ public class TestesregressaoSteps {
 
     	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
     	driver.findElement(By.id("txtDataDia")).clear();
-    	driver.findElement(By.id("txtDataDia")).sendKeys("05");
+    	driver.findElement(By.id("txtDataDia")).sendKeys("23");
     	driver.findElement(By.id("txtDataMes")).clear();
-    	driver.findElement(By.id("txtDataMes")).sendKeys("07");
+    	driver.findElement(By.id("txtDataMes")).sendKeys("09");
     	driver.findElement(By.id("txtDataAno")).clear();
-    	driver.findElement(By.id("txtDataAno")).sendKeys("1960");    	
+    	driver.findElement(By.id("txtDataAno")).sendKeys("1976");    	
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
         driver.findElement(By.id("txtMae")).sendKeys("Angela Marias Canzian");
@@ -710,15 +713,15 @@ public class TestesregressaoSteps {
     
     @And ("acessa pagina de Avulso Fixa")
     public void paginaAvulsoFixa()  throws InterruptedException {	
-    	driver.navigate().to("https://assine.vivo.com.br/niteroi_PR/telefonia?cid=M3");
+    	driver.navigate().to("https://assine.vivo.com.br/niteroi_PR/telefonia/planos");
 
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button"))));
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Planos de Telefonia"));
     }
     
     @And ("seleciona opcao de Avulso Fixa")
     public void acessarMenuAvulsoFixa() throws InterruptedException {    	
-    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button"));
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/article[1]/div/div[1]/div[4]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }
@@ -728,7 +731,7 @@ public class TestesregressaoSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
     	
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Regina auxiliadora de Amorim marques");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Regina de Amorim marque");   
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0098");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("24360-022");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("61");
@@ -1249,19 +1252,16 @@ public class TestesregressaoSteps {
     
     @And ("acessa pg de Avulso Fixa Dois")
     public void paginaAvulsoFixa2()  throws InterruptedException {
-    	driver.navigate().to("https://assine.vivo.com.br/natal_RN/telefonia");
-        Thread.sleep(10000); 
+    	driver.navigate().to("https://assine.vivo.com.br/natal_RN/telefonia/planos");
+
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Planos de Telefonia"));
     }
     
     @And ("informar op de Avulso Fixa Dois")
     public void acessarMenuAvulsoFixa2() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-//    	WebDriverWait wait = new WebDriverWait(driver, 30);
-//    	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\\\"secCards\\\"]/div/div/div/article[3]/div[1]/div[4]/div[2]/atom-button/button")));   
-   
-//      	Actions act=new Actions(driver); 	
-//    	act.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))).click().build().perform();
-//      	
+
         WebElement element1 = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[3]/div[1]/div[4]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
@@ -1293,9 +1293,6 @@ public class TestesregressaoSteps {
     public void comprarInternetAvulsoFixa2() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
     	Thread.sleep(3000);
-    	
-//        Actions act3=new Actions(driver); 	
-//    	act3.moveToElement(driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
     	
     	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[3]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
@@ -1335,7 +1332,6 @@ public class TestesregressaoSteps {
     	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/div/button")).click();
     	
     	Thread.sleep(5000);
-
     }
     
     @And ("endereco Instalacao clica Proximo Passo Avulso Fixa Dois")
@@ -1416,7 +1412,6 @@ public class TestesregressaoSteps {
     	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2C\\28-Teste-messageSucessoouErro-TelefoniaFixa2.jpg"));
     	
     	driver.quit();
-    	
     }	
     
 //------------------------------//
@@ -1620,452 +1615,442 @@ public class TestesregressaoSteps {
   public void acessaMenu2pSimuladorB2B() throws InterruptedException {
   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
   	
-  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+  	WebDriverWait wait = new WebDriverWait(driver, 200);
+  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"))));
 
-    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"));
+    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
     element1.click();
   }
   
   @When ("modal consulta dados do Cliente simulador 2P B2B")
   public void validaDados2pSimuladorB2B()  throws IOException {
-    WebDriverWait wait = new WebDriverWait(driver, 200);
-  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
-  	
-  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ME TES NOVO NV");   
-  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3223");
-    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90560-003");
-    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("545");
-      
-    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-  	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\01-Teste-informaDados-2pSimulador-B2B.jpg"));
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+	  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
+	  	
+	  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Empresa de Transporte ME");   
+	  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3223");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90560-003");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("545");
+	      
+	    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\01-Teste-informaDados-2pSimulador-B2B.jpg"));
   }
   
   @And ("modal Identifica clica em Consultar simulador 2P B2B")
   public void btaoconsulta2pSimuladorB2B() throws InterruptedException {
-  	driver.findElement(By.className("btn-consult")).click();
-  	Thread.sleep(5000);
+  		driver.findElement(By.className("btn-consult")).click();
+  		
+  		WebDriverWait wait1 = new WebDriverWait(driver, 200);
+  		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1/strong"), "Escolha um combo ou monte o seu!"));
   }
   
   @And ("seleciona botao compra simulador 2P B2B")
-  public void btaoComprar2pSimuladorB2B() throws InterruptedException {
-  	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-  	Thread.sleep(3000);
-  	
-  	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[2]"));
-    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-    element1.click();
-  	
+  public void btaoComprar2pSimuB2B() throws InterruptedException {
+	      	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+	      	Thread.sleep(3000);
+	      	
+	      	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[2]"));
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+	        element1.click();
   }   
   
   @And ("seleciona card banda larga simulador 2P B2B")
   public void BL2pSimuladorB2B() throws InterruptedException {
-  	Thread.sleep(10000);
-  	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section/div/div/section/div/div/div[2]/div/div/div/button")).click();
+	  WebDriverWait wait = new WebDriverWait(driver, 200);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section/div/div/section/div/div/div[2]/div/div/div/button"))));
+	  	
+  	  driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section/div/div/section/div/div/div[2]/div/div/div/button")).click();
   } 
    
   @And ("seleciona card Telefonia Fixa simulador 2P B2B")
   public void fixa2pSimuladorB2B() throws InterruptedException {
-  	Thread.sleep(10000);
-  	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[3]/div/div/section/div/div/div[2]/div/div[2]/div[2]/button")).click();
-  	Thread.sleep(5000);
+	  WebDriverWait wait = new WebDriverWait(driver, 200);
+	  wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[3]/div/div/section/div/div/div[2]/div/div[2]/div[2]/button"))));
+	  
+	  driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[3]/div/div/section/div/div/div[2]/div/div[2]/div[2]/button")).click();
   }
   
   @When ("cliente informa dados pedido simulador 2P B2B")
   public void InformaDados2pSimuladorB2B() throws IOException {
-  	
-  	driver.findElement(By.id("txtBusinessName")).clear();
-  	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Vivo Novo Novo NV");
-  	driver.findElement(By.id("txtBusinessDocument")).clear();
-  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("26261575000151");
-
-  	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-  	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\02-Teste-dadosCliente01-2pSimulador-B2B.jpg"));
-
-  	driver.findElement(By.id("txtDataDia")).clear();
-  	driver.findElement(By.id("txtDataDia")).sendKeys("09");
-  	driver.findElement(By.id("txtDataMes")).clear();
-  	driver.findElement(By.id("txtDataMes")).sendKeys("07");
-  	driver.findElement(By.id("txtDataAno")).clear();
-  	driver.findElement(By.id("txtDataAno")).sendKeys("2002");    
-  	
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
-  	driver.findElement(By.id("txtEmail")).clear();
-  	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
-
+		WebDriverWait wait = new WebDriverWait(driver, 200);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtBusinessName"))));
+		  
+	  	driver.findElement(By.id("txtBusinessName")).clear();
+	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Empresa Telefonica Testando");
+	  	driver.findElement(By.id("txtBusinessDocument")).clear();
+	  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("97491744000198");
+	
+	  	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\02-Teste-dadosCliente01-2pSimulador-B2B.jpg"));
+	
+	  	driver.findElement(By.id("txtDataDia")).clear();
+	  	driver.findElement(By.id("txtDataDia")).sendKeys("09");
+	  	driver.findElement(By.id("txtDataMes")).clear();
+	  	driver.findElement(By.id("txtDataMes")).sendKeys("07");
+	  	driver.findElement(By.id("txtDataAno")).clear();
+	  	driver.findElement(By.id("txtDataAno")).sendKeys("2002");    
+	  	
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
+	  	driver.findElement(By.id("txtEmail")).clear();
+	  	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
   }
   
   @And ("cliente seleciona Proximo Passo simulador 2P B2B")
   public void btaoProxPasso2pSimuladorB2B() throws IOException {
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/div/button")).click();
+  		driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/div/button")).click();
 
   }
    
   @And ("tela Endereco Instalacao seleciona Proximo Passo simulador 2P B2B")
   public void btaoProxPasso22pSimuladorB2B() throws InterruptedException {
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
+	  driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
   	
-  	Thread.sleep(3000);
+	  WebDriverWait wait = new WebDriverWait(driver, 200);
+      wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label"))));
   }
   
   @When ("informa os dados de pagamentos simulador 2P B2B")
   public void dadosPagamento2pSimuladorB2B() throws IOException {
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
-
-//  Thread.sleep(3000);
-  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\03-Teste-dadosPagamento-2pSimulador-B2B.jpg"));
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
+	
+	  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\03-Teste-dadosPagamento-2pSimulador-B2B.jpg"));
   }
    
   @And ("seleciona em Finalizar Pedido simulador 2P B2B")
   public void btaoProxPasso32pSimuladorB2B() throws InterruptedException {
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
-  	
-	WebDriverWait wait = new WebDriverWait(driver, 60);
-	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
+	  	
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
   }
   
   @Then ("valida retorno de mensagem de sucesso ou erro simulador 2P B2B")
   public void msgSucessoouErro2pSimuladorB2B() throws IOException {
-  	System.out.println("----------------------------------------------------------------");
-  	System.out.println("B2B 2P SIMULADOR - " + driver.getTitle());
-  	System.out.println("----------------------------------------------------------------");
-  	
-  	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
-  	String strng = element.getText();
-  	System.out.println(strng);
-  	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
-  	System.out.println("----------------------------------------------------------------");
-  	    	
-  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
-  	String strng2 = element2.getText();
-  	System.out.printf("Número Protocolo: "+ strng2);
-  	System.out.println();
-  	
-  	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
-  	String strng3 = element3.getText();
-  	System.out.printf("Nome Completo: "+ strng3);
-  	System.out.println();
-  	
-  	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
-  	String strng4 = element4.getText();
-  	System.out.printf("Documento: "+ strng4);
-  	System.out.println();
-  	
-  	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
-  	String strng6 = element6.getText();
-  	System.out.printf("Nome da Mãe: "+ strng6);
-  	System.out.println();
-  	
-  	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
-  	String strng7 = element7.getText();
-  	System.out.printf("Endereço: "+ strng7);
-  	System.out.println();
-  	System.out.println("----------------------------------------------------------------");
-  	
-  	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
-  	String strng8 = element8.getText();
-  	System.out.printf("Plano Internet: "+ strng8);
-  	System.out.println();
-  	
-   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-  	String strng10 = element10.getText();
-  	System.out.printf("Plano Telefonia Fixa: "+ strng10);
-  	System.out.println();
-  	System.out.println("----------------------------------------------------------------");
-
-  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\04-Teste-messageSucessoouErro-2pSimulador-B2B.jpg"));
-  	
-  	driver.quit();
+	  	System.out.println("----------------------------------------------------------------");
+	  	System.out.println("B2B 2P SIMULADOR - " + driver.getTitle());
+	  	System.out.println("----------------------------------------------------------------");
+	  	
+	  	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
+	  	String strng = element.getText();
+	  	System.out.println(strng);
+	  	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
+	  	System.out.println("----------------------------------------------------------------");
+	  	    	
+	  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
+	  	String strng2 = element2.getText();
+	  	System.out.printf("Número Protocolo: "+ strng2);
+	  	System.out.println();
+	  	
+	  	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
+	  	String strng3 = element3.getText();
+	  	System.out.printf("Nome Completo: "+ strng3);
+	  	System.out.println();
+	  	
+	  	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
+	  	String strng4 = element4.getText();
+	  	System.out.printf("Documento: "+ strng4);
+	  	System.out.println();
+	  	
+	  	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
+	  	String strng6 = element6.getText();
+	  	System.out.printf("Nome da Mãe: "+ strng6);
+	  	System.out.println();
+	  	
+	  	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
+	  	String strng7 = element7.getText();
+	  	System.out.printf("Endereço: "+ strng7);
+	  	System.out.println();
+	  	System.out.println("----------------------------------------------------------------");
+	  	
+	  	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
+	  	String strng8 = element8.getText();
+	  	System.out.printf("Plano Internet: "+ strng8);
+	  	System.out.println();
+	  	
+	   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+	  	String strng10 = element10.getText();
+	  	System.out.printf("Plano Telefonia Fixa: "+ strng10);
+	  	System.out.println();
+	  	System.out.println("----------------------------------------------------------------");
+	
+	  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\04-Teste-messageSucessoouErro-2pSimulador-B2B.jpg"));
+	  	
+	  	driver.quit();
   	
   }
   
-//--------------------------------//
-// Combo 3P - Portal Assine - B2B //
-//--------------------------------// 	     
+//----------------------------//
+//Combo 3P - Portal Assine B2B//
+//----------------------------// 	     
 	     
-   @And ("acessa pg de combo 3P B2B")
-   public void pgCombo3PB2B()  throws InterruptedException {	
-   	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
-   	Thread.sleep(6000);  
-   }
-   
-   @And ("seleciona card combo 3P B2B")
-   public void acessaMenuB2B() throws InterruptedException {
-	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-//	WebDriverWait wait = new WebDriverWait(driver, 30);
-//	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\\\"mainView\\\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"))); 
+  @And ("acessa pg de combo 3P B2B")
+  public void pgCombo3PB2B()  throws InterruptedException {	
+	  	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
 	  	
-   	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
-    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-    element1.click();
-
-   	Thread.sleep(3000);
-   }
-   
-   @When ("modal informa os dados do Cliente B2B")
-   public void informaDadosB2B()  throws IOException {
-   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda ME TENV");   
-   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
-    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("80010-050");
-    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("297");
-//  Thread.sleep(3000);
-       
-    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\05-Teste-informaDados-3PCombo-B2B.jpg"));
-   }
-   
-   @And ("modal de Identificacao clica em Consulta B2B")
-   public void btaoConsultaB2B() throws InterruptedException {
-   	driver.findElement(By.className("btn-consult")).click();
-   	Thread.sleep(5000);
-   }
-   
-   @When ("informa dados do cliente complete o pedido B2B")
-   public void dadosClienteB2B() throws IOException {
-  	driver.findElement(By.id("txtBusinessName")).clear();
-  	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Testando Vivo Dois NV");
-  	driver.findElement(By.id("txtBusinessDocument")).clear();
-  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("72396036000147");
-
-  	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\06-Teste-dadosCliente01-3PCombo-B2B.jpg"));
-
-  	driver.findElement(By.id("txtDataDia")).clear();
-  	driver.findElement(By.id("txtDataDia")).sendKeys("02");
-  	driver.findElement(By.id("txtDataMes")).clear();
-  	driver.findElement(By.id("txtDataMes")).sendKeys("04");
-  	driver.findElement(By.id("txtDataAno")).clear();
-  	driver.findElement(By.id("txtDataAno")).sendKeys("2001");    
-	  	
-  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
-  	driver.findElement(By.id("txtEmail")).clear();
-  	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
-
-   }
-   
-   @And ("tela dados do cliente clica em Proximo Passo B2B")
-   public void btaoProximoPasso1B2B() throws IOException {
-   	driver.findElement(By.className("btn-lg")).click();
-   	
-   }
-   
-   @And ("tela Endereco de Instalacao clica em Proximo Passo B2B")
-   public void btaoProximoPasso2B2B() throws InterruptedException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
-   	
-   	Thread.sleep(3000);
-   }
-   
-   @When ("pagina de Pagamentos informa os dados B2B")
-   public void dadosPagamentoB2B() throws IOException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
-
-//  Thread.sleep(3000);
-   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\07-Teste-dadosPagamento-3PCombo-B2B.jpg"));
-
-   }
-   
-   @And ("pagina de Pagamento clica em Finalizar Pedido B2B")
-   public void btaoProximoPasso3() throws InterruptedException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
-   	
-	WebDriverWait wait = new WebDriverWait(driver, 60);
-	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
-   }
-   
-   @Then ("pagina exibida mensagem de sucesso ou erro B2B")
-   public void pgmsgSucessoouErroB2B() throws IOException {
-   	System.out.println("----------------------------------------------------------------");
-   	System.out.println("B2B 3P COMBO - " + driver.getTitle());
-   	System.out.println("----------------------------------------------------------------");
-   	
-   	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
-   	String strng = element.getText();
-   	System.out.println(strng);
-   	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
-   	System.out.println("----------------------------------------------------------------");
-   	    	
-   	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
-   	String strng2 = element2.getText();
-   	System.out.printf("Número Protocolo: "+ strng2);
-   	System.out.println();
-   	
-   	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
-   	String strng3 = element3.getText();
-   	System.out.printf("Nome Completo: "+ strng3);
-   	System.out.println();
-   	
-   	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
-   	String strng4 = element4.getText();
-   	System.out.printf("Documento: "+ strng4);
-   	System.out.println();
-   	
-   	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
-   	String strng6 = element6.getText();
-   	System.out.printf("Nome da Mãe: "+ strng6);
-   	System.out.println();
-   	
-   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
-   	String strng7 = element7.getText();
-   	System.out.printf("Endereço: "+ strng7);
-   	System.out.println();
-   	System.out.println("----------------------------------------------------------------");
-   	
-   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
-   	String strng8 = element8.getText();
-   	System.out.printf("Plano Internet: "+ strng8);
-   	System.out.println();
-   	
-   	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-   	String strng9 = element9.getText();
-   	System.out.printf("Plano TV por Assinatura: "+ strng9);
-   	System.out.println();
-   	
-   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
-   	String strng10 = element10.getText();
-   	System.out.printf("Plano Telefonia Fixa: "+ strng10);
-   	System.out.println();
-   	System.out.println("----------------------------------------------------------------");
-
-
-   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\08-Teste-messageSucessoouErro-3PCombo-B2B.jpg"));
-   	
-   	driver.quit();
-   	
-   }
-   
- //---------------------------------------------------------------//
- //Realizar pedido de compra simulador 2P - Portal Assine - B2B SP//
- //---------------------------------------------------------------//
-   
-   @And ("acessa pg simulador 2P B2B SP")
-   public void pg2pSimuladorB2BSP()  throws InterruptedException {
-	   driver.navigate().to("https://assine.vivo.com.br/sao-paulo_SP/empresas/pequenas-e-medias/combos");
-	   
-	   WebDriverWait wait1 = new WebDriverWait(driver, 200);
-	   wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
-   }
-   
-   @And ("seleciona op simulador 2P B2B SP")
-   public void acessaMenu2pSimuladorB2BSP() throws InterruptedException {
-	   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-	   	
-	   	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[2]/span[1]")).click();
-	   	
-	   	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-	   	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	  	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+  }
+  
+  @And ("seleciona card combo 3P B2B")
+  public void acessaMenuB2B() throws InterruptedException {
+		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
 	
-	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"));
+	  	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+	    element1.click();
+  }
+  
+  @When ("modal informa os dados do Cliente B2B")
+  public void informaDadosB2B()  throws IOException {
+	   WebDriverWait wait = new WebDriverWait(driver, 60);
+	   wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
+	  
+	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda ME TENV");   
+	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
+	   driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("80010-050");
+	   driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("297");
+	      
+	   File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	   FileUtils.copyFile(scrFile, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\05-Teste-informaDados-3PCombo-B2B.jpg"));
+  }
+  
+  @And ("modal de Identificacao clica em Consulta B2B")
+  public void btaoConsultaB2B() throws InterruptedException {
+	  	driver.findElement(By.className("btn-consult")).click();
+  }
+  
+  @When ("informa dados do cliente complete o pedido B2B")
+  public void dadosClienteB2B() throws IOException {
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtBusinessName"))));
+		
+	 	driver.findElement(By.id("txtBusinessName")).clear();
+	 	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Testando Vivo Dois NV");
+	 	driver.findElement(By.id("txtBusinessDocument")).clear();
+	 	driver.findElement(By.id("txtBusinessDocument")).sendKeys("72396036000147");
+	
+	 	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\06-Teste-dadosCliente01-3PCombo-B2B.jpg"));
+	
+	 	driver.findElement(By.id("txtDataDia")).clear();
+	 	driver.findElement(By.id("txtDataDia")).sendKeys("02");
+	 	driver.findElement(By.id("txtDataMes")).clear();
+	 	driver.findElement(By.id("txtDataMes")).sendKeys("04");
+	 	driver.findElement(By.id("txtDataAno")).clear();
+	 	driver.findElement(By.id("txtDataAno")).sendKeys("2001");    
+		  	
+	 	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
+	 	driver.findElement(By.id("txtEmail")).clear();
+	 	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
+
+  }
+  
+  @And ("tela dados do cliente clica em Proximo Passo B2B")
+  public void btaoProximoPasso1B2B() throws IOException {
+  		driver.findElement(By.className("btn-lg")).click();
+  	
+  }
+  
+  @And ("tela Endereco de Instalacao clica em Proximo Passo B2B")
+  public void btaoProximoPasso2B2B() throws InterruptedException {
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
+
+  }
+  
+  @When ("pagina de Pagamentos informa os dados B2B")
+  public void dadosPagamentoB2B() throws IOException {
+	    WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label"))));
+		
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
+
+	  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\07-Teste-dadosPagamento-3PCombo-B2B.jpg"));
+
+  }
+  
+  @And ("pagina de Pagamento clica em Finalizar Pedido B2B")
+  public void btaoProximoPasso3() throws InterruptedException {
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
+	  	
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
+  }
+  
+  @Then ("pagina exibida mensagem de sucesso ou erro B2B")
+  public void pgmsgSucessoouErroB2B() throws IOException {
+	  	System.out.println("----------------------------------------------------------------");
+	  	System.out.println("B2B 3P COMBO - " + driver.getTitle());
+	  	System.out.println("----------------------------------------------------------------");
+	  	
+	  	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
+	  	String strng = element.getText();
+	  	System.out.println(strng);
+	  	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
+	  	System.out.println("----------------------------------------------------------------");
+	  	    	
+	  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
+	  	String strng2 = element2.getText();
+	  	System.out.printf("Número Protocolo: "+ strng2);
+	  	System.out.println();
+	  	
+	  	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
+	  	String strng3 = element3.getText();
+	  	System.out.printf("Nome Completo: "+ strng3);
+	  	System.out.println();
+	  	
+	  	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
+	  	String strng4 = element4.getText();
+	  	System.out.printf("Documento: "+ strng4);
+	  	System.out.println();
+	  	
+	  	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
+	  	String strng6 = element6.getText();
+	  	System.out.printf("Nome da Mãe: "+ strng6);
+	  	System.out.println();
+	  	
+	  	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
+	  	String strng7 = element7.getText();
+	  	System.out.printf("Endereço: "+ strng7);
+	  	System.out.println();
+	  	System.out.println("----------------------------------------------------------------");
+	  	
+	  	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
+	  	String strng8 = element8.getText();
+	  	System.out.printf("Plano Internet: "+ strng8);
+	  	System.out.println();
+	  	
+	  	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+	  	String strng9 = element9.getText();
+	  	System.out.printf("Plano TV por Assinatura: "+ strng9);
+	  	System.out.println();
+	  	
+	  	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
+	  	String strng10 = element10.getText();
+	  	System.out.printf("Plano Telefonia Fixa: "+ strng10);
+	  	System.out.println();
+	  	System.out.println("----------------------------------------------------------------");
+	
+	
+	  	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	  	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\08-Teste-messageSucessoouErro-3PCombo-B2B.jpg"));
+	  	
+	  	driver.quit();
+  }
+
+   
+//----------------------------------//
+// Combo 3P - Portal Assine - B2B SP//
+//----------------------------------// 	     
+	     
+   @And ("acessa pg combo 3P B2B SP")
+   public void pgcombo3PB2BSP()  throws InterruptedException {	
+	   	driver.navigate().to("https://assine.vivo.com.br/sao-paulo_SP/empresas/pequenas-e-medias/combos");
+	   	
+	   	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+   }
+   
+   @And ("assine card combo 3P B2B SP")
+   public void acessamenu3PB2BSP() throws InterruptedException {
+		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+		
+		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[3]/span")).click();
+	
+		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+		
+	   	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
 	    element1.click();
    }
    
-   @When ("modal consulta dados Cliente simulador 2P B2B SP")
-   public void validaDados2pSimuladorB2BSP()  throws IOException {
+   @When ("modal informa dados Cliente 3P B2B SP")
+   public void informaDados3PB2BSP()  throws IOException {
 	    WebDriverWait wait = new WebDriverWait(driver, 200);
-   	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")));
-   	
-	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao ME TES NOVO");   
-	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3332");
-	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("01510-001");
-	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("729");
-	       
+	   	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")));
+	   	
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Empresa de Carros Novo");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0097");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("04709011");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("679");
+       
 	    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\09-Teste-informaDados-2pSimulador-B2B-SP.jpg"));
+	   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\09-Teste-informaDados-3PCombo-B2B-SP.jpg"));
    }
    
-   @And ("modal Identifica clica Consultar simulador 2P B2B SP")
-   public void btaoconsulta2pSimuladorB2BSP() throws InterruptedException {
-	   	driver.findElement(By.className("btn-consult")).click();
-	   	Thread.sleep(5000);
+   @And ("modal identificacao clica em Consultar 3P B2B SP")
+   public void btaoConsulta3PB2BSP() throws InterruptedException {
+	   driver.findElement(By.className("btn-consult")).click();
+   	
    }
    
-   @And ("seleciona botao compra simulador 2P B2B SP")
-   public void btaoComprar2pSimuladorB2BSP() throws InterruptedException {
-	   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-	   	Thread.sleep(3000);
+   @When ("informa dados cliente checkout 3P B2B SP")
+   public void dadosCliente3PB2BSP() throws IOException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+	   	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtBusinessName")));
 	   	
-	   	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[2]"));
-	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-	    element1.click();
-   }   
-   
-   @And ("seleciona card BL simulador 2P B2B SP")
-   public void BL2pSimuladorB2BSP() throws InterruptedException {
-	   	Thread.sleep(10000);
-	   	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section/div/div/section/div/div/div[2]/div/div/div/button")).click();
-   } 
-    
-   @And ("seleciona card Telefonia Fixa simulador 2P B2B SP")
-   public void fixa2pSimuladorB2BSP() throws InterruptedException {
-	   	Thread.sleep(10000);
-	   	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[3]/div/div/section/div/div/div[2]/div/div[2]/div[2]/button")).click();
-	   	Thread.sleep(5000);
+	  	driver.findElement(By.id("txtBusinessName")).clear();
+	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Assine Vivo Novo");
+	  	driver.findElement(By.id("txtBusinessDocument")).clear();
+	  	driver.findElement(By.id("txtBusinessDocument")).sendKeys("86221573000160");
+	
+	  	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\10-Teste-dadosCliente01-3PCombo-B2B-SP.jpg"));
+	
+	  	driver.findElement(By.id("txtDataDia")).clear();
+	  	driver.findElement(By.id("txtDataDia")).sendKeys("19");
+	  	driver.findElement(By.id("txtDataMes")).clear();
+	  	driver.findElement(By.id("txtDataMes")).sendKeys("08");
+	  	driver.findElement(By.id("txtDataAno")).clear();
+	  	driver.findElement(By.id("txtDataAno")).sendKeys("1987");    
+		  	
+	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
+	  	driver.findElement(By.id("txtEmail")).clear();
+	  	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
    }
    
-   @When ("cliente informa dados pedido simulador 2P B2B SP")
-   public void InformaDados2pSimuladorB2BSP() throws IOException {
-	   	driver.findElement(By.id("txtBusinessName")).clear();
-	   	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Vivo Novo Tes");
-	   	driver.findElement(By.id("txtBusinessDocument")).clear();
-	   	driver.findElement(By.id("txtBusinessDocument")).sendKeys("72342260000156");
-	
-	   	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\10-Teste-dadosCliente01-2pSimulador-B2B-SP.jpg"));
-	
-	   	driver.findElement(By.id("txtDataDia")).clear();
-	   	driver.findElement(By.id("txtDataDia")).sendKeys("12");
-	   	driver.findElement(By.id("txtDataMes")).clear();
-	   	driver.findElement(By.id("txtDataMes")).sendKeys("09");
-	   	driver.findElement(By.id("txtDataAno")).clear();
-	   	driver.findElement(By.id("txtDataAno")).sendKeys("2010");    
-	   	
-	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
-	   	driver.findElement(By.id("txtEmail")).clear();
-	   	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
+   @And ("tela dados cliente clica proximo passo 3P B2B SP")
+   public void btaoProximoPasso13PB2BSP() throws IOException {
+   		driver.findElement(By.className("btn-lg")).click();
+   	
    }
    
-   @And ("cliente seleciona proximo Passo simulador 2P B2B SP")
-   public void btaoProxPasso2pSimuladorB2BSP() throws IOException {
-   		driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/div/button")).click();
+   @And ("tela endereco instalacao seleciona Proximo Passo 3P B2B SP")
+   public void btaoProximoPasso23PB2BSP() throws InterruptedException {
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
+	   
+	   	WebDriverWait wait = new WebDriverWait(driver, 200);
+	   	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")));
+   }
+   
+   @When ("pg pagamentos informa dados 3P B2B SP")
+   public void dadosPagamento3PB2BSP() throws IOException {
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
+	
+	   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\11-Teste-dadosPagamento-3PCombo-B2B-SP.jpg"));
 
    }
-    
-   @And ("tela endereco insta seleciona proximo passo simulador 2P B2B SP")
-   public void btaoProxPasso22pSimuladorB2BSP() throws InterruptedException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
-   	
-   	Thread.sleep(3000);
+   
+   @And ("pg pagamento clica Finalizar Pedido 3P B2B SP")
+   public void btaoProximoPasso33PB2BSP() throws InterruptedException {
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
+	   	
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
    }
    
-   @When ("informa dados pagamentos simulador 2P B2B SP")
-   public void dadosPag2pSimuladorB2BSP() throws IOException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
-
-   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\11-Teste-dadosPagamento-2pSimulador-B2B-SP.jpg"));
-   }
-    
-   @And ("seleciona finalizar pedido simulador 2P B2B SP")
-   public void btaoProxPasso32pSimuladorB2BSP() throws InterruptedException {
-   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
-   	
- 	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
-   }
-   
-   @Then ("valida retorno mensagem sucesso ou erro simulador 2P B2B SP")
-   public void msgSucessoouErro2pSimuladorB2BSP() throws IOException {
+   @Then ("pg exibida mensagem sucesso ou erro 3P B2B SP")
+   public void pgmsgSucessoouErro3PB2BSP() throws IOException {
 	   	System.out.println("----------------------------------------------------------------");
-	   	System.out.println("B2B 2P SIMULADOR - SP - " + driver.getTitle());
+	   	System.out.println("B2B 3P COMBO - " + driver.getTitle());
 	   	System.out.println("----------------------------------------------------------------");
 	   	
 	   	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
@@ -2078,136 +2063,205 @@ public class TestesregressaoSteps {
 	   	String strng2 = element2.getText();
 	   	System.out.printf("Número Protocolo: "+ strng2);
 	   	System.out.println();
+	   	System.out.println("----------------------------------------------------------------");
 	   	
+	   	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
+	   	String strng3 = element3.getText();
+	   	System.out.printf("Nome Completo: "+ strng3);
+	   	System.out.println();
+	   	
+	   	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
+	   	String strng4 = element4.getText();
+	   	System.out.printf("Documento: "+ strng4);
+	   	System.out.println();
+	   	
+	   	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
+	   	String strng6 = element6.getText();
+	   	System.out.printf("Nome da Mãe: "+ strng6);
+	   	System.out.println();
+	   	
+	   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
+	   	String strng7 = element7.getText();
+	   	System.out.printf("Endereço: "+ strng7);
+	   	System.out.println();
+	   	System.out.println("----------------------------------------------------------------");
+	   	
+	   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
+	   	String strng8 = element8.getText();
+	   	System.out.printf("Plano Internet: "+ strng8);
+	   	System.out.println();
+	   	
+	   	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+	   	String strng9 = element9.getText();
+	   	System.out.printf("Plano TV por Assinatura: "+ strng9);
+	   	System.out.println();
+	   	
+	   	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
+	   	String strng10 = element10.getText();
+	   	System.out.printf("Plano Telefonia Fixa: "+ strng10);
+	   	System.out.println();
 	   	System.out.println("----------------------------------------------------------------");
 	
+	
 	   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\12-Teste-messageSucessoouErro-2pSimulador-B2B-SP.jpg"));
+	   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\12-Teste-messageSucessoouErro-3PCombo-B2B-SP.jpg"));
 	   	
 	   	driver.quit();
-   	
+	   	
    }
    
- //--------------------------------//
- // Combo 3P - Portal Assine - B2B //
- //--------------------------------// 	     
- 	     
-    @And ("acessa pg de combo 3P B2B SP")
-    public void pgCombo3PB2BSP()  throws InterruptedException {	
-    	driver.navigate().to("https://assine.vivo.com.br/bocaina_SP/empresas/pequenas-e-medias/combos");
-    	Thread.sleep(6000);  
-    }
-    
-    @And ("seleciona card combo 3P B2B SP")
-    public void acessaMenuB2BSP() throws InterruptedException {
-    	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-// 	WebDriverWait wait = new WebDriverWait(driver, 30);
-// 	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\\\"mainView\\\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"))); 
- 	  	
-    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
-    	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-    	element1.click();
-
-    	Thread.sleep(3000);
-    }
-    
-    @When ("modal informa os dados do Cliente B2B SP")
-    public void informaDadosB2BSP()  throws IOException {
-    	 driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao ltda ME TENV");   
-    	 driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
-	     driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("17240-000");
-	     driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("474");
-//  Thread.sleep(3000);
-        
-	     File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    	 FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\13-Teste-informaDados-3PCombo-B2B-SP.jpg"));
-    }
-    
-    @And ("modal de identificacao clica em Consulta B2B SP")
-    public void btaoConsultaB2BSP() throws InterruptedException {
-    	driver.findElement(By.className("btn-consult")).click();
-    	Thread.sleep(5000);
-    }
-    
-    @When ("informa dados do cliente complete o pedido B2B SP")
-    public void dadosClienteB2BSP() throws IOException {
+//-------------------------------------------------------------//
+// Realizar pedido de compra combo 2P - Portal Assine - B2B SP //
+//-------------------------------------------------------------//
+   
+   @And ("acessa pg combo 2P B2B SP")
+   public void pgcombo2PB2BSP()  throws InterruptedException {
+	   driver.navigate().to("https://assine.vivo.com.br/sao-paulo_SP/empresas/pequenas-e-medias/combos");
+	   
+	   WebDriverWait wait1 = new WebDriverWait(driver, 200);
+	   wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
+   }
+   
+   @And ("seleciona combo 2P B2B SP")
+   public void acessaMenu2pComboB2BSP() throws InterruptedException {
+	   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+	   		   	
+	   	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+	   	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+	
+	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/button"));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+	    element1.click();
+   }
+   
+   @When ("modal consulta dados Cliente combo 2P B2B SP")
+   public void validaDados2pComboB2BSP()  throws IOException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+   	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")));
+   	
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao ME");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3332");
+	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("01419-001");
+	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("1123");
+	       
+	    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\13-Teste-informaDados-2pSimulador-B2B-SP.jpg"));
+   }
+   
+   @And ("modal Identifica clica Consultar combo 2P B2B SP")
+   public void btaoconsulta2pComboB2BSP() throws InterruptedException {
+	   	driver.findElement(By.className("btn-consult")).click();
+   }
+   
+   @When ("cliente informa dados pedido combo 2P B2B SP")
+   public void InformaDados2pComboB2BSP() throws IOException {
+	    WebDriverWait wait = new WebDriverWait(driver, 200);
+	   	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtBusinessName")));
+	   	
 	   	driver.findElement(By.id("txtBusinessName")).clear();
-	   	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Testando Vivo Novo");
+	   	driver.findElement(By.id("txtBusinessName")).sendKeys("Telefonica Vivo Empresa Tes");
 	   	driver.findElement(By.id("txtBusinessDocument")).clear();
-	   	driver.findElement(By.id("txtBusinessDocument")).sendKeys("72370033000134");
+	   	driver.findElement(By.id("txtBusinessDocument")).sendKeys("35772139000138");
 	
 	   	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	 	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\14-Teste-dadosCliente01-3PCombo-B2B-SP.jpg"));
+	   	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\14-Teste-dadosCliente01-2pSimulador-B2B-SP.jpg"));
 	
 	   	driver.findElement(By.id("txtDataDia")).clear();
-	   	driver.findElement(By.id("txtDataDia")).sendKeys("02");
+	   	driver.findElement(By.id("txtDataDia")).sendKeys("12");
 	   	driver.findElement(By.id("txtDataMes")).clear();
-	   	driver.findElement(By.id("txtDataMes")).sendKeys("04");
+	   	driver.findElement(By.id("txtDataMes")).sendKeys("01");
 	   	driver.findElement(By.id("txtDataAno")).clear();
-	   	driver.findElement(By.id("txtDataAno")).sendKeys("2001");    
-	 	  	
+	   	driver.findElement(By.id("txtDataAno")).sendKeys("2000");    
+	   	
 	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
 	   	driver.findElement(By.id("txtEmail")).clear();
 	   	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
-
-    }
-    
-    @And ("tela dados do cliente clica em Proximo Passo B2B SP")
-    public void btaoProximoPasso1B2BSP() throws IOException {
-    	driver.findElement(By.className("btn-lg")).click();
-    	
-    }
-    
-    @And ("tela endereco instalacao clica em Proximo Passo B2B SP")
-    public void btaoProximoPasso2B2BSP() throws InterruptedException {
-    	driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
-    	
-    	Thread.sleep(3000);
-    }
-    
-    @When ("pagina pagamentos informa os dados B2B SP")
-    public void dadosPagamentoB2BSP() throws IOException {
-    	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
-    	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
-
- //  Thread.sleep(3000);
-    	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\15-Teste-dadosPagamento-3PCombo-B2B-SP.jpg"));
-
-    }
-    
-    @And ("pagina pagamento clica em Finalizar Pedido B2B SP")
-    public void btaoProximoPasso3SP() throws InterruptedException {
-    	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
-    	
- 	WebDriverWait wait = new WebDriverWait(driver, 60);
- 	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
-    }
-    
-    @Then ("pagina mensagem de sucesso ou erro B2B SP")
-    public void pgmsgSucessoouErroB2BSP() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2B 3P COMBO - SP -" + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	
-    	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
-    	String strng = element.getText();
-    	System.out.println(strng);
-    	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
-    	System.out.println("----------------------------------------------------------------");
-    	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
-    	String strng2 = element2.getText();
-    	System.out.printf("Número Protocolo: "+ strng2);
-    	System.out.println();
-    	
-    	System.out.println("----------------------------------------------------------------");
-
-    	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\16-Teste-messageSucessoouErro-3PCombo-B2B-SP.jpg"));
-    	
-    	driver.quit();
-    	
-    }   
+   }
    
+   @And ("cliente seleciona proximo Passo combo 2P B2B SP")
+   public void btaoProxPasso2pComboB2BSP() throws IOException {
+   		driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/div/button")).click();
+
+   }
+    
+   @And ("tela endereco insta seleciona proximo passo combo 2P B2B SP")
+   public void btaoProxPasso22pComboB2BSP() throws InterruptedException {
+   		driver.findElement(By.xpath("//*[@id=\"formCheckoutEndereco\"]/div/button")).click();
+   	
+   		WebDriverWait wait = new WebDriverWait(driver, 200);
+	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")));
+   }
+   
+   @When ("informa dados pagamentos combo 2P B2B SP")
+   public void dadosPag2pComboB2BSP() throws IOException {
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[3]/div[2]/div/ul/li[1]/label")).click();
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/fieldset[4]/div[3]/div[3]/div/label/span")).click();
+	
+	   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\15-Teste-dadosPagamento-2pSimulador-B2B-SP.jpg"));
+   }
+    
+   @And ("seleciona finalizar pedido combo 2P B2B SP")
+   public void btaoProxPasso32pComboB2BSP() throws InterruptedException {
+	   	driver.findElement(By.xpath("//*[@id=\"formCheckoutPagamento\"]/div/button")).click();
+	   	
+	 	WebDriverWait wait = new WebDriverWait(driver, 60);
+	 	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
+   }
+   
+   @Then ("valida retorno mensagem sucesso ou erro Combo 2P B2B SP")
+   public void msgSucessoouErro2pComboB2BSP() throws IOException {
+	   	System.out.println("----------------------------------------------------------------");
+	   	System.out.println("B2B 2P COMBO - SP - " + driver.getTitle());
+	   	System.out.println("----------------------------------------------------------------");
+	   	
+	   	WebElement element = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[1]/h2"));
+	   	String strng = element.getText();
+	   	System.out.println(strng);
+	   	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
+	   	System.out.println("----------------------------------------------------------------");
+	   	    	
+	   	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
+	   	String strng2 = element2.getText();
+	   	System.out.printf("Número Protocolo: "+ strng2);
+	   	System.out.println();	   	
+	   	System.out.println("----------------------------------------------------------------");
+	   	
+	   	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
+	   	String strng3 = element3.getText();
+	   	System.out.printf("Nome Completo: "+ strng3);
+	   	System.out.println();
+	   	
+	   	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
+	   	String strng4 = element4.getText();
+	   	System.out.printf("Documento: "+ strng4);
+	   	System.out.println();
+	   	
+	   	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
+	   	String strng6 = element6.getText();
+	   	System.out.printf("Nome da Mãe: "+ strng6);
+	   	System.out.println();
+	   	
+	   	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
+	   	String strng7 = element7.getText();
+	   	System.out.printf("Endereço: "+ strng7);
+	   	System.out.println();
+	   	System.out.println("----------------------------------------------------------------");
+	   	
+	   	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
+	   	String strng8 = element8.getText();
+	   	System.out.printf("Plano Internet: "+ strng8);
+	   	System.out.println();
+	   	
+	   	WebElement element09 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
+	   	String strng09 = element09.getText();
+	   	System.out.printf("Plano Telefonia Fixa: "+ strng09);
+	   	System.out.println();
+	   	System.out.println("----------------------------------------------------------------");
+	
+	   	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	   	FileUtils.copyFile(scrFile2, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\16-Teste-messageSucessoouErro-2pSimulador-B2B-SP.jpg"));
+	   	
+	   	driver.quit();
+   }  
 }

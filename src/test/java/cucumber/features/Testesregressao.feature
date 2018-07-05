@@ -210,30 +210,27 @@ Scenario: Combo 3P - Portal Assine B2B
 @CenarioSimu2PSP-B2B
 Scenario: Simulador 2P SP - Portal Assine B2B
 	Given abre uma nova pagina do navegador
-	And acessa pg simulador 2P B2B SP
-	And seleciona op simulador 2P B2B SP
-	When modal consulta dados do Cliente simulador 2P B2B SP
-	And modal Identifica clica Consultar simulador 2P B2B SP
-	And seleciona botao compra simulador 2P B2B SP
-	And seleciona card BL simulador 2P B2B SP
-	And seleciona card Telefonia Fixa simulador 2P B2B SP
-	When cliente informa dados pedido simulador 2P B2B SP
-	And cliente seleciona proximo Passo simulador 2P B2B SP
-	And tela endereco insta seleciona proximo passo simulador 2P B2B SP
-	When informa dados pagamentos simulador 2P B2B SP
-	And seleciona finalizar pedido simulador 2P B2B SP
-	Then valida retorno mensagem sucesso ou erro simulador 2P B2B SP
-	
+	And acessa pg combo 2P B2B SP
+	And seleciona combo 2P B2B SP
+	When modal consulta dados Cliente combo 2P B2B SP
+	And modal Identifica clica Consultar combo 2P B2B SP
+	When cliente informa dados pedido combo 2P B2B SP
+	And cliente seleciona proximo Passo combo 2P B2B SP
+	And tela endereco insta seleciona proximo passo combo 2P B2B SP
+	When informa dados pagamentos combo 2P B2B SP
+	And seleciona finalizar pedido combo 2P B2B SP
+	Then valida retorno mensagem sucesso ou erro Combo 2P B2B SP
+
 @CenarioCombo3PSP-B2B
 Scenario: Combo 3P SP- Portal Assine B2B
 	Given abre uma nova pagina do navegador
-	And acessa pg de combo 3P B2B SP
-	And seleciona card combo 3P B2B SP
-	When modal informa os dados do Cliente B2B SP
-	And modal de identificacao clica em Consulta B2B SP
-	When informa dados do cliente complete o pedido B2B SP
-	And tela dados do cliente clica em Proximo Passo B2B SP
-	And tela endereco instalacao clica em Proximo Passo B2B SP
-	When pagina pagamentos informa os dados B2B SP
-	And pagina pagamento clica em Finalizar Pedido B2B SP
-	Then pagina mensagem de sucesso ou erro B2B SP
+	And acessa pg combo 3P B2B SP
+	And assine card combo 3P B2B SP
+	When modal informa dados Cliente 3P B2B SP
+	And modal identificacao clica em Consultar 3P B2B SP
+	When informa dados cliente checkout 3P B2B SP
+	And tela dados cliente clica proximo passo 3P B2B SP
+	And tela endereco instalacao seleciona Proximo Passo 3P B2B SP
+	When pg pagamentos informa dados 3P B2B SP
+	And pg pagamento clica Finalizar Pedido 3P B2B SP
+	Then pg exibida mensagem sucesso ou erro 3P B2B SP

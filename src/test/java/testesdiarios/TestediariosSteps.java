@@ -32,7 +32,7 @@ public class TestediariosSteps {
 //----------------------------------------------------//
 	
     @Given ("abre pg do navegador TD")
-    public void bussolaTD()  throws InterruptedException {
+    public void bussolaTD()  throws InterruptedException { 
     	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver/chromedriver.exe");
     	driver = new ChromeDriver(); 
     	driver.manage().window().maximize();
@@ -129,9 +129,29 @@ public class TestediariosSteps {
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
     }
     
-    @And ("modal de Identificacao clica em Receber Ligacao TD")
+    @SuppressWarnings("unlikely-arg-type")
+	@And ("modal de Identificacao clica em Receber Ligacao TD")
     public void receberLigacaocomboTD() throws InterruptedException {
     	driver.findElement(By.className("btn-consult")).click();
+    	
+    	Thread.sleep(6000);
+    	
+     	if(!driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong")).equals(driver)){
+     		WebDriverWait wait1 = new WebDriverWait(driver, 200);
+        	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+            element1.click();
+            
+            WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
+        	
+        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("MARIO DA SILVA TESTANDO");   
+        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
+        	
+        	driver.findElement(By.className("btn-consult")).click();
+     	} 
     }
     
     @And ("modal de Identificacao clica em Adicionar TD")
@@ -148,7 +168,7 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtDocumento")));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("27243069290");
+    	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
     	driver.findElement(By.id("txtFone")).clear();
@@ -221,14 +241,14 @@ public class TestediariosSteps {
     
     @And ("informa opcao de Avulso BL TD")
     public void menuAvulsoBLTD() throws InterruptedException {
-    	((JavascriptExecutor)driver).executeScript("scroll(0,500)");
-    	    	
     	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ol/li[2]/span[1]")).click();
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[3]/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
     	
-    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[3]/div[1]/div[4]/div[2]/atom-button/button")).click();
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+        element1.click();
    }
     
     @When ("modal de consulta cobertura dados do Cliente Avulso BL TD")
@@ -266,7 +286,7 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("79235273005");
+    	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
@@ -335,15 +355,18 @@ public class TestediariosSteps {
     
     @And ("acessa pg de Avulso Fixa TD")
     public void pgAvulsoFixaTD()  throws InterruptedException {	
-    	driver.navigate().to("https://assine.vivo.com.br/francisco-beltrao_PR/telefonia?cid=M3");
+    	driver.navigate().to("https://assine.vivo.com.br/francisco-beltrao_PR/telefonia/planos");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button"))));
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Planos de Telefonia"));
     }
     
     @And ("informa opcao de Avulso Fixa TD")
     public void avulsoFixaTD() throws InterruptedException {
-        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"secCards\"]/div/div/div/article[2]/div[1]/div[4]/div[2]/atom-button/button"));
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
+    	
+        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }
@@ -383,7 +406,7 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("45412883893");
+    	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
@@ -453,17 +476,18 @@ public class TestediariosSteps {
     
     @And ("acessa pg de Avulso TV TD")
     public void pgAvulsoTVTD()  throws InterruptedException {	
-    	driver.navigate().to("https://assine.vivo.com.br/Paranavai_PR/tv-por-assinatura");
+    	driver.navigate().to("https://assine.vivo.com.br/Paranavai_PR/tv-por-assinatura/planos");
 
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/article[2]/div/footer/div[2]/div[2]/atom-button/button"), "Assine já"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Vivo TV"));
     }
     
     @And ("acessa opcao de Avulso TV TD")
     public void acessaMenuAvulsoTVTD() throws InterruptedException {
-//    	((JavascriptExecutor)driver).executeScript("scroll(0,500)");
-    	    	
-        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/article[2]/div/footer/div[2]/div[2]/atom-button/button"));
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div[1]/div/article[2]/div/footer/div[2]/div[2]/atom-button/button"), "Assine já"));
+    	
+        WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div[1]/div/article[2]/div/footer/div[2]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }
@@ -503,7 +527,7 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("24015299000");
+    	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
@@ -573,14 +597,16 @@ public class TestediariosSteps {
     public void pg3pSimuladorTD()  throws InterruptedException {
     	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[1]/div/div/div/div/div/div[2]/div/atom-button/a"))));
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"), "Combos"));
     }
     
     @And ("confirma consulta simulador 3P TD")
     public void acessarMenu3pSimulador() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-    	Thread.sleep(3000);
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))));
 
         Actions act2=new Actions(driver); 	
     	act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))).click().build().perform();
@@ -608,7 +634,9 @@ public class TestediariosSteps {
     @And ("valida botao simulador 3P TD")
     public void compra3pSimuladorTD() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-    	Thread.sleep(3000);
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[1]"))));
     	
     	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[1]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
@@ -654,7 +682,7 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtName"))));
     	
     	driver.findElement(By.id("txtDocumento")).clear();
-    	driver.findElement(By.id("txtDocumento")).sendKeys("44067537026");
+    	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
     	driver.findElement(By.id("txtFone")).clear();
@@ -713,39 +741,30 @@ public class TestediariosSteps {
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-//    	WebElement element8 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]"));
-//    	String strng8 = element8.getText();
-//    	System.out.printf(strng8);
-//    	System.out.println();
-//    	
-//    	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[4]/div[2]/div[1]/ul/li[1]/span"));
-//    	String strng9 = element9.getText();
-//    	System.out.printf(strng9);
-//    	System.out.println();
-//    	
-//	 	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[5]/div[2]/div[1]/ul/li[1]/span"));
-//    	String strng10 = element10.getText();
-//    	System.out.printf(strng10);
-//    	System.out.println();
-//    	System.out.println("----------------------------------------------------------------");
-
-//    	File scrFile2 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//    	FileUtils.copyFile(scrFile2, new File("C:\\Users\\80479178\\Downloads\\Testes\\05-Teste-messageSucessoouErro-3pSimulador.jpg"));
-    	
     	driver.quit();
     	
     }
     
-//----------------------------------------//
-// LP Oferta Internet Banda Larga - COMBO //
-//----------------------------------------//
+//-------------------------------------------------//
+// COMPRA - LP Oferta Internet Banda Larga - COMBO //
+//-------------------------------------------------//
  	
      @And ("acessa pagina LP Oferta BL TD")
      public void acessapaginaLPOfertaBL()  throws InterruptedException {
-     	driver.navigate().to("https://assine.vivo.com.br/jaragua-do-sul_PR/oferta/internet-banda-larga");
+     	driver.get("https://assine.vivo.com.br/jaragua-do-sul_PR/oferta/internet-banda-larga");
      	
-     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"))));
+//     	WebDriverWait wait = new WebDriverWait(driver, 200);
+//      	wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+     	
+     	String url = driver.getCurrentUrl();
+
+     	if (url.equals("https://assine.vivo.com.br/oferta/internet-banda-larga")) { 
+     		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+          	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+     	} else { 
+     		driver.quit();
+     		driver.get("https://assine.vivo.com.br/jaragua-do-sul_PR/oferta/internet-banda-larga");
+     	} 
      }
      
      @And ("informa botao Assine ja LP Oferta BL TD")
@@ -758,22 +777,42 @@ public class TestediariosSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
      	
-     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("TESTANDO MKT DA VIVO NOVO");   
+     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("TESTANDO MKT COMPRA VIVO");   
      	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("89252-000");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("237");
      }
      
+     @SuppressWarnings("unlikely-arg-type")
      @And ("modal clica em Consultar LP Oferta BL TD")
      public void consultarLPOfertaBL() throws InterruptedException {
      	driver.findElement(By.className("btn-consult")).click();
+     	
+     	Thread.sleep(3000);
+    	
+     	if(!driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong")).equals(driver)){
+     		WebDriverWait wait1 = new WebDriverWait(driver, 200);
+        	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+        	
+        	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+            element1.click();
+            
+            WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
+        	
+        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("TESTANDO MKT COMPRA VIVO");   
+         	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0097");
+        	
+        	driver.findElement(By.className("btn-consult")).click();
+     	} 
 
      }
           
      @And ("modal pontos adicionais clica em Adicionar LP Oferta BL TD")
      public void btaoAdicionalLPOfertaBL() throws InterruptedException, IOException {
-    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-     	wait2.until(ExpectedConditions.textToBe(By.className("btn-consult"), "Adicionar"));
+    	 WebDriverWait wait2 = new WebDriverWait(driver, 200);
+     	wait2.until(ExpectedConditions.textToBe(By.xpath("html/body/div[2]/section/section/div/div//div/section/form/div/div/div/load/div[2]/strong"), "Grátis"));
 
      	driver.findElement(By.className("btn-consult")).click();
      }
@@ -784,7 +823,7 @@ public class TestediariosSteps {
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
       	
      	driver.findElement(By.id("txtDocumento")).clear();
-     	driver.findElement(By.id("txtDocumento")).sendKeys("52896048049");
+     	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
      	driver.findElement(By.id("txtEmail")).clear();
      	driver.findElement(By.id("txtEmail")).sendKeys("jonathan.sobrinho@telefonica.com");
      	driver.findElement(By.id("txtFone")).clear();
@@ -799,13 +838,11 @@ public class TestediariosSteps {
      	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
         driver.findElement(By.id("txtMae")).sendKeys("Mae Maria Testando Novo");
-
      }
      
      @And ("clica em Proximo Passo LP Oferta BL TD")
      public void btaoProximoPasso1LPOfertaBL() throws InterruptedException {
      	driver.findElement(By.className("btn-lg")).click();
-     	
      }
      
      @And ("endereco de Instalacao clica em Proximo Passo LP Oferta BL TD")
@@ -1053,7 +1090,7 @@ public class TestediariosSteps {
     	driver.findElement(By.className("ico-cep-enviar")).click();
 
     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1/strong"))));
     }
     
     @Then ("retorno da msg da pag simulador Vivo TV")
@@ -1062,8 +1099,8 @@ public class TestediariosSteps {
     	System.out.println("B2C - Página Vivo TV - " + driver.getTitle());
     	System.out.println("----------------------------------------------------------------");
     	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1/strong"));
+      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
       	String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ strng2);
@@ -1104,7 +1141,6 @@ public class TestediariosSteps {
       	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41)99623-3696");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("80050-540");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("39");
-
       }
       
       @And ("clica em Receber Ligacao C2RC FSP")

@@ -57,3 +57,33 @@ Scenario: Precos Cards de Convergencia - G6_SP_3P_100_gpon
 	Given abre navegador preco card convergencia
 	And acessa pg de convergencia G6
 	Then valida preco dos cards de convergencia G6
+	
+@Cenario-G7-B2C
+Scenario: Precos Cards de Convergencia - G7_SP_3P_50_vdsl
+	Given abre navegador preco card convergencia
+	And acessa pg de convergencia G7
+	Then valida preco dos cards de convergencia G7
+	
+@Cenario-G9-B2C
+Scenario: Precos Cards de Convergencia - G9_FSP_3P_gpon_lançamento
+	Given abre navegador preco card convergencia
+	And acessa pg de convergencia G9
+	Then valida preco dos cards de convergencia G9
+	
+@Cenario-G10-B2C
+Scenario: Precos Cards de Convergencia - G10_FSP_3P_100_GPON
+	Given abre navegador preco card convergencia
+	And acessa pg convergencia G10
+	Then valida precos cards de convergencia G10
+	
+@Cenario-MassivoSP-B2C
+Scenario: Precos Cards de Convergencia - Massivo SP
+	Given abre navegador preco card convergencia
+	And acessa pg convergencia Massivo SP
+	Then valida precos cards de convergencia Massivo SP
+	
+@Cenario-DefautSP-B2C
+Scenario: Precos Cards de Convergencia - Massivo SP
+	Given abre navegador preco card convergencia
+	And acessa pg convergencia Defaut SP
+	Then valida precos cards de convergencia Defaut SP

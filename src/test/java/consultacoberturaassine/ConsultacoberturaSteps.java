@@ -508,7 +508,7 @@ public class ConsultacoberturaSteps {
 }
     
 //------------------------------------------//
-//Consulta Cobertura - G10_FSP_3P_100_GPON  //
+// Consulta Cobertura - G10_FSP_3P_100_GPON //
 //------------------------------------------//
  	     
     @And ("acessa pg grupo G10")
