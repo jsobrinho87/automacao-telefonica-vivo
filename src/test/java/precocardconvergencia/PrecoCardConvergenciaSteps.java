@@ -1797,7 +1797,8 @@ public class PrecoCardConvergenciaSteps {
      	      	String strngPCL6 = elementPCL6.getText();
      	      	System.out.printf("|Oferta Celular | " + strngPCL6  + " |");
      	      	System.out.println();
-     	      	    	      	
+     	      	System.out.println("--------------------------------");
+     	      	
      	       	driver.quit();
            }    
            
@@ -1931,6 +1932,7 @@ public class PrecoCardConvergenciaSteps {
      	      	String strngPCL6 = elementPCL6.getText();
      	      	System.out.printf("|Oferta Celular | " + strngPCL6  + " |");
      	      	System.out.println();
+     	      	System.out.println("--------------------------------");
      	      	
      	       	driver.quit();
            }             
