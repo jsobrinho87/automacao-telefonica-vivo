@@ -27,9 +27,8 @@ import cucumber.api.junit.Cucumber;
 			 + "@Cenario-OnnetPlus-B2B,"
 			 + "@Cenario-G7-B2B,"
 			 + "@Cenario-G9-B2B,"
-			 + "@Cenario-Default-SP-Soft-B2B"
-			 + "@Cenario-OFFNET-B2B,"
-			
+			 + "@Cenario-Default-SP-Soft-B2B,"
+//			 + "@Cenario-OFFNET-B2B,"
         	})   
 
 public class PrecoCardsComboTest {

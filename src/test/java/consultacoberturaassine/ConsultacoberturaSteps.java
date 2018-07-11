@@ -91,7 +91,7 @@ public class ConsultacoberturaSteps {
       	System.out.println("----------------------------------------------");
       	
       	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
@@ -150,25 +150,19 @@ public class ConsultacoberturaSteps {
        	System.out.println("----------------------------------------------");
        	     	    	
       	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
       	System.out.println();
       	System.out.println("----------------------------------------------");
       	
-
-//      report.endTest(logger);
-//      report.flush();
-//      	 
-//      driver.get("C:\\Users\\80479178\\Downloads\\Release\\advanceReport.html");
-      	
     	driver.quit();
      }    
      
-//----------------------------------------//
-// Consulta Cobertura - G3_FSP_50_GPON    //
-//----------------------------------------// 	     
+//-------------------------------------//
+// Consulta Cobertura - G3_FSP_50_GPON //
+//-------------------------------------// 	     
    	     
       @And ("acessa pg de cobertura G3")
       public void paginaCoberturaG3()  throws InterruptedException {	
@@ -194,8 +188,8 @@ public class ConsultacoberturaSteps {
       	
       	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Marcio Neto Testando");   
       	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
-        driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("88372-602");
-        driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("69");
+        driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("88372-288");
+        driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("155");
           
       }
       
@@ -214,7 +208,7 @@ public class ConsultacoberturaSteps {
         	System.out.println("-------------------------------------------");
         	     	    	
           	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-          	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+          	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //          String strng2 = element2.getText();
           	System.out.printf("Resultado: "+ driver.getTitle());
@@ -222,6 +216,7 @@ public class ConsultacoberturaSteps {
           	System.out.println("-------------------------------------------");
         	driver.quit();    	
       }
+      
 //----------------------------------------//
 // Consulta Cobertura - G4_FSP_2P_15_vdsl //
 //----------------------------------------// 	     
@@ -270,7 +265,7 @@ public class ConsultacoberturaSteps {
          	System.out.println("----------------------------------------------");
          	     	    	
           	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-          	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+          	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //          String strng2 = element2.getText();
           	System.out.printf("Resultado: "+ driver.getTitle());
@@ -327,7 +322,7 @@ public class ConsultacoberturaSteps {
       	System.out.println("---------------------------------------------------");
       	     	    	
       	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
@@ -612,7 +607,7 @@ public class ConsultacoberturaSteps {
         	System.out.println("-----------------------------------");
         	     	    	
         	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-        	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+        	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //        String strng2 = element2.getText();
         	System.out.printf("Resultado: "+ driver.getTitle());
@@ -786,7 +781,7 @@ public class ConsultacoberturaSteps {
      	System.out.println("-----------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+     	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
@@ -849,7 +844,7 @@ public class ConsultacoberturaSteps {
      	System.out.println("-----------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+     	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
@@ -911,7 +906,7 @@ public class ConsultacoberturaSteps {
      	System.out.println("---------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+     	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
@@ -1035,7 +1030,7 @@ public class ConsultacoberturaSteps {
      	System.out.println("------------------------------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+     	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
 //      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
@@ -1097,7 +1092,7 @@ public class ConsultacoberturaSteps {
      	System.out.println("-----------------------------------------------------");
      	     	    	
      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-     	assertTrue(element2.getText().contains("Escolha um combo ou monte o seu!"));
+     	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
 
      	System.out.printf("Resultado: "+ driver.getTitle());
      	System.out.println();
@@ -1156,21 +1151,12 @@ public class ConsultacoberturaSteps {
      	System.out.println("B2C - Consulta Cobertura - (Default_SP_soft - B2B)");
      	System.out.println("--------------------------------------------------");
      	     	    	
-//     	WebElement element2 = driver.findElement(By.xpath("/html/body/section[1]/div/div[1]/h4"));
-//     	assertTrue(element2.getText().contains("Materiais, a tecnologia fibra ainda não chegou na sua região."));
-//     	
      	WebDriverWait wait4 = new WebDriverWait(driver, 200);
 	    wait4.until(ExpectedConditions.textToBe(By.xpath("/html/body/section[1]/div/div[1]/h4"), "Materiais, a tecnologia fibra ainda não chegou na sua região."));
 
-//      String strng2 = element2.getText();
      	System.out.printf("Resultado: "+ driver.getTitle());
      	System.out.println();
      	System.out.println("--------------------------------------------------");
-   
-//     	logger.log(LogStatus.PASS, "Onnet_Sem_TV");
-//     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
-////      report.endTest(logger);
-//     	report.flush();
      	
      	driver.quit();
    }

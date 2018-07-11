@@ -45,7 +45,7 @@ public class PrecoCardsComboSteps {
     	driver.get("https://assine.vivo.com.br/apucarana_PR/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
     }
     
    
@@ -149,7 +149,7 @@ public class PrecoCardsComboSteps {
     	driver.navigate().to("https://assine.vivo.com.br/brusque_SC/combos");
      	
      	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-     	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+     	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
      }
      
     
@@ -253,7 +253,7 @@ public class PrecoCardsComboSteps {
       	driver.get("https://assine.vivo.com.br/navegantes_SC/combos");
       	
       	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
       }
       
      
@@ -363,7 +363,7 @@ public class PrecoCardsComboSteps {
  	driver.get("https://assine.vivo.com.br/rondonopolis_MT/combos");
  	
  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
- 	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Banda Larga + Telefonia Fixa"));
+ 	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
  }
  
 
@@ -420,12 +420,6 @@ public class PrecoCardsComboSteps {
 	 	System.out.println();
 	 	System.out.println("----------------------------------");
 	 	
-	// 	WebElement elementText2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[2]/div/div/h1/strong"));
-	// 	String strngText2 = elementText2.getText();
-	// 	System.out.printf(strngText2);
-	// 	System.out.println();
-	// 	System.out.println("---------------------------------------------------------------------");
-	 	
 	 	WebDriverWait wait4 = new WebDriverWait(driver, 200);
 	 	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[4]/div[1]/div[3]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
 	 	
@@ -480,10 +474,9 @@ public class PrecoCardsComboSteps {
 	  	driver.get("https://assine.vivo.com.br/curitiba_PR/combos");
 	  	
 	  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-	  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+	  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
   }
   
- 
   @Then ("valida preco dos cards de combos G5")
   public void retornoSucessoouErroG5() throws InterruptedException {   	
   	    System.out.println("---------------------------------------------------------");
@@ -585,7 +578,7 @@ public class PrecoCardsComboSteps {
 	  	driver.get("https://assine.vivo.com.br/sao-paulo_SP/combos");
 	  	
 	  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-	  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+	  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
   }
   
   @Then ("valida preco dos cards de combos G6")
@@ -740,7 +733,7 @@ public class PrecoCardsComboSteps {
    		driver.get("https://assine.vivo.com.br/teresina_PI/combos");
    	
    		WebDriverWait wait1 = new WebDriverWait(driver, 200);
-   		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+   		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
    }
    
   
@@ -845,7 +838,7 @@ public class PrecoCardsComboSteps {
     	driver.get("https://assine.vivo.com.br/garanhuns_PE/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h1/strong"), "Banda Larga + TV por Assinatura + Telefonia Fixa"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"comb-3in1\"]/div/div/h2/strong"), "Internet + TV por Assinatura + Telefone Fixo"));
     }
     
     @Then ("valida preco cards de combos G10")
@@ -955,7 +948,7 @@ public class PrecoCardsComboSteps {
       	 	driver.get("https://assine.vivo.com.br/erechim_RS/combos");
       		
       		WebDriverWait wait1 = new WebDriverWait(driver, 200);
-      		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Banda Larga + Telefonia Fixa"));
+      		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
       }
       
       @Then ("valida preco cards de combos Offnet")
@@ -1172,7 +1165,7 @@ public class PrecoCardsComboSteps {
       	driver.get("https://assine.vivo.com.br/apucarana_PR/empresas/pequenas-e-medias/combos");
       	
       	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
       }
       
       @Then ("valida preco cards de combos Onnet_padrao")
@@ -1372,7 +1365,7 @@ public class PrecoCardsComboSteps {
     	driver.get("https://assine.vivo.com.br/cuiaba_MT/empresas/pequenas-e-medias/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
     }
     
     @Then ("valida preco cards de combos Onnet_sem_tv")
@@ -1482,7 +1475,7 @@ public class PrecoCardsComboSteps {
     	driver.get("https://assine.vivo.com.br/curitiba_PR/empresas/pequenas-e-medias/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
     }
     
     @Then ("valida preco cards de combos Onnet_plus")
@@ -1682,7 +1675,7 @@ public class PrecoCardsComboSteps {
   	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
   	
   	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+  	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
   }
   
   @Then ("valida preco cards de combos G7_SP_B2B")
@@ -1792,7 +1785,7 @@ public class PrecoCardsComboSteps {
     	driver.get("https://assine.vivo.com.br/teresina_PI/empresas/pequenas-e-medias/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
     }
     
     @Then ("valida preco cards de combos G9_FSP_B2B")
@@ -1987,16 +1980,16 @@ public class PrecoCardsComboSteps {
 //Precificação preço dos Cards de Combos - OFFNET B2B //
 //----------------------------------------------------// 	     
   	     
-    @And ("acessa pg combo Offnet_B2B")
-    public void paginaCoberturaOffnetB2B()  throws InterruptedException {	
-    	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
+    @And ("acessa pg combos Offnet B2B")
+    public void paginaCoberturaOffB2B()  throws InterruptedException {	
+    	driver.get("https://assine.vivo.com.br/erechim_RS/empresas/pequenas-e-medias/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
     }
     
-    @Then ("valida preco cards de combos Offnet_B2B")
-    public void retornoSucessoouErroOffnetB2B() throws InterruptedException {   	
+    @Then ("valida preco cards combos Offnet B2B")
+    public void retornoSucessoouErroOffB2B() throws InterruptedException {   	
   	  	System.out.println("---------------------------------------------");
       	System.out.println("|B2B - Preços Cards de Combos - (Offnet_B2B)|");
       	System.out.println("---------------------------------------------");	
@@ -2006,7 +1999,7 @@ public class PrecoCardsComboSteps {
 //Internet + Telefone Fixo// 
 //Aba 01//       	
       	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
       	WebElement elementRS = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
       	String strngRS = elementRS.getText();
@@ -2019,7 +2012,7 @@ public class PrecoCardsComboSteps {
       	System.out.printf(strng1a);
     	
       	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
       	WebElement elementRS2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
       	String strngRS2 = elementRS2.getText();
@@ -2032,7 +2025,7 @@ public class PrecoCardsComboSteps {
       	System.out.printf(strng2a); 	
           	
       	WebDriverWait wait3 = new WebDriverWait(driver, 200);
-   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+   		wait3.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
    		WebElement elementRS3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[1]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
    		String strngRS3 = elementRS3.getText();
@@ -2050,7 +2043,7 @@ public class PrecoCardsComboSteps {
    		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ol/li[3]/span")).click();
    		
    		WebDriverWait wait4 = new WebDriverWait(driver, 200);
-      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	wait4.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
       	WebElement elementRS4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[1]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
       	String strngRS4 = elementRS4.getText();
@@ -2063,7 +2056,7 @@ public class PrecoCardsComboSteps {
       	System.out.printf(strng4a);
     	
       	WebDriverWait wait5 = new WebDriverWait(driver, 200);
-      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+      	wait5.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
       	WebElement elementRS5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[2]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
       	String strngRS5 = elementRS5.getText();
@@ -2076,7 +2069,7 @@ public class PrecoCardsComboSteps {
       	System.out.printf(strng5a);
           	
       	WebDriverWait wait6 = new WebDriverWait(driver, 200);
-   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine Já"));
+   		wait6.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[2]/atom-button/a"), "Assine já"));
       	
    		WebElement elementRS6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/ul/li[2]/article[3]/div/div[3]/div[2]/div[2]/div[1]/div/strong[1]"));
    		String strngRS6 = elementRS6.getText();
@@ -2097,16 +2090,16 @@ public class PrecoCardsComboSteps {
 //Precificação preço dos Cards de Combos - Default_SP_soft - B2B //
 //---------------------------------------------------------------// 	     
   	     
-    @And ("acessa pg combo Default_SP_B2B")
-    public void paginaCoberturaDefaultSPB2B()  throws InterruptedException {	
+    @And ("acessa pg combo Default SP B2B")
+    public void paginaCoberturaDefSPB2B()  throws InterruptedException {	
     	driver.get("https://assine.vivo.com.br/votorantim_SP/empresas/pequenas-e-medias/combos");
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
     }
     
-    @Then ("valida preco cards de combos Default_SP_B2B")
-    public void retornoSucessoouErroDefaultSPB2B() throws InterruptedException {   	
+    @Then ("valida preco cards combos Default SP B2B")
+    public void retornoSucessoouErroDefSPB2B() throws InterruptedException {   	
   	  	System.out.println("--------------------------------------------------------");
       	System.out.println("|B2B - Preços Cards de Combos - (Default_SP_soft - B2B)|");
       	System.out.println("--------------------------------------------------------");	

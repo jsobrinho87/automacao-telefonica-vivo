@@ -27,21 +27,6 @@ Scenario: Valida C2CR FSP - Testes Diarios
 	And clica em Receber Ligacao C2RC FSP
 	Then retorno da msg da pag C2RC FSP
 
-@CenarioPaginas
-Scenario: Apresenta paginas - Testes Diarios
-	Given abre pg do navegador TD
-	And acessa pagina cb 3P
-	Given abre pg do navegador TD
-	And acessa pagina Banda Larga
-	Given abre pg do navegador TD
-	And acessa pagina Fixa
-	Given abre pg do navegador TD
-	And acessa pagina TV
-	Given abre pg do navegador TD
-	And acessa pagina Simulador 3P
-	Given abre pg do navegador TD
-	And acessa pagina LP BL
-
 @CenarioCombo-3P
 Scenario: Combo 3P - Testes Diarios
 	Given abre pg do navegador TD

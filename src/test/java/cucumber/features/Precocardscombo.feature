@@ -132,15 +132,15 @@ Scenario: Precos Cards de Combo - G9_FSP_3P_gpon_lançamento - B2B
 	Given abre pg do navegador preco card combo
 	And acessa pg combo G9_FSP_B2B
 	Then valida preco cards de combos G9_FSP_B2B
+
+@Cenario-Default-SP-Soft-B2B
+Scenario: Precos Cards de Combo - Default-SP-Soft-B2B
+	Given abre pg do navegador preco card combo
+	And acessa pg combo Default SP B2B
+	Then valida preco cards combos Default SP B2B
 	
 @Cenario-OFFNET-B2B
 Scenario: Precos Cards de Combo - Offnet_B2B
 	Given abre pg do navegador preco card combo
-	And acessa pg combo Offnet_B2B
-	Then valida preco cards de combos Offnet_B2B
-	
-@Cenario-Default-SP-Soft-B2B
-Scenario: Precos Cards de Combo - Offnet_B2B
-	Given abre pg do navegador preco card combo
-	And acessa pg combo Default_SP_B2B
-	Then valida preco cards de combos Default_SP_B2B
+	And acessa pg combos Offnet B2B
+	Then valida preco cards combos Offnet B2B

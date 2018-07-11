@@ -22,25 +22,6 @@ Feature: Execucao dos testes de regressao do release
 #---------B2C---------#
 #---------------------#
 
-@CenarioPaginas-B2C
-Scenario: Apresenta paginas - Testes Regressivos
-	Given abre uma nova pagina do navegador
-	And acessa pg cb 3P regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg cb 2P regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg Banda Larga regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg Fixa regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg TV regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg Simulador 3P regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg fixa dois regressao
-	Given abre uma nova pagina do navegador
-	And acessa pg Simulador 2P regressao
-
 @CenarioCombo3P-B2C
 Scenario: Combo 3P - Portal Assine
 	Given abre uma nova pagina do navegador
@@ -77,6 +58,7 @@ Scenario: Banda Larga Avulsa - Portal Assine
 	And seleciona card de Avulso BL
 	When na modal de consulta cobertura dados do Cliente - Avulso BL
 	And na modal de Identifica clica em Receber Ligacao - Avulso BL
+	And informa bt comprar internet avulsa BL
 	When cliente complete o pedido - Avulso BL
 	And cliente clica em Proximo Passo - Avulso BL
 	And na tela Endereco Instalacao clica Proximo Passo - Avulso BL
@@ -169,13 +151,6 @@ Scenario: Simulador 2P - Portal Assine
 #---------B2B---------#
 #---------------------#
 
-@CenarioPaginas-B2B
-Scenario: Apresenta paginas - Testes Regressivos B2B
-	Given abre uma nova pagina do navegador
-	And acessa pg simu 2P regressao B2B
-	Given abre uma nova pagina do navegador
-	And acessa pg simu 2P regressao B2B
-
 @CenarioSimu2P-B2B
 Scenario: Simulador 2P - Portal Assine B2B
 	Given abre uma nova pagina do navegador
@@ -199,7 +174,7 @@ Scenario: Combo 3P - Portal Assine B2B
 	And acessa pg de combo 3P B2B
 	And seleciona card combo 3P B2B
 	When modal informa os dados do Cliente B2B
-	And modal de Identificacao clica em Consulta B2B
+	And modal de Identificacao combo clica Consulta B2B
 	When informa dados do cliente complete o pedido B2B
 	And tela dados do cliente clica em Proximo Passo B2B
 	And tela Endereco de Instalacao clica em Proximo Passo B2B
