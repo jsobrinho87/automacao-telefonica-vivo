@@ -121,32 +121,6 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
 
-@CenarioValidaPaginas
-Scenario: Verifica paginas - Testes Diarios
-	Given abre pg do navegador TD
-	And acessa nova pagina LP BL Nova Iguacu
-	Then retorno da msg de LP Oferta BL Nova Iguacu
-	Given abre pg do navegador TD
-	And acessa nova pagina LP BL Palhoca
-	Then retorno da msg de LP Oferta BL Palhoca
-	Given abre pg do navegador TD
-	And acessa nova pagina LP BL Paranavai
-	Then retorno da msg de LP Oferta BL Paranavai
-	Given abre pg do navegador TD
-	And acessa nova pagina promo mobile 100 mega
-	Then retorno da msg da promo mobile 100 mega
-	Given abre pg do navegador TD
-	And acessa nova pagina promo TV fibra
-	Then retorno da msg da promo TV fibra
-	Given abre pg do navegador TD
-	And acessa nova pag promo inter contratar exata
-	Then retorno da msg da promo inter contratar exata
-	Given abre pg do navegador TD
-	And acessa nova pag Vivo TV
-	When modal de consulta cobertura Vivo TV
-	And clique de Identificacao modal Vivo TV
-	Then retorno da msg da pag simulador Vivo TV
-
 @CenarioC2CR-02
 Scenario: Valida C2CR FSP - Testes Diarios
 	Given abre pg do navegador TD
@@ -173,3 +147,14 @@ Scenario: Consulta cobertura - Defaut SP
 	When na modal de consulta cobertura SP Defaut
 	And seleciona botao consultar SP Defaut
 	Then valida retorno de sucesso ou erro SP Defaut
+	
+@CenarioChatOracle
+Scenario: Acesso Chat Oracle
+	Given abre pg do navegador TD
+	And acessa pg de home FSP Chat
+	And seleciona opcao de Compre pelo chat
+	And na modal seleciona chat Oracle
+	When na modal informa Cep e numero chat
+	And seleciona botao consultar Chat
+	And modal informa dados para acesso ao chat
+	Then valida acesso chat oracle

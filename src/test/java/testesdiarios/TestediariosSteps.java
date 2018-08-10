@@ -4,6 +4,7 @@ import cucumber.api.java.en.Given;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 public class TestediariosSteps {
 	
 	private WebDriver driver;
-//	private util util;
+//	private utils util;
 	public static final int TIMEOUT_SEGUNDO = 15;
 	
 //----------------------------------------------------//
@@ -46,12 +47,23 @@ public class TestediariosSteps {
         public void acessapaginaCombo3P()  throws InterruptedException {	
     	driver.navigate().to("https://assine.vivo.com.br/porto-alegre_RS/combos");
     	
+//    	util.util.logPrint("Carrega pagina Combos");
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"))));
+    	
+    	if (driver.findElements(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"))));   
+     	} 
     }
     
     @And ("informa opcao de combo 3P TD")
     public void menucomboTD() throws InterruptedException {
+//    	util.util.logPrint("Seleciona card Combo");
+    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='comb-3in1']/../section[1]/div/article[2]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button")));
     	
@@ -69,6 +81,8 @@ public class TestediariosSteps {
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90660-120");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
+        
+//        util.util.logPrint("Valida Consulta Cobertura");
     }
     
     @SuppressWarnings("unlikely-arg-type")
@@ -179,16 +193,23 @@ public class TestediariosSteps {
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
     	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong"), "Planos Vivo Internet"));
+    
+    	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong"), "Planos Vivo Internet"));
+     	} 
     }
     
     @And ("informa opcao de Avulso BL TD")
     public void menuAvulsoBLTD() throws InterruptedException {
-    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ol/li[2]/span[1]")).click();
+//    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ol/li[2]/span")).click();
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/a"), "Assine já"));
     	
-    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"));
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/a"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
    }
@@ -275,7 +296,6 @@ public class TestediariosSteps {
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"))));
     }
     
-    
     @Then ("mensagem de sucesso ou erro Avulso BL TD")
     public void sucessoouErroAvulsoBLTD() throws IOException {
     	System.out.println("----------------------------------------------------------------");
@@ -301,6 +321,13 @@ public class TestediariosSteps {
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
     	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Planos de Telefonia"));
+    
+    	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Planos de Telefonia"));
+     	} 
     }
     
     @And ("informa opcao de Avulso Fixa TD")
@@ -422,6 +449,13 @@ public class TestediariosSteps {
 
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
     	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Vivo TV"));
+    
+    	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+        	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h1/strong"), "Vivo TV"));
+     	}
     }
     
     @And ("acessa opcao de Avulso TV TD")
@@ -539,8 +573,15 @@ public class TestediariosSteps {
     public void pg3pSimuladorTD()  throws InterruptedException {
     	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC");
     	
-    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-      	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"), "Combos"));
+    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
+      	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"), "Combos"));
+    
+      	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+          	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"), "Combos"));
+     	}
     }
     
     @And ("confirma consulta simulador 3P TD")
@@ -612,9 +653,9 @@ public class TestediariosSteps {
     @And ("informa Fixa simulador 3P TD")
     public void telefonia3pSimuladorTD() throws InterruptedException {
     	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-    	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[3]/div/div[2]/div[2]/button"))));
-    	
-    	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[3]/div/div[2]/div[2]/button")).click();
+    	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button"))));
+
+    	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button")).click();
     	Thread.sleep(3000);
     }
     
@@ -693,20 +734,17 @@ public class TestediariosSteps {
  	
      @And ("acessa pagina LP Oferta BL TD")
      public void acessapaginaLPOfertaBL()  throws InterruptedException {
-     	driver.get("https://assine.vivo.com.br/Salvador_BA/oferta/internet-banda-larga");
+     	driver.get("https://assine.vivo.com.br/Salvador_BA/oferta/tv-por-assinatura");
      	
-//     	WebDriverWait wait = new WebDriverWait(driver, 200);
-//      wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+     	WebDriverWait wait = new WebDriverWait(driver, 200);
+        wait.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
      	
-     	String url = driver.getCurrentUrl();
-
-     	if (url.equals("https://assine.vivo.com.br/oferta/internet-banda-larga")) { 
-     		WebDriverWait wait2 = new WebDriverWait(driver, 200);
-          	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
-     	} else { 
-     		driver.quit();
-     		driver.get("https://assine.vivo.com.br/Salvador_BA/oferta/internet-banda-larga");
-     	} 
+     	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+            wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+     	}
      }
      
      @And ("informa botao Assine ja LP Oferta BL TD")
@@ -719,8 +757,8 @@ public class TestediariosSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
      	
-     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("TESTANDO MKT COMPRA VIVO");   
-     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
+     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("TESTANDO MKT TELEFONICA NOVO");   
+     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0001");
      	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("40024-081");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("111");
      }
@@ -772,14 +810,14 @@ public class TestediariosSteps {
      	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
      	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
      	driver.findElement(By.id("txtDataDia")).clear();
-     	driver.findElement(By.id("txtDataDia")).sendKeys("07");
+     	driver.findElement(By.id("txtDataDia")).sendKeys("10");
      	driver.findElement(By.id("txtDataMes")).clear();
      	driver.findElement(By.id("txtDataMes")).sendKeys("12");
      	driver.findElement(By.id("txtDataAno")).clear();
-     	driver.findElement(By.id("txtDataAno")).sendKeys("1999");   	
+     	driver.findElement(By.id("txtDataAno")).sendKeys("1990");   	
      	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
-        driver.findElement(By.id("txtMae")).sendKeys("Mae Maria Testando Novo");
+        driver.findElement(By.id("txtMae")).sendKeys("Mae Nova Testando");
      }
      
      @And ("clica em Proximo Passo LP Oferta BL TD")
@@ -826,242 +864,24 @@ public class TestediariosSteps {
 
     	driver.quit();
      }
-
-//---------------------------------------------------------------------------//
-// Verifica disponibilidade de páginas se estão disponiveis no Portal Assine //
-//---------------------------------------------------------------------------//
-
-//==> LP Oferta Banda Larga - Nova Iguaçu
-     
-  @And ("acessa nova pagina LP BL Nova Iguacu")
-  public void acessapagnovoLPBLNovaIguacu()  throws InterruptedException {
-  	driver.navigate().to("https://assine.vivo.com.br/nova-iguacu_RJ/oferta/internet-banda-larga");
-  	
-  	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li/div/div/div/div/div/div[1]/h2/strong"), "Viva tudo com a ultravelocidade de Vivo Fibra"));
-  }
-  
-  @Then ("retorno da msg de LP Oferta BL Nova Iguacu")
-  public void paginaOKLPOfertaBLNovaIguacu() throws IOException {
-  	System.out.println("-------------------------------------------------------------------");
-  	System.out.println("B2C - Nova Iguaçu RJ - LP " + driver.getTitle());
-  	System.out.println("-------------------------------------------------------------------");
-
-  	driver.quit();
-  	
-  }
-
-//==> LP Oferta Banda Larga - Palhoça
-  
-  @And ("acessa nova pagina LP BL Palhoca")
-  public void acessapagnovoLPBLpalhoca()  throws InterruptedException {
-  	driver.navigate().to("https://assine.vivo.com.br/palhoca_SC/oferta/internet-banda-larga?s_cid=saz_CA_pesq_goo_SZ000479_GVT-Power_BL_saz_cpc");
-
-  	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li/div/div/div/div/div/div[1]/h2/strong"), "Vivo Internet + Wi-Fi Grátis"));
-  }
-  
-  @Then ("retorno da msg de LP Oferta BL Palhoca")
-  public void paginaOKLPOfertaBLpalhoca() throws IOException {
-  	System.out.println("----------------------------------------------------------------");
-  	System.out.println("B2C - Palhoça SC - LP " + driver.getTitle());
-  	System.out.println("----------------------------------------------------------------");
-  	     	    	
-  	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li/div/div/div/div/div/div[1]/h2/strong"));
-  	String strng2 = element2.getText();
-  	System.out.printf("Resultado: "+ strng2);
-  	System.out.println();
-  	System.out.println("----------------------------------------------------------------");
-  	
-  	driver.quit();
-  	
-    }
-  	
-//==> LP Oferta Banda Larga - Paranavai
-    
-    @And ("acessa nova pagina LP BL Paranavai")
-    public void acessapagnovoLPBLParanavai()  throws InterruptedException {
-    	driver.navigate().to("https://assine.vivo.com.br/paranavai_PR/oferta/internet-banda-larga?gclid=CLSlmb628dECFQgGkQodf90IyA&utm_source=google&utm_medium=paid-search&utm_campaign=vivo-fibra-fsp:performance:cadastra&utm_content=ros:prospect:none:text-link:cpc:bl:desktop&utm_term=internetvivoamplag7&ef_id=WJMiVAAAACfy3alp:20170202123551:s");
-
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li/div/div/div/div/div/div[2]/div/atom-button/a"))));
-    }
-    
-    @Then ("retorno da msg de LP Oferta BL Paranavai")
-    public void paginaOKLPOfertaBLParanavai() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2C - Paranavai SC - LP " + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[1]/div[2]/div/div[1]/h5"));
-      	String strng2 = element2.getText();
-      	System.out.printf("Resultado: "+ strng2);
-      	System.out.println();
-      	
-      	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[2]/div[2]/div/div[1]/h4/strong"));
-      	String strng3 = element3.getText();
-      	System.out.printf("Resultado: "+ strng3);
-      	System.out.println();
-      	
-      	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[4]/div/article/div/div[3]/div[2]/div/div[1]/h4/strong"));
-      	String strng4 = element4.getText();
-      	System.out.printf("Resultado: "+ strng4);
-      	System.out.println();
-      	System.out.println("----------------------------------------------------------------");
-    	
-    	driver.quit();	
-  }
-    
-//==> Página Promo 100 Mega - Institucional GVT Localidades Exata
-    
-    @And ("acessa nova pagina promo mobile 100 mega")
-    public void acessapagpromomobile100mega()  throws InterruptedException {
-    	driver.navigate().to("http://www.promo.vivofibra.com.br/oferta100mega/promo100mega/mobile.html?utm_source=google&utm_medium=paid-search&utm_campaign=vivo-fibra-sp%3Aperformance%3Acadastra&utm_content=ros%3Aprospect%3Asp%3Atext-link%3Acpc%3Ainst%3Amobile&utm_term=CA_B2C-Fixa_SP-Premium_Search_Mobile_Institucional_GVT_Performance:Institucional_GVT_Localidades_Exata");
-
-    	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"section-cards\"]/div/h2"), "Ofertas com Vivo Fibra"));
-    }
-    
-    @Then ("retorno da msg da promo mobile 100 mega")
-    public void paginaOKpromomobile100mega() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2C - Promo 100 mega Institucional GVT Localidades Exata - " + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[1]/div[2]/p[1]"));
-    	String strng2 = element2.getText();
-    	System.out.printf("Resultado: "+ strng2);
-    	System.out.println();
-    	
-    	WebElement element15 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[2]/div[2]/div/p[1]"));
-    	String strng3 = element15.getText();
-    	System.out.printf("Resultado: "+ strng3);
-    	System.out.println();
-    	
-    	WebElement element16 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[3]/div[2]/p"));
-    	String strng4 = element16.getText();
-    	System.out.printf("Resultado: "+ strng4);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
-    		
-    	driver.quit();
-    }    
-    
-//==> Página Promo TV fibra
-    
-    @And ("acessa nova pagina promo TV fibra")
-    public void acessapagpromovivofibra()  throws InterruptedException {
-    	driver.navigate().to("http://www.promo.vivofibra.com.br/tv-fibra/mobile/mobile.html?utm_source=google&utm_medium=paid-search&utm_campaign=vivo-fibra-sp%3Aperformance%3Acadastra&utm_content=ros%3Aprospect%3Asp%3Atext-link%3Acpc%3Atv%3Amobile&utm_term=CA_B2C-Fixa_SP-Premium_Search_Mobile_TV_Sem-Marca_Performance:TV-por-Assinatura_Ampla-Modificada");
-
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"internet_fibra\"]/div[3]/div/a/span"))));
-    }
-    
-    @Then ("retorno da msg da promo TV fibra")
-    public void paginaOKpromoTVfibra() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2C - Promo TV por Assinatura - " + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[1]/div[2]/p[1]"));
-    	String strng2 = element2.getText();
-    	System.out.printf("Resultado: "+ strng2);
-    	System.out.println();
-    	
-    	WebElement element15 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[2]/div[2]/div/p[1]"));
-    	String strng3 = element15.getText();
-    	System.out.printf("Resultado: "+ strng3);
-    	System.out.println();
-    	
-    	WebElement element16 = driver.findElement(By.xpath("//*[@id=\"tab1\"]/div/div/div[2]/div[1]/div[3]/div[2]/p"));
-    	String strng4 = element16.getText();
-    	System.out.printf("Resultado: "+ strng4);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
-    		
-    	driver.quit();
-    }   
-    
-//==> Página Promo 100 mega - Internet Contratar Exata
-    
-    @And ("acessa nova pag promo inter contratar exata")
-    public void acessapaginternetcontratarexata()  throws InterruptedException {
-    	driver.navigate().to("http://www.promo.vivofibra.com.br/oferta100mega/?utm_source=google&utm_medium=paid-search&utm_campaign=vivo-fibra-sp%3Aperformance%3Acadastra&utm_content=ros%3Aprospect%3Asp%3Atext-link%3Acpc%3Abl%3Adesktop&utm_term=CA_B2C-Fixa_SP-Premium_Search_Desktop_Banda-Larga-Internet_Sem-Marca_Performance:Internet_Contratar_Exata");
-
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"tab3\"]/div[1]/div[3]/div/a"))));
-    }
-    
-    @Then ("retorno da msg da promo inter contratar exata")
-    public void paginaOKinternetcontratarexata() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2C - Promo 100 mega Internet Contratar Exata - " + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"section-cards\"]/div/h2"));
-    	String strng2 = element2.getText();
-    	System.out.printf("Resultado: "+ strng2);
-    	System.out.println();
-    	System.out.println("----------------------------------------------------------------");
-    		
-    	driver.quit();
-    }   
-    
-//==> Acessa Página Vivo TV
-    
-    @And ("acessa nova pag Vivo TV")
-    public void acessapagvivoTV()  throws InterruptedException {
-    	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR");
-    	Thread.sleep(3000);
-    	driver.navigate().to("http://www.vivotv.com.br/assine");
-
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("modal-cep-name"))));
-    }
-    
-    @When ("modal de consulta cobertura Vivo TV")
-    public void dadosvivoTV()  throws IOException {
-    	driver.findElement(By.id("modal-cep-name")).sendKeys("Jonathan Sobrinho Testando");   
-    	driver.findElement(By.id("modal-cep-phone")).sendKeys("(41)2525-3200");
-        driver.findElement(By.id("cep")).sendKeys("80050-540");
-        driver.findElement(By.id("numero")).sendKeys("39");
-    }
-    
-    @And ("clique de Identificacao modal Vivo TV")
-    public void cliquemodalvivoTV() throws InterruptedException {
-    	driver.findElement(By.className("ico-cep-enviar")).click();
-
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1/strong"))));
-    }
-    
-    @Then ("retorno da msg da pag simulador Vivo TV")
-    public void paginaOKvivoTV() throws IOException {
-    	System.out.println("----------------------------------------------------------------");
-    	System.out.println("B2C - Página Vivo TV - " + driver.getTitle());
-    	System.out.println("----------------------------------------------------------------");
-    	     	    	
-    	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
-
-      	String strng2 = element2.getText();
-      	System.out.printf("Resultado: "+ strng2);
-      	System.out.println();
-      	System.out.println("----------------------------------------------------------------");
-    
-    	driver.quit();
-    }   
-    
+ 
 //---------------------------------------------------------------//
 // Realizar C2RC "Nós ligamos para você" - (FSP) - Portal Assine //
 //---------------------------------------------------------------//
       	
       @And ("acessa pagina teste C2RC FSP")
-      public void acessapagC2RCFSP()  throws InterruptedException {	
+      public void acessapagC2RCFSP()  throws InterruptedException {
       	driver.navigate().to("https://assine.vivo.com.br/curitiba_PR");
       	
       	WebDriverWait wait = new WebDriverWait(driver, 200);
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a"))));      
+      	
+      	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+          	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a"))));      
+     	}
       }
       
       @And ("valida botao C2RC FSP")
@@ -1089,7 +909,7 @@ public class TestediariosSteps {
       public void clicaC2RCFSP() throws InterruptedException {
       	driver.findElement(By.className("btn-consult")).click();
       
-        Thread.sleep(3000);
+      	Thread.sleep(3000);
       }
       
       @Then ("retorno da msg da pag C2RC FSP")
@@ -1116,8 +936,16 @@ public class TestediariosSteps {
       public void acessapagdoisC2RCFSP()  throws InterruptedException {	
       	driver.navigate().to("https://assine.vivo.com.br/apucarana_PR/combos");
       	
-      	WebDriverWait wait = new WebDriverWait(driver, 200);
+      	WebDriverWait wait = new WebDriverWait(driver, 100);
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a"))));      
+      	
+      	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a")).size() != 0) { 
+      		driver.navigate().refresh();
+      		
+      		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+          	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/ul/li[2]/div/div/div/div/div/div[2]/div/atom-button/a"))));      
+     	} 
+      	
       }
       
       @And ("valida botao dois C2RC FSP")
@@ -1179,6 +1007,13 @@ public class TestediariosSteps {
          	
          	WebDriverWait wait = new WebDriverWait(driver, 200);
           	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[3]"))));
+        
+          	if (driver.findElements(By.xpath("//*[@id=\"header\"]/div/section[3]")).size() != 0) { 
+          		driver.navigate().refresh();
+          		
+          		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+              	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[3]"))));
+         	}
         }
         
         @And ("seleciona opcao de combo SP G6")
@@ -1221,6 +1056,9 @@ public class TestediariosSteps {
         	System.out.printf("Resultado: "+ driver.getTitle());
         	System.out.println();
         	System.out.println("----------------------------------------------");
+        	
+//          	util.util.logPrint("Valida Consulta Cobertura SP G6");
+        	
         	driver.quit();
         }   
       
@@ -1234,6 +1072,13 @@ public class TestediariosSteps {
 
             WebDriverWait wait = new WebDriverWait(driver, 200);
           	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[3]"))));
+          	
+          	if (driver.findElements(By.xpath("//*[@id=\"header\"]/div/section[3]")).size() != 0) { 
+          		driver.navigate().refresh();
+          		
+          		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+              	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[3]"))));
+         	}
      }
      
      @And ("seleciona opcao de combo SP Defaut")
@@ -1281,4 +1126,109 @@ public class TestediariosSteps {
        	System.out.println("---------------------------------------------");
        	driver.quit(); 	
      }   
+     
+
+//----------------------------------//
+// Realiza acesso CHAT ORACLE - B2C //
+//---- -----------------------------//
+     	     
+       @And ("acessa pg de home FSP Chat")
+       public void paginaHomeChat()  throws InterruptedException {	
+            driver.navigate().to("https://assine.vivo.com.br/curitiba_PR");
+
+            WebDriverWait wait = new WebDriverWait(driver, 200);
+            wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img"))));
+            	
+           	if (driver.findElements(By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img")).size() != 0) { 
+           		driver.navigate().refresh();
+            		
+           		WebDriverWait wait2 = new WebDriverWait(driver, 200);
+               	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img"))));
+            }
+       }
+       
+       @And ("seleciona opcao de Compre pelo chat")
+       public void acessarCtaChat() throws InterruptedException { 	
+           	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+          	Thread.sleep(3000);
+
+            Actions act2=new Actions(driver); 	
+       	    act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
+       }
+       
+       @And ("na modal seleciona chat Oracle")
+       public void selecionaChatOracle()  throws InterruptedException {
+    	    WebDriverWait wait = new WebDriverWait(driver, 200);
+            wait.until(ExpectedConditions.textToBe(By.xpath("html/body/div[2]/section/section/div[1]/div//div/section/div/div[1]/h2/strong"), "O que você deseja?"));
+        	
+         	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/section/div/div[2]/atom-button[1]/a")).click();
+       }
+       
+       @When ("na modal informa Cep e numero chat")
+       public void modalConsultaCoberturaChat()  throws InterruptedException {
+    	    WebDriverWait wait = new WebDriverWait(driver, 200);
+            wait.until(ExpectedConditions.textToBe(By.xpath("html/body/div[2]/section/section/div[1]/div//div/section/header/h2/strong"), "Onde você está?"));
+         	
+          	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("82900320");
+            driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("66");     
+       }
+       
+       @And ("seleciona botao consultar Chat")
+       public void consultaChat() throws InterruptedException {
+         	driver.findElement(By.className("btn-consult")).click();
+         	
+     	    Thread.sleep(10000);         	
+       }
+       
+       @And ("modal informa dados para acesso ao chat")
+       public void dadosAcessoChat() throws InterruptedException {
+
+//    	   WebDriverWait wait = new WebDriverWait(driver,200);
+//           wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt((By.xpath("//*[@id=\"mCSB_17_container\"]/div/chat-oracle-b2c/section/iframe"))));
+
+    	   driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"mCSB_17_container\"]/div/chat-oracle-b2c/section/iframe")));
+    	   
+    	   driver.findElement(By.xpath("html/body/div//div//form/div[2]//input")).sendKeys("Robo Testando Assine Vivo");
+           driver.findElement(By.xpath("html/body/div//div//form/div[4]//input")).sendKeys("4125256363");
+           driver.findElement(By.xpath("html/body/div//div//form/div[5]//input")).sendKeys("jonathan.teste@telefonca.com");
+           
+           WebDriverWait wait2 = new WebDriverWait(driver, 200);
+           wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div//div//form/div[7]//input"))));
+       	
+           driver.findElement(By.xpath("html/body/div//div//form/div[7]//input")).click();
+           
+           driver.switchTo().defaultContent();
+       }
+       
+       @Then ("valida acesso chat oracle")
+       public void validaAcessoChatOracle() throws IOException {
+    	    System.out.println("---------------------------------------");
+        	System.out.println("      Testando acesso Chat Oracle      ");
+        	System.out.println("---------------------------------------");
+        	
+        	String winHandleBefore = driver.getWindowHandle();
+
+            for(String winHandle : driver.getWindowHandles()){
+               driver.switchTo().window(winHandle);
+            }
+        	         	
+        	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+          	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.id("rn_ChatTranscriptFraseologiaEncerramiento_8_Transcript"))));
+        	         	
+        	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"chat-status\"]"));
+	       	String strng2 = element2.getText();
+	       	System.out.printf("Atendente: "+ strng2);
+	       	System.out.println();
+	       	System.out.println("---------------------------------------");
+       	
+        	driver.findElement(By.id("rn_ChatTimeoutDisconnector_10_Input")).sendKeys("Olá! Estamos realizando alguns testes pelo canal MKT Digital da Vivo. Obrigado pela atenção!");
+        	driver.findElement(By.id("rn_ChatTimeoutDisconnector_10_Input")).sendKeys(Keys.ENTER);
+//       	driver.findElement(By.id("rn_ChatSendButton_11_Button")).click();
+        
+            driver.close();
+            driver.switchTo().window(winHandleBefore);
+        	
+        	driver.quit(); 
+       }        
+     
 }

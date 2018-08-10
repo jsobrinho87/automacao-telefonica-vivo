@@ -22,9 +22,38 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
 
 public class util {
 	private WebDriver webDriver;
+	
+	public static void logPrint(String strLog) {
+		ExtentTest extentTest = TestRule.getExtertTest();
+		try {
+			efetuarPrintTela(strLog);
+			extentTest.log(Status.INFO, strLog,
+					MediaEntityBuilder
+					.createScreenCaptureFromPath(
+							System.getProperty("user.dir") + "\\src\\test\\resources\\" + strLog + ".png")
+					.build());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static void efetuarPrintTela(String strLog) {
+		File scrFile = ((TakesScreenshot) TestRule.getDriver()).getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(scrFile,
+					new File(System.getProperty("user.dir") + "\\src\\test\\resources\\" + strLog + ".png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	public static float formatar(float d) {
 		BigDecimal bd = new BigDecimal(Float.toString(d));

@@ -25,7 +25,7 @@ Feature: Execucao dos testes de regressao do release
 @CenarioCombo3P-B2C
 Scenario: Combo 3P - Portal Assine
 	Given abre uma nova pagina do navegador
-	And acessa pagina de combo 3P
+	And acessa pagina de combo 3P	
 	And seleciona opcao de combo 3P
 	When na modal de consulta cobertura informa os dados do Cliente
 	And na modal de Identificacao clica em Receber Ligacao

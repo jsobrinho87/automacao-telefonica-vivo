@@ -12,16 +12,16 @@ import cucumber.api.junit.Cucumber;
 	tags  = {
 		     "@CenarioC2CR-01,"
 	       + "@CenarioCombo-3P,"
-	       + "@CenarioBL-Avulsa," 
+//	       + "@CenarioBL-Avulsa,"
 	       + "@CenarioFixa-Avulsa,"
 	       + "@CenarioTV-Avulsa,"
 	       + "@CenarioSimulador-3P,"
 	       + "@CenarioLP-BL,"
            + "@CenarioC2CR-02,"
-	       + "@CenarioValidaPaginas,"
            + "@CenarioConsultaSP-G6,"
-           + "@CenarioConsultaSP-Defalt"
-	    	})
+           + "@CenarioConsultaSP-Defalt,"
+		   + "@CenarioChatOracle"
+	    	}) 
 
 public class TestediariosTest {
 
