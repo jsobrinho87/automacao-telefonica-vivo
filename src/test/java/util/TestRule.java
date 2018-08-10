@@ -1,4 +1,6 @@
-package consultacoberturaassine;
+package util;
+
+import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -11,6 +13,7 @@ import cucumber.api.java.Before;
 
 public class TestRule {
 	
+	private static WebDriver driver;
 	private static ExtentHtmlReporter htmlReporter;
 	private static ExtentReports extentReport;
 	private static ExtentTest extentTest;
@@ -32,6 +35,14 @@ public class TestRule {
 		extentTest.log(Status.PASS, "Cenario "+ cenario.getName()+ " executado com sucesso!");
 		extentTest.log(Status.ERROR, "Cenario "+ cenario.getName()+ " executado com falha.");
 		extentReport.flush();
+	}
+	
+	public static WebDriver getDriver() {
+		return driver;
+	}
+	
+	public static ExtentTest getExtertTest() {
+		return extentTest;
 	}
 
 }
