@@ -105,6 +105,8 @@ public class TestediariosSteps {
         	
         	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("MARIO DA SILVA TESTANDO");   
         	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
+        	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90660-120");
+            driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
         	
         	driver.findElement(By.className("btn-consult")).click();
      	} 
@@ -473,8 +475,8 @@ public class TestediariosSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
     	
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Regina auxiliadora de Amorim");   
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0098");
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Regina Testando de Amorim");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0009");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("87701-000");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("720");
     }
@@ -512,7 +514,7 @@ public class TestediariosSteps {
     	driver.findElement(By.id("txtDataDia")).clear();
     	driver.findElement(By.id("txtDataDia")).sendKeys("13");
     	driver.findElement(By.id("txtDataMes")).clear();
-    	driver.findElement(By.id("txtDataMes")).sendKeys("02");
+    	driver.findElement(By.id("txtDataMes")).sendKeys("08");
     	driver.findElement(By.id("txtDataAno")).clear();
     	driver.findElement(By.id("txtDataAno")).sendKeys("1960");    	
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
@@ -1212,17 +1214,19 @@ public class TestediariosSteps {
                driver.switchTo().window(winHandle);
             }
         	         	
-        	WebDriverWait wait2 = new WebDriverWait(driver, 200);
-          	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.id("rn_ChatTranscriptFraseologiaEncerramiento_8_Transcript"))));
-        	         	
-        	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"chat-status\"]"));
+        	WebDriverWait wait2 = new WebDriverWait(driver, 400);
+          	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.id("chat-status-connected"))));
+        	
+          	//Verificar atendente disponivel
+        	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"rn_ChatAgentStatusAnimation_6_Roster\"]"));
 	       	String strng2 = element2.getText();
-	       	System.out.printf("Atendente: "+ strng2);
+	       	System.out.printf(strng2);
 	       	System.out.println();
 	       	System.out.println("---------------------------------------");
-       	
-        	driver.findElement(By.id("rn_ChatTimeoutDisconnector_10_Input")).sendKeys("Olá! Estamos realizando alguns testes pelo canal MKT Digital da Vivo. Obrigado pela atenção!");
-        	driver.findElement(By.id("rn_ChatTimeoutDisconnector_10_Input")).sendKeys(Keys.ENTER);
+	       	
+	        //Inclui resposta ao atendente e fechao chat
+        	driver.findElement(By.id("rn_ChatPostMessageCustom_14_Input")).sendKeys("Olá! Estamos realizando alguns testes pelo canal MKT Digital da Vivo. Obrigado pela atenção!");
+        	driver.findElement(By.id("rn_ChatPostMessageCustom_14_Input")).sendKeys(Keys.ENTER);
 //       	driver.findElement(By.id("rn_ChatSendButton_11_Button")).click();
         
             driver.close();

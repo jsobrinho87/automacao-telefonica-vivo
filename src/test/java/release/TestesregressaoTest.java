@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
     tags  = {
              "@CenarioCombo3P-B2C,"
            + "@CenarioCombo2P-B2C,"
-           + "@CenarioBL-B2C,"
+//           + "@CenarioBL-B2C,"
            + "@CenarioFixa-B2C,"
            + "@CenarioTV-B2C,"
            + "@CenarioSimu3P-B2C,"   

@@ -183,18 +183,21 @@ Scenario: Combo 3P - Portal Assine B2B
 	Then pagina exibida mensagem de sucesso ou erro B2B
 	
 @CenarioSimu2PSP-B2B
-Scenario: Simulador 2P SP - Portal Assine B2B
+Scenario: Combo 2P SP - Portal Assine B2B
 	Given abre uma nova pagina do navegador
-	And acessa pg combo 2P B2B SP
-	And seleciona combo 2P B2B SP
-	When modal consulta dados Cliente combo 2P B2B SP
-	And modal Identifica clica Consultar combo 2P B2B SP
-	When cliente informa dados pedido combo 2P B2B SP
-	And cliente seleciona proximo Passo combo 2P B2B SP
-	And tela endereco insta seleciona proximo passo combo 2P B2B SP
-	When informa dados pagamentos combo 2P B2B SP
-	And seleciona finalizar pedido combo 2P B2B SP
-	Then valida retorno mensagem sucesso ou erro Combo 2P B2B SP
+	And acessa pg simulador 2P B2B SP
+	And seleciona simulador 2P B2B SP
+	When modal consulta dados Cliente simu 2P B2B SP
+	And modal Identifica clica em Consultar simu 2P B2B SP
+	And seleciona botao compra simu 2P B2B SP
+	And seleciona card banda larga simu 2P B2B SP
+	And seleciona card Telefonia Fixa simu 2P B2B SP
+	When cliente informa dados pedido simu 2P B2B SP
+	And cliente seleciona proximo Passo simu 2P B2B SP
+	And tela endereco seleciona proximo passo simu 2P B2B SP
+	When informa dados pagamentos simu 2P B2B SP
+	And seleciona finalizar pedido simu 2P B2B SP
+	Then valida retorno mensagem sucesso ou erro simu 2P B2B SP
 
 @CenarioCombo3PSP-B2B
 Scenario: Combo 3P SP- Portal Assine B2B

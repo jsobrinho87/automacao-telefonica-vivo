@@ -405,7 +405,7 @@ public class ConsultacoberturaSteps {
     	    ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
             Thread.sleep(3000);
 
-            Actions act2=new Actions(driver); 	
+            Actions act2=new Actions(driver);
             act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
       }
       
@@ -790,7 +790,7 @@ public class ConsultacoberturaSteps {
    
 //     	logger.log(LogStatus.PASS, "Onnet_padrao");
 //     	logger.addScreenCapture("C:\\Users\\80479178\\Downloads\\BUG-01.jpg");
-////      report.endTest(logger);
+//      report.endTest(logger);
 //     	report.flush();
      	
      	driver.quit();
