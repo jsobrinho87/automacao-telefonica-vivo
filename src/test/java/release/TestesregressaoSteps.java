@@ -1534,9 +1534,9 @@ public class TestesregressaoSteps {
   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
   	
   	WebDriverWait wait = new WebDriverWait(driver, 200);
-  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))));
+  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"))));
 
-    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"));
+    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
     element1.click();
   }
@@ -2062,9 +2062,9 @@ public class TestesregressaoSteps {
 	   ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
 	  	
 	  	WebDriverWait wait = new WebDriverWait(driver, 200);
-	  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))));
+	  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"))));
 
-	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"));
+	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
 	    element1.click();
    }
