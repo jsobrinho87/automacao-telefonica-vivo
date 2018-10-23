@@ -99,6 +99,7 @@ Scenario: Simulador 3P - Testes Diarios
 	And informa TV simulador 3P TD
 	And informa adicionais TV simulador 3P TD
 	And informa Fixa simulador 3P TD
+	And informa Amazon Prime simulador 3P TD
 	When cliente informa o pedido simulador 3P TD
 	And cliente clica Proximo Passo simulador 3P TD
 	And tela Endereco Instalacao clica Proximo Passo simulador 3P TP

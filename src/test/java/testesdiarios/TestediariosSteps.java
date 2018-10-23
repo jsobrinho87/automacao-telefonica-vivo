@@ -85,31 +85,31 @@ public class TestediariosSteps {
 //        util.util.logPrint("Valida Consulta Cobertura");
     }
     
-    @SuppressWarnings("unlikely-arg-type")
+//    @SuppressWarnings("unlikely-arg-type")
 	@And ("modal de Identificacao clica em Receber Ligacao TD")
     public void receberLigacaocomboTD() throws InterruptedException {
     	driver.findElement(By.className("btn-consult")).click();
     	
     	Thread.sleep(6000);
     	
-     	if(!driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong")).equals(driver)){
-     		WebDriverWait wait1 = new WebDriverWait(driver, 200);
-        	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
-        	
-        	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
-            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
-            element1.click();
-            
-            WebDriverWait wait2 = new WebDriverWait(driver, 200);
-        	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
-        	
-        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("MARIO DA SILVA TESTANDO");   
-        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
-        	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90660-120");
-            driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
-        	
-        	driver.findElement(By.className("btn-consult")).click();
-     	} 
+//     	if(!driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong")).equals(driver)){
+//     		WebDriverWait wait1 = new WebDriverWait(driver, 200);
+//        	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+//        	
+//        	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/article[1]/div[1]/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+//            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
+//            element1.click();
+//            
+//            WebDriverWait wait2 = new WebDriverWait(driver, 200);
+//        	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
+//        	
+//        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("MARIO DA SILVA TESTANDO");   
+//        	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
+//        	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90660-120");
+//            driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("390");
+//        	
+//        	driver.findElement(By.className("btn-consult")).click();
+//     	} 
     }
     
     @And ("modal de Identificacao clica em Adicionar TD")
@@ -201,7 +201,7 @@ public class TestediariosSteps {
       		
       		WebDriverWait wait2 = new WebDriverWait(driver, 200);
         	wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h1/strong"), "Planos Vivo Internet"));
-     	} 
+     	}
     }
     
     @And ("informa opcao de Avulso BL TD")
@@ -209,9 +209,9 @@ public class TestediariosSteps {
 //    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ol/li[2]/span")).click();
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/a"), "Assine já"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
     	
-    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/a"));
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
    }
@@ -221,8 +221,8 @@ public class TestediariosSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
   
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Wilson jose Testando Novo");   
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0000");
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Wilson Testando Novo");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-0100");
         driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("40024-081");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("111");
     }
@@ -265,7 +265,7 @@ public class TestediariosSteps {
     	driver.findElement(By.id("txtDataAno")).sendKeys("1990");    	
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
-        driver.findElement(By.id("txtMae")).sendKeys("Mae Maria Testando Nov");
+        driver.findElement(By.id("txtMae")).sendKeys("Mae Maria Novo");
     }
     
     @And ("clica em Proximo Passo Avulso BL TD")
@@ -587,13 +587,12 @@ public class TestediariosSteps {
     }
     
     @And ("confirma consulta simulador 3P TD")
-    public void acessarMenu3pSimulador() throws InterruptedException {
+    public void acessarMenu3pSimula() throws InterruptedException {
     	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
     	
-    	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))));
-
-        Actions act2=new Actions(driver); 	
+    	Thread.sleep(3000);
+    	
+    	Actions act2=new Actions(driver); 	
     	act2.moveToElement(driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[3]/div/div/div[1]/div[2]/a"))).click().build().perform();
     }
     
@@ -658,6 +657,14 @@ public class TestediariosSteps {
     	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button"))));
 
     	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button")).click();
+    }
+    
+    @And ("informa Amazon Prime simulador 3P TD")
+    public void amazon3pSimuladorTD() throws InterruptedException {
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+    	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"svaStep\"]/div/div/ul/li[2]/div/div/h2"))));
+
+    	driver.findElement(By.xpath("//*[@id=\"svaStep\"]/div/div/ul/li[2]/div/div/h2")).click();
     	Thread.sleep(3000);
     }
     
@@ -1040,7 +1047,7 @@ public class TestediariosSteps {
         
         @And ("seleciona botao consultar SP G6")
         public void consultaG6() throws InterruptedException {
-          	driver.findElement(By.className("btn-consult")).click();
+        	driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys(Keys.ENTER);
         	
          	WebDriverWait wait = new WebDriverWait(driver, 200);
          	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));
@@ -1105,12 +1112,12 @@ public class TestediariosSteps {
      
      @And ("seleciona botao consultar SP Defaut")
      public void consultaDefaut() throws InterruptedException {
-       	driver.findElement(By.className("btn-consult")).click();
-       	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-       	Thread.sleep(3000);
-     	
-       	WebDriverWait wait = new WebDriverWait(driver, 200);
-       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));
+    	 	driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys(Keys.ENTER);
+	       	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	       	Thread.sleep(3000);
+	     	
+	       	WebDriverWait wait = new WebDriverWait(driver, 200);
+	       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));
      }
      
      @Then ("valida retorno de sucesso ou erro SP Defaut")
@@ -1139,13 +1146,13 @@ public class TestediariosSteps {
             driver.navigate().to("https://assine.vivo.com.br/curitiba_PR");
 
             WebDriverWait wait = new WebDriverWait(driver, 200);
-            wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img"))));
+            wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"))));
             	
-           	if (driver.findElements(By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img")).size() != 0) { 
+           	if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong")).size() != 0) { 
            		driver.navigate().refresh();
             		
            		WebDriverWait wait2 = new WebDriverWait(driver, 200);
-               	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"header\"]/div/section[2]/div/div[2]/a/picture/img"))));
+               	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div[1]/div/header/span/h2/strong"))));
             }
        }
        

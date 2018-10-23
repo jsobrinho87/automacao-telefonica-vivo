@@ -12,7 +12,7 @@ import cucumber.api.junit.Cucumber;
 	tags  = {
 		     "@CenarioC2CR-01,"
 	       + "@CenarioCombo-3P,"
-//	       + "@CenarioBL-Avulsa,"
+	       + "@CenarioBL-Avulsa,"
 	       + "@CenarioFixa-Avulsa,"
 	       + "@CenarioTV-Avulsa,"
 	       + "@CenarioSimulador-3P,"

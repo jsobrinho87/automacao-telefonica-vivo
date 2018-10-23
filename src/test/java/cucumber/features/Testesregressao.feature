@@ -108,6 +108,7 @@ Scenario: Simulador 3P - Portal Assine
 	And seleciona TV por Assinatura simulador 3P
 	And informa pontos adicionais TV simulador 3P
 	And informa Telefonia simulador 3P
+	And informa Amazon Prime simulador 3P
 	When cliente complete o pedido - simulador 3P
 	And cliente clica em Proximo Passo - simulador 3P
 	And na tela Endereco Instalacao clica Proximo Passo simulador 3P

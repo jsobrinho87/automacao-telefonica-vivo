@@ -418,9 +418,9 @@ public class TestesregressaoSteps {
     	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ol/li[2]/span")).click();
     	
     	WebDriverWait wait1 = new WebDriverWait(driver, 200);
-    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[2]/article[3]/div/div[1]/div[4]/div[2]/atom-button/a"), "Assine já"));
+    	wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button"), "Assine já"));
     	
-    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[2]/article[3]/div/div[1]/div[4]/div[2]/atom-button/a")).click();   
+    	driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[1]/div/div/div/div/ul/li[1]/article[2]/div/div[1]/div[4]/div[2]/atom-button/button")).click();   
     }
     
     @When ("na modal de consulta cobertura dados do Cliente - Avulso BL")
@@ -428,7 +428,7 @@ public class TestesregressaoSteps {
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
     	
-    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Eunice de Amorimi Marquess");   
+    	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Eunice Amorim Marques");   
     	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-3200");
     	driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("40024-081");
         driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("111");
@@ -465,21 +465,21 @@ public class TestesregressaoSteps {
     	driver.findElement(By.id("txtEmail")).clear();
     	driver.findElement(By.id("txtEmail")).sendKeys("jsobrinho87@hotmail.com");
     	driver.findElement(By.id("txtFone")).clear();
-    	driver.findElement(By.id("txtFone")).sendKeys("4125253233");
+    	driver.findElement(By.id("txtFone")).sendKeys("4125250001");
 
     	File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
     	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2C\\10-Teste-dadosCliente-BandaLarga.jpg"));
 
     	driver.findElement(By.xpath(".//*[@id='formCheckoutIdentificacao']/fieldset/div[6]/div[2]/label")).click();
     	driver.findElement(By.id("txtDataDia")).clear();
-    	driver.findElement(By.id("txtDataDia")).sendKeys("25");
+    	driver.findElement(By.id("txtDataDia")).sendKeys("18");
     	driver.findElement(By.id("txtDataMes")).clear();
     	driver.findElement(By.id("txtDataMes")).sendKeys("05");
     	driver.findElement(By.id("txtDataAno")).clear();
     	driver.findElement(By.id("txtDataAno")).sendKeys("1938");    	
     	Select drpStatus = new Select(driver.findElement(By.id("estCivil")));
         drpStatus.selectByValue("Casado");
-        driver.findElement(By.id("txtMae")).sendKeys("Nair Viera de Amorim");
+        driver.findElement(By.id("txtMae")).sendKeys("Nair Viera Amorim");
     }	
     
     @And ("cliente clica em Proximo Passo - Avulso BL")
@@ -528,31 +528,6 @@ public class TestesregressaoSteps {
     	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
     	String strng2 = element2.getText();
     	System.out.printf("Número Protocolo: "+ strng2);
-    	System.out.println();
-    	
-    	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
-    	String strng3 = element3.getText();
-    	System.out.printf("Nome Completo: "+ strng3);
-    	System.out.println();
-    	
-    	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
-    	String strng4 = element4.getText();
-    	System.out.printf("Documento: "+ strng4);
-    	System.out.println();
-    	
-    	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[7]/span"));
-    	String strng5 = element5.getText();
-    	System.out.printf("Data de Nascimento: "+ strng5);
-    	System.out.println();
-    	
-    	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
-    	String strng6 = element6.getText();
-    	System.out.printf("Nome da Mãe: "+ strng6);
-    	System.out.println();
-    	
-    	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
-    	String strng7 = element7.getText();
-    	System.out.printf("Endereço: "+ strng7);
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
@@ -694,42 +669,21 @@ public class TestesregressaoSteps {
     	String strng = element.getText();
     	System.out.println(strng);
     	Assert.assertEquals("Seu pedido foi realizado com sucesso.", strng); 
+    	
     	System.out.println("----------------------------------------------------------------");
     	    	
     	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[1]/section/section/div[2]/p/span"));
     	String strng2 = element2.getText();
     	System.out.printf("Número Protocolo: "+ strng2);
     	System.out.println();
-    	
-    	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
-    	String strng3 = element3.getText();
-    	System.out.printf("Nome Completo: "+ strng3);
-    	System.out.println();
-    	
-    	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
-    	String strng4 = element4.getText();
-    	System.out.printf("Documento: "+ strng4);
-    	System.out.println();
-    	
-    	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[7]/span"));
-    	String strng5 = element5.getText();
-    	System.out.printf("Data de Nascimento: "+ strng5);
-    	System.out.println();
-    	
-    	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
-    	String strng6 = element6.getText();
-    	System.out.printf("Nome da Mãe: "+ strng6);
-    	System.out.println();
-    	
-    	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
-    	String strng7 = element7.getText();
-    	System.out.printf("Endereço: "+ strng7);
-    	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
-    	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/h3/strong"))));
+    	
+    	WebElement element10 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/h3/strong"));
     	String strng10 = element10.getText();
-    	System.out.printf("Plano Telefonia Fixa: "+ strng10);
+    	System.out.printf("Plano: "+ strng10);
     	System.out.println();
     	System.out.println("----------------------------------------------------------------");
     	
@@ -874,32 +828,10 @@ public class TestesregressaoSteps {
     	String strng2 = element2.getText();
     	System.out.printf("Número Protocolo: "+ strng2);
     	System.out.println();
-    	
-    	WebElement element3 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[1]/span"));
-    	String strng3 = element3.getText();
-    	System.out.printf("Nome Completo: "+ strng3);
-    	System.out.println();
-    	
-     	WebElement element4 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[2]/span"));
-    	String strng4 = element4.getText();
-    	System.out.printf("Documento: "+ strng4);
-    	System.out.println();
-    	
-    	WebElement element5 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[7]/span"));
-    	String strng5 = element5.getText();
-    	System.out.printf("Data de Nascimento: "+ strng5);
-    	System.out.println();
-
-    	WebElement element6 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[1]/p[9]/span"));
-    	String strng6 = element6.getText();
-    	System.out.printf("Nome da Mãe: "+ strng6);
-    	System.out.println();
-
-    	WebElement element7 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[1]/div[1]/div[2]/p[2]/span"));
-    	String strng7 = element7.getText();
-    	System.out.printf("Endereço: "+ strng7);
-    	System.out.println();
     	System.out.println("----------------------------------------------------------------");
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"))));
 
     	WebElement element9 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section/div[2]/div[2]/div/article[3]/div[2]/div[1]/ul/li[1]/span"));
     	String strng9 = element9.getText();
@@ -1003,6 +935,15 @@ public class TestesregressaoSteps {
     	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button"))));
 
     	driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/div/div/section[4]/div/div/section/div/div/div[1]/div/div[2]/div[2]/button")).click();
+    	Thread.sleep(3000);
+    }
+    
+    @And ("informa Amazon Prime simulador 3P")
+    public void amazon3pSimulador() throws InterruptedException {
+    	WebDriverWait wait2 = new WebDriverWait(driver, 200);
+    	wait2.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"svaStep\"]/div/div/ul/li[2]/div/div/h2"))));
+
+    	driver.findElement(By.xpath("//*[@id=\"svaStep\"]/div/div/ul/li[2]/div/div/h2")).click();
     	Thread.sleep(3000);
     }
     
@@ -1534,9 +1475,9 @@ public class TestesregressaoSteps {
   	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
   	
   	WebDriverWait wait = new WebDriverWait(driver, 200);
-  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"))));
+  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"))));
 
-    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a"));
+    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[5]/div/div/div[1]/div[2]/a[2]"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
     element1.click();
   }
@@ -1546,7 +1487,7 @@ public class TestesregressaoSteps {
 	    WebDriverWait wait = new WebDriverWait(driver, 200);
 	  	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
 	  	
-	  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Empresa de Transporte ME");   
+	  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Empresa de Transporte novo ME");   
 	  	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3223");
 	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("90560-003");
 	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("545");
@@ -1595,7 +1536,7 @@ public class TestesregressaoSteps {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtBusinessName"))));
 		  
 	  	driver.findElement(By.id("txtBusinessName")).clear();
-	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Empresa Telefonica Testando");
+	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Empresa Telefonica novo Testando");
 	  	driver.findElement(By.id("txtBusinessDocument")).clear();
 	  	driver.findElement(By.id("txtBusinessDocument")).sendKeys(util.util.gerarCNPJ());
 	
@@ -1603,11 +1544,11 @@ public class TestesregressaoSteps {
 	  	FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\02-Teste-dadosCliente01-2pSimulador-B2B.jpg"));
 	
 	  	driver.findElement(By.id("txtDataDia")).clear();
-	  	driver.findElement(By.id("txtDataDia")).sendKeys("09");
+	  	driver.findElement(By.id("txtDataDia")).sendKeys("22");
 	  	driver.findElement(By.id("txtDataMes")).clear();
-	  	driver.findElement(By.id("txtDataMes")).sendKeys("07");
+	  	driver.findElement(By.id("txtDataMes")).sendKeys("12");
 	  	driver.findElement(By.id("txtDataAno")).clear();
-	  	driver.findElement(By.id("txtDataAno")).sendKeys("2002");    
+	  	driver.findElement(By.id("txtDataAno")).sendKeys("2000");    
 	  	
 	  	driver.findElement(By.xpath("//*[@id=\"formCheckoutIdentificacao\"]/fieldset/div[6]/div/label/span")).click();
 	  	driver.findElement(By.id("txtEmail")).clear();
@@ -1734,7 +1675,7 @@ public class TestesregressaoSteps {
 	   WebDriverWait wait = new WebDriverWait(driver, 60);
 	   wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input"))));
 	  
-	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais para contrucao ltda ME TENV");   
+	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao empresa novo ME");   
 	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
 	   driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("80010-050");
 	   driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("297");
@@ -1877,11 +1818,11 @@ public class TestesregressaoSteps {
 	   	WebDriverWait wait1 = new WebDriverWait(driver, 200);
 		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
    
-		if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong")).size() != 0) { 
+		if (driver.findElements(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong")).size() != 0) { 
 	  		driver.navigate().refresh();
 	  		
 	  		WebDriverWait wait2 = new WebDriverWait(driver, 200);
-			wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
+			wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header/div/div/h2/strong"), "Internet + Telefone Fixo"));
 	 	} 
    }
    
@@ -1889,12 +1830,12 @@ public class TestesregressaoSteps {
    public void acessamenu3PB2BSP() throws InterruptedException {
 		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
 		
-		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[3]/span")).click();
-	
+//		driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ol/li[2]/span")).click();
+//	
 		WebDriverWait wait2 = new WebDriverWait(driver, 200);
-		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
+		wait2.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"), "Assine já"));
 		
-	   	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[2]/article[3]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
+	   	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[2]/div/div/div/ul/li[1]/article[2]/div/div[4]/div[2]/div[2]/div[2]/atom-button/button"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
 	    element1.click();
    }
@@ -2074,7 +2015,7 @@ public class TestesregressaoSteps {
 	    WebDriverWait wait = new WebDriverWait(driver, 200);
    	    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")));
    	
-	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao ME");   
+	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Materiais contrucao empresa ME");   
 	   	driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2565-3332");
 	    driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("01419-001");
 	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("1123");
