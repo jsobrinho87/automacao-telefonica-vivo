@@ -57,8 +57,8 @@ Scenario: Banda Larga Avulsa - Portal Assine
 	And acessa pagina de Avulso BL
 	And seleciona card de Avulso BL
 	When na modal de consulta cobertura dados do Cliente - Avulso BL
-	And na modal de Identifica clica em Receber Ligacao - Avulso BL
-	And informa bt comprar internet avulsa BL
+#	And na modal de Identifica clica em Receber Ligacao - Avulso BL
+#	And informa bt comprar internet avulsa BL
 	When cliente complete o pedido - Avulso BL
 	And cliente clica em Proximo Passo - Avulso BL
 	And na tela Endereco Instalacao clica Proximo Passo - Avulso BL
@@ -135,12 +135,13 @@ Scenario: Telefonia Fixa Avulsa Dois - Portal Assine
 Scenario: Simulador 2P - Portal Assine
 	Given abre uma nova pagina do navegador
 	And acessa pagina de simulador 2P
-	And seleciona opcao de simulador 2P
+	And seleciona opcao combo online simulador 2P
 	When na modal de consulta cobertura dados do Cliente simulador 2P
 	And na modal de Identifica clica em Consultar simulador 2P
 	And seleciona botao comprar simulador 2P
 	And seleciona banda larga simulador 2P
 	And seleciona Telefonia Fixa simulador 2P
+	And informa Amazon Prime simulador 2P
 	When cliente complete o pedido - simulador 2P
 	And cliente clica em Proximo Passo - simulador 2P
 	And na tela Endereco Instalacao clica Proximo Passo simulador 2P
@@ -184,7 +185,7 @@ Scenario: Combo 3P - Portal Assine B2B
 	Then pagina exibida mensagem de sucesso ou erro B2B
 	
 @CenarioSimu2PSP-B2B
-Scenario: Combo 2P SP - Portal Assine B2B
+Scenario: Simulador 2P SP - Portal Assine B2B
 	Given abre uma nova pagina do navegador
 	And acessa pg simulador 2P B2B SP
 	And seleciona simulador 2P B2B SP

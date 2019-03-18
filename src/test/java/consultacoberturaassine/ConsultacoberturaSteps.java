@@ -4,6 +4,7 @@ import cucumber.api.java.en.Given;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -81,7 +82,7 @@ public class ConsultacoberturaSteps {
     	driver.findElement(By.className("btn-consult")).click();
     	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
     }
     
     @And ("valida retorno de sucesso ou erro G1")
@@ -90,8 +91,8 @@ public class ConsultacoberturaSteps {
       	System.out.println("B2C - Consulta Cobertura - (G1_FSP_3P_15_vdsl)");
       	System.out.println("----------------------------------------------");
       	
-      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1"));
+      	assertTrue(element2.getText().contains("Banda Larga + Telefonia Fixa"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
@@ -139,8 +140,8 @@ public class ConsultacoberturaSteps {
      	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
      	Thread.sleep(3000);
      	
-     	WebDriverWait wait = new WebDriverWait(driver, 30);
-     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+     	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
      }
      
      @Then ("valida retorno de sucesso ou erro G2")
@@ -149,8 +150,8 @@ public class ConsultacoberturaSteps {
        	System.out.println("B2C - Consulta Cobertura - (G2_FSP_3P_50_vdsl)");
        	System.out.println("----------------------------------------------");
        	     	    	
-      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
+       	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1"));
+      	assertTrue(element2.getText().contains("Banda Larga + Telefonia Fixa"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
@@ -198,7 +199,7 @@ public class ConsultacoberturaSteps {
       	driver.findElement(By.className("btn-consult")).click();
       	
       	WebDriverWait wait = new WebDriverWait(driver, 200);
-      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
       }
       
       @Then ("valida retorno de sucesso ou erro G3")
@@ -207,8 +208,8 @@ public class ConsultacoberturaSteps {
         	System.out.println("B2C - Consulta Cobertura - (G3_FSP_50_GPON)");
         	System.out.println("-------------------------------------------");
         	     	    	
-          	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-          	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
+        	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1"));
+          	assertTrue(element2.getText().contains("Banda Larga + Telefonia Fixa"));
 
 //          String strng2 = element2.getText();
           	System.out.printf("Resultado: "+ driver.getTitle());
@@ -255,7 +256,7 @@ public class ConsultacoberturaSteps {
          	driver.findElement(By.className("btn-consult")).click();
        	
         	WebDriverWait wait = new WebDriverWait(driver, 200);
-        	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+        	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
        }
        
        @Then ("valida retorno de sucesso ou erro G4")
@@ -264,8 +265,8 @@ public class ConsultacoberturaSteps {
          	System.out.println("B2C - Consulta Cobertura - (G4_FSP_2P_15_vdsl)");
          	System.out.println("----------------------------------------------");
          	     	    	
-          	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-          	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
+         	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1"));
+          	assertTrue(element2.getText().contains("Banda Larga + Telefonia Fixa"));
 
 //          String strng2 = element2.getText();
           	System.out.printf("Resultado: "+ driver.getTitle());
@@ -312,7 +313,7 @@ public class ConsultacoberturaSteps {
     	driver.findElement(By.className("btn-consult")).click();
     	    	
     	WebDriverWait wait = new WebDriverWait(driver, 200);
-    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"))));
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
     }
     
     @Then ("valida retorno de sucesso ou erro G5")
@@ -321,8 +322,8 @@ public class ConsultacoberturaSteps {
       	System.out.println("B2C - Consulta Cobertura - (G5_FSP_3P_50_vdsl_plus)");
       	System.out.println("---------------------------------------------------");
       	     	    	
-      	WebElement element2 = driver.findElement(By.xpath("html/body/div/ui-view/ui-view/div/section/section/header[1]/div/div/h1/strong"));
-      	assertTrue(element2.getText().contains("Selecionamos produtos disponíveis para sua região"));
+      	WebElement element2 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/header[1]/div/div/h1"));
+      	assertTrue(element2.getText().contains("Banda Larga + Telefonia Fixa"));
 
 //      String strng2 = element2.getText();
       	System.out.printf("Resultado: "+ driver.getTitle());
@@ -365,8 +366,8 @@ public class ConsultacoberturaSteps {
     
     @And ("seleciona botao consultar G6")
     public void consultaG6() throws InterruptedException {
-      	driver.findElement(By.className("btn-consult")).click();
-     	    	
+    	driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys(Keys.ENTER);
+    	
      	WebDriverWait wait = new WebDriverWait(driver, 200);
      	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));
     }
@@ -423,7 +424,7 @@ public class ConsultacoberturaSteps {
       
       @And ("seleciona botao consultar G7")
       public void consultaG7() throws InterruptedException {
-        	driver.findElement(By.className("btn-consult")).click();
+    	    driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys(Keys.ENTER);
       	
         	WebDriverWait wait = new WebDriverWait(driver, 200);
         	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));
@@ -480,7 +481,7 @@ public class ConsultacoberturaSteps {
     
     @And ("seleciona botao consultar G9")
     public void consultaG9() throws InterruptedException {
-      	driver.findElement(By.className("btn-consult")).click();
+    	driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys(Keys.ENTER);
       	    	
       	WebDriverWait wait = new WebDriverWait(driver, 200);
       	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("btnLinkMonte"))));

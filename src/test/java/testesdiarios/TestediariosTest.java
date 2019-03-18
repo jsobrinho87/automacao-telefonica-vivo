@@ -17,6 +17,8 @@ import cucumber.api.junit.Cucumber;
 	       + "@CenarioTV-Avulsa,"
 	       + "@CenarioSimulador-3P,"
 	       + "@CenarioLP-BL,"
+	       + "@CenarioCom3P-B2B,"
+           + "@CenarioSimu2PSP-B2B,"
            + "@CenarioC2CR-02,"
            + "@CenarioConsultaSP-G6,"
            + "@CenarioConsultaSP-Defalt,"

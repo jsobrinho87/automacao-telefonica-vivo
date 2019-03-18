@@ -99,7 +99,7 @@ Scenario: Simulador 3P - Testes Diarios
 	And informa TV simulador 3P TD
 	And informa adicionais TV simulador 3P TD
 	And informa Fixa simulador 3P TD
-	And informa Amazon Prime simulador 3P TD
+	And informa Amazon Prime Video simulador 3P TD
 	When cliente informa o pedido simulador 3P TD
 	And cliente clica Proximo Passo simulador 3P TD
 	And tela Endereco Instalacao clica Proximo Passo simulador 3P TP
@@ -121,6 +121,37 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	When em Pagamentos informa os dados LP Oferta BL TD
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
+	
+@CenarioCom3P-B2B
+Scenario: Combo 3P - Portal Assine B2B SP
+	Given abre pg do navegador TD
+	And acessa cb 3P B2B SP
+	And valida card combo 3P B2B SP
+	When informa dados Cliente 3P B2B SP
+	And identificacao clica em Consultar 3P B2B SP
+	When dados cliente checkout 3P B2B SP
+	And dados cliente clica proximo passo 3P B2B SP
+	And endereco instalacao seleciona Proximo Passo 3P B2B SP
+	When pagamentos informa dados 3P B2B SP
+	And pagamento clica Finalizar Pedido 3P B2B SP
+	Then exibida mensagem sucesso ou erro 3P B2B SP
+	
+@CenarioSimu2PSP-B2B
+Scenario: Simulador 2P SP - Portal Assine B2B
+	Given abre pg do navegador TD
+	And acessa novo simulador 2P B2B SP
+	And teste simulador 2P B2B SP"
+	When consulta dados Cliente simu 2P B2B SP
+	And clica em Consultar simu 2P B2B SP
+	And botao simu 2P B2B SP
+	And card banda larga simu 2P B2B SP
+	And card Telefonia Fixa simu 2P B2B SP
+	When dados pedido simu 2P B2B SP
+	And proximo Passo simu 2P B2B SP
+	And proximo passo 2 simu 2P B2B SP
+	When dados pagamentos simu 2P B2B SP
+	And fecha pedido simu 2P B2B SP
+	Then mensagem sucesso ou erro simu 2P B2B SP
 
 @CenarioC2CR-02
 Scenario: Valida C2CR FSP - Testes Diarios
