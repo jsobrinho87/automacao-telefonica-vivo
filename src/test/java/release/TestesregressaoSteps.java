@@ -1386,7 +1386,7 @@ public class TestesregressaoSteps {
   	
   	Thread.sleep(3000);
 
-    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[6]/div/div/div[1]/div[2]/a"));
+    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[6]/div/div/div[1]/div[2]/a[2]"));
     ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
     element1.click();
   }
@@ -1541,7 +1541,7 @@ public class TestesregressaoSteps {
 	     
   @And ("acessa pg de combo 3P B2B")
   public void pgCombo3PB2B()  throws InterruptedException {	
-	  	driver.navigate().to("https://assine.vivo.com.br/Florianopolis_SC/empresas/pequenas-e-medias/combos");
+	  	driver.navigate().to("https://assine.vivo.com.br/sao-paulo_SP/empresas/pequenas-e-medias/combos");
 	  	
 	  	WebDriverWait wait1 = new WebDriverWait(driver, 200);
 		wait1.until(ExpectedConditions.textToBe(By.xpath("//*[@id=\"mainView\"]/ui-view/header[1]/div/div/h2/strong"), "Internet + Telefone Fixo"));
@@ -1571,8 +1571,8 @@ public class TestesregressaoSteps {
 	  
 	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[1]/input")).sendKeys("Regressao Assine Robo");   
 	   driver.findElement(By.xpath("html/body/div[2]/section/section/div[1]/div/div/div/section/form/div/div[1]/div[2]/input")).sendKeys("(41) 2525-2636");
-	   driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("88010-140");
-	   driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("27");
+	   driver.findElement(By.cssSelector("div.wrap-double > input[name=\"cep\"]")).sendKeys("01510-001");
+	   driver.findElement(By.xpath(".//*[@class='header-modal']/../form/div/div[1]/div[3]/div[2]/input")).sendKeys("729");
 	      
 	   File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	   FileUtils.copyFile(scrFile, new File("C:\\Users\\jsobr\\Downloads\\Release\\Evidências Testes Regressão Release\\Pedidos de compra\\B2B\\05-Teste-informaDados-3PCombo-B2B.jpg"));
@@ -1589,7 +1589,7 @@ public class TestesregressaoSteps {
 		wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtBusinessName"))));
 		
 	 	driver.findElement(By.id("txtBusinessName")).clear();
-	 	driver.findElement(By.id("txtBusinessName")).sendKeys("Testando Vivo");
+	 	driver.findElement(By.id("txtBusinessName")).sendKeys("Testando Vivo SP");
 	 	driver.findElement(By.id("txtBusinessDocument")).clear();
 	 	driver.findElement(By.id("txtBusinessDocument")).sendKeys(util.util.gerarCNPJ());
 	
@@ -1745,7 +1745,7 @@ public class TestesregressaoSteps {
 	   	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txtBusinessName")));
 	   	
 	  	driver.findElement(By.id("txtBusinessName")).clear();
-	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Testando Vivo");
+	  	driver.findElement(By.id("txtBusinessName")).sendKeys("Testando Vivo SP");
 	  	driver.findElement(By.id("txtBusinessDocument")).clear();
 	  	driver.findElement(By.id("txtBusinessDocument")).sendKeys(util.util.gerarCNPJ());
 	
@@ -1867,7 +1867,7 @@ public class TestesregressaoSteps {
 	  	
 	   Thread.sleep(3000);
 
-	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[6]/div/div/div[1]/div[2]/a"));
+	    WebElement element1 = driver.findElement(By.xpath("//*[@id=\"mainView\"]/ui-view/section[6]/div/div/div[1]/div[2]/a[2]"));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
 	    element1.click();
    }
