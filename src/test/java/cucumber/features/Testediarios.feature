@@ -48,8 +48,8 @@ Scenario: Banda Larga Avulsa - Testes Diarios
 	And acessa pg de Avulso BL TD
 	And informa opcao de Avulso BL TD
 	When modal de consulta cobertura dados do Cliente Avulso BL TD
-	And modal de Identifica clica Receber Ligacao Avulso BL TD
-	And informa botao comprar internet avulsa BL TD
+#	And modal de Identifica clica Receber Ligacao Avulso BL TD
+#	And informa botao comprar internet avulsa BL TD
 	When completa o pedido Avulso BL TD
 	And clica em Proximo Passo Avulso BL TD
 	And tela Endereco Instalacao clica Proximo Passo Avulso BL TD
@@ -106,21 +106,6 @@ Scenario: Simulador 3P - Testes Diarios
 	When pagamentos informa dados simulador 3P TD
 	And pagamento clica Finalizar Pedido simulador 3P TD
 	Then mensagem de sucesso ou erro simulador 3P TD
-
-@CenarioLP-BL
-Scenario: LP Oferta Banda Larga - Testes Diarios
-	Given abre pg do navegador TD
-	And acessa pagina LP Oferta BL TD
-	And informa botao Assine ja LP Oferta BL TD
-	When modal consulta cobertura informa dados LP Oferta BL TD
-	And modal clica em Consultar LP Oferta BL TD
-	And modal pontos adicionais clica em Adicionar LP Oferta BL TD
-	When complete dados do cliente de pedido LP Oferta BL TD
-	And clica em Proximo Passo LP Oferta BL TD
-	And endereco de Instalacao clica em Proximo Passo LP Oferta BL TD
-	When em Pagamentos informa os dados LP Oferta BL TD
-	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
-	Then mensagem de sucesso ou erro LP Oferta BL TD
 	
 @CenarioCom3P-B2B
 Scenario: Combo 3P - Portal Assine B2B SP
@@ -140,12 +125,8 @@ Scenario: Combo 3P - Portal Assine B2B SP
 Scenario: Simulador 2P SP - Portal Assine B2B
 	Given abre pg do navegador TD
 	And acessa novo simulador 2P B2B SP
-	And teste simulador 2P B2B SP"
+	And teste simulador 2P B2B SP
 	When consulta dados Cliente simu 2P B2B SP
-	And clica em Consultar simu 2P B2B SP
-	And botao simu 2P B2B SP
-	And card banda larga simu 2P B2B SP
-	And card Telefonia Fixa simu 2P B2B SP
 	When dados pedido simu 2P B2B SP
 	And proximo Passo simu 2P B2B SP
 	And proximo passo 2 simu 2P B2B SP
@@ -186,7 +167,7 @@ Scenario: Acesso Chat Oracle
 	And acessa pg de home FSP Chat
 	And seleciona opcao de Compre pelo chat
 	And na modal seleciona chat Oracle
-	When na modal informa Cep e numero chat
-	And seleciona botao consultar Chat
+#	When na modal informa Cep e numero chat
+#	And seleciona botao consultar Chat
 	And modal informa dados para acesso ao chat
 	Then valida acesso chat oracle
