@@ -106,6 +106,7 @@ Scenario: Simulador 3P - Testes Diarios
 	When pagamentos informa dados simulador 3P TD
 	And pagamento clica Finalizar Pedido simulador 3P TD
 	Then mensagem de sucesso ou erro simulador 3P TD
+<<<<<<< HEAD
 
 @CenarioLP-BL
 Scenario: LP Oferta Banda Larga - Testes Diarios
@@ -121,6 +122,8 @@ Scenario: LP Oferta Banda Larga - Testes Diarios
 	When em Pagamentos informa os dados LP Oferta BL TD
 	And em Pagamento clica em Finalizar Pedido LP Oferta BL TD
 	Then mensagem de sucesso ou erro LP Oferta BL TD
+=======
+>>>>>>> branch 'master' of https://github.com/jsobrinho87/automacao-telefonica-vivo
 	
 @CenarioCom3P-B2B
 Scenario: Combo 3P - Portal Assine B2B SP

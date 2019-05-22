@@ -1234,7 +1234,6 @@ public class TestediariosSteps {
        	     	    	
         WebElement element2 = driver.findElement(By.id("btnLinkMonte"));
        	assertTrue(element2.getText().contains("Monte sua oferta"));
-
        	System.out.printf("Resultado: "+ driver.getTitle());
        	System.out.println();
        	System.out.println("---------------------------------------------");
