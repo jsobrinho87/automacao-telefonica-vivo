@@ -216,29 +216,30 @@ public class TestediariosSteps {
         driver.findElement(By.className("btn-consult")).click();
     }
     
-//    @And ("modal de Identifica clica Receber Ligacao Avulso BL TD")
-//    public void receberLigacaoAvulsoBLTD() throws InterruptedException {
-//    	driver.findElement(By.className("btn-consult")).click();
-//    	
-//    	WebDriverWait wait = new WebDriverWait(driver, 200);
-//    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[1]/div/article[2]"))));
-//    }
-//    
-//    @And ("informa botao comprar internet avulsa BL TD")
-//    public void btaoComprarInternetAvulsoBLTD() throws InterruptedException {
-//    	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-//    	
-//    	Thread.sleep(3000);
-//    	
-//    	Actions act4=new Actions(driver);   	
-//    	act4.moveToElement(driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
-//    }
+    @And ("identifica pagina botao Avulso BL TD")
+    public void receberLigacaoAvulsoBLTD() throws InterruptedException {
+    	WebDriverWait wait = new WebDriverWait(driver, 200);
+    	wait.until(ExpectedConditions.visibilityOfElementLocated((By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[2]/div/article[2]"))));
+
+    }
+    
+    @And ("informa botao comprar internet avulsa BL TD")
+    public void btaoComprarInternetAvulsoBLTD() throws InterruptedException {
+    	((JavascriptExecutor)driver).executeScript("scroll(0,400)");
+    	
+    	Thread.sleep(3000);
+    	
+    	Actions act4=new Actions(driver);   	
+    	act4.moveToElement(driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[4]/div/div/div[1]/div[2]/a[3]"))).click().build().perform();
+    }
     
     @When ("completa o pedido Avulso BL TD")
     public void dadosClienteAvulsoBLTD() throws IOException { 
     	WebDriverWait wait = new WebDriverWait(driver, 200);
     	wait.until(ExpectedConditions.visibilityOfElementLocated((By.id("txtDocumento"))));
     	
+    	driver.findElement(By.id("txtName")).clear();
+    	driver.findElement(By.id("txtName")).sendKeys("Wilson Testando Novo");
     	driver.findElement(By.id("txtDocumento")).clear();
     	driver.findElement(By.id("txtDocumento")).sendKeys(util.util.gerarCPF());
     	driver.findElement(By.id("txtEmail")).clear();
@@ -610,7 +611,7 @@ public class TestediariosSteps {
     	
     	Thread.sleep(3000);
     	
-    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[3]/div/div/div[1]/div[2]/a[1]"));
+    	WebElement element1 = driver.findElement(By.xpath("//*[@id=\"simulador-assine\"]/section/section/section[4]/div/div/div[1]/div[2]/a[1]"));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element1);
         element1.click();
     }   
